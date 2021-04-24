@@ -13,6 +13,9 @@ public class Player : MonoBehaviour {
 	[Header("Refs"), Space]
 	[SerializeField] PlayerMoving mover;
 	[SerializeField] DebugText debugText;
+	public int Wallet = 1000;
+	public Inventory inventory;
+	public List<DungeonObject> PlayerInventory = new List<DungeonObject>();
 
 #if UNITY_EDITOR
 	private void OnValidate() {
