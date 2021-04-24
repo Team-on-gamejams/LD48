@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class ProductCheck : MonoBehaviour
 {
 
-    public DungeonObject ObjectType = DungeonObject.Null;
+    public DungeonObject ObjectType = DungeonObject.None;
     public int price;
     void Awake()
     {

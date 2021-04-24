@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] Hotbar hotbar;
 	[SerializeField] DebugText debugText;
 	public int Wallet = 1000;
-	public Inventory inventory;
+	public InstrumentsDB inventoryDB;
 	public List<DungeonObject> PlayerInventory = new List<DungeonObject>();
 
 #if UNITY_EDITOR

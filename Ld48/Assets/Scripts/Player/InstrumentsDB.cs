@@ -13,7 +13,7 @@ public class Instruments
     enum InstrumentType { resource, instrument }
 
 }
-public class Inventory : MonoBehaviour
+public class InstrumentsDB : MonoBehaviour
 {
     //public Dictionary<DungeonObject, float> instrumentDB = new Dictionary<DungeonObject, float>();
     public List<Instruments> instruments = new List<Instruments>();
