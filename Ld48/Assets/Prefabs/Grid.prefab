@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4703521975138864878}
   - component: {fileID: 4703521975138864865}
-  - component: {fileID: 4703521975138864864}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -45,18 +44,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSize: {x: 32, y: 32}
-  cellSize: {x: 1, y: 1}
---- !u!114 &4703521975138864864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4703521975138864879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6257c6790546040b0dbda25e8df623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 30210c75b338b164a9ccac6c9feba315, type: 3}
-  grid: {fileID: 4703521975138864865}
+  startRoom:
+    serializedVersion: 2
+    x: 11
+    y: 23
+    width: 9
+    height: 4
+  startOreGold:
+    serializedVersion: 2
+    x: 19
+    y: 18
+    width: 2
+    height: 2
+  startOreIron:
+    serializedVersion: 2
+    x: 11
+    y: 23
+    width: 2
+    height: 2
+  playerStartPos: {x: 16, y: 23}
+  playerGo: {fileID: 0}

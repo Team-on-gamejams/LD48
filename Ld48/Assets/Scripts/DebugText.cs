@@ -21,7 +21,11 @@ public class DebugText : MonoBehaviour {
 #endif
 
 	void Awake() {
+		if (!textField)
+			textField = GetComponent<TextMeshPro>();
+
 		GameManager.Instance.OnDebugModeChange += OnDebugModeChange;
+
 		OnDebugModeChange(GameManager.Instance.IsDebugMode);
 	}
 

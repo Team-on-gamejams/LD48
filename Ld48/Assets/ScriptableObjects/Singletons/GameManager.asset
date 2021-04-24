@@ -12,3 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591d662dec81b754394feb90f575ad46, type: 3}
   m_Name: GameManager
   m_EditorClassIdentifier: 
+  foregroundDirtSprite: {fileID: 21300000, guid: 31d0bbba8d7f865459a62bdbca2dd65d,
+    type: 3}
+  backgroundDirtSprite: {fileID: 21300000, guid: a83f4f7af87780242bf08d0a3c6a102a,
+    type: 3}
+  foregroundStoneSprite: {fileID: 21300000, guid: 471fb6fca7de6e045a0ec9cf3f962fba,
+    type: 3}
+  backgroundStoneSprite: {fileID: 21300000, guid: a2cae91af8c6e1f49bb33a849fd0c2a8,
+    type: 3}
+  foregroundBedrockSprite: {fileID: 21300000, guid: 8cd881e9d9230dc47a3ed069c98f51db,
+    type: 3}
+  backgroundBedrockSprite: {fileID: 21300000, guid: e9b0a958bae80ae4dbc6120d42482754,
+    type: 3}
+  oreGoldSprite: {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
+  oreIronSprite: {fileID: 21300000, guid: e31991c35ce64af439d93d632f7ab52f, type: 3}
