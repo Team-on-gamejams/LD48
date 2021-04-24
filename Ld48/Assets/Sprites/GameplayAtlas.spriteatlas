@@ -47,15 +47,21 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 96d4e5f6b928e4f40b0c35e6d4ebcef8, type: 3}
     - {fileID: 102900000, guid: 229227f9af1cdf2478656e6433b96676, type: 3}
     - {fileID: 102900000, guid: 7871e2405ba04044284a6e8562c58c84, type: 3}
-    totalSpriteSurfaceArea: 16384
+    totalSpriteSurfaceArea: 65536
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 5d49ecd180973ff4c89ae12df2d9bb95, type: 3}
+  - {fileID: 21300000, guid: 3b829df2706f31a4c9deeb7fc181c572, type: 3}
   - {fileID: 21300000, guid: dd792bd3143895e4f8f0ad638addfaea, type: 3}
+  - {fileID: 21300000, guid: fa6445a5f6d25bd428423048b5720ba9, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Ladder
+  - Block
   - Player
+  - Platform
   m_RenderDataMap: {}
   m_Tag: GameplayAtlas
   m_IsVariant: 0

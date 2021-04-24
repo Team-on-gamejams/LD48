@@ -17,9 +17,6 @@ public class Grid : MonoBehaviour {
 	[SerializeField] Rect startOreIron;
 	[SerializeField] Vector2Int playerStartPos;
 
-	[Header("Refs"), Space]
-	[SerializeField] GameObject playerGo;
-
 	Transform visualParent;
 
 #if UNITY_EDITOR
@@ -76,7 +73,7 @@ public class Grid : MonoBehaviour {
 				c.Init();
 
 				if (x == playerStartPos.x && y == playerStartPos.y) {
-					playerGo.transform.position = c.transform.position;
+					GameManager.Instance.player.mover.transform.position = c.transform.position;
 				}
 			}
 		}
