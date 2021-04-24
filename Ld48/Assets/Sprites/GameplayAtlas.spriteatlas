@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GameplayAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2a82bade4b9889b46a68e7c7c398e2e7, type: 3}
+    - {fileID: 102900000, guid: 96d4e5f6b928e4f40b0c35e6d4ebcef8, type: 3}
+    - {fileID: 102900000, guid: 229227f9af1cdf2478656e6433b96676, type: 3}
+    - {fileID: 102900000, guid: 7871e2405ba04044284a6e8562c58c84, type: 3}
+    totalSpriteSurfaceArea: 655360
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 0542bbb0ab1e45b4fbc1feca10be5b3e, type: 3}
+  - {fileID: 21300000, guid: 99c6fed0dd63a6a4c968c3b1a66e60a0, type: 3}
+  - {fileID: 21300000, guid: 5c89c54286630d446aa7326f6a821aec, type: 3}
+  - {fileID: 21300000, guid: 65f451822654297498a966f6da5a49b6, type: 3}
+  - {fileID: 21300000, guid: 415cfd9280ec1c04198088628ccf6787, type: 3}
+  - {fileID: 21300000, guid: bfed1bf2187ad404c9ed1d2527abd713, type: 3}
+  - {fileID: 21300000, guid: 3e2579831caee2b4780f7d110409a89d, type: 3}
+  - {fileID: 21300000, guid: 2b21eab35ef6f9b45ba5915d071fb1d2, type: 3}
+  - {fileID: 21300000, guid: dd792bd3143895e4f8f0ad638addfaea, type: 3}
+  - {fileID: 21300000, guid: bea9fd448f6e6b642a99aa597d369d25, type: 3}
+  - {fileID: 21300000, guid: 6aceffa4dc379d74cbd173370e368997, type: 3}
+  - {fileID: 21300000, guid: b4e4d435b59b2ed47a3dd2be042dbbae, type: 3}
+  - {fileID: 21300000, guid: 12e31a95669b1a0469251438816f80ea, type: 3}
+  - {fileID: 21300000, guid: a420053665d53404d9c0eb841ad8b67f, type: 3}
+  - {fileID: 21300000, guid: c131f666d2b0f0b4aa1ff739b6fab55d, type: 3}
+  - {fileID: 21300000, guid: 62f67db71824b834e97ad188d592a44b, type: 3}
+  - {fileID: 21300000, guid: 9de77f982a4c577458fe2173672b203d, type: 3}
+  - {fileID: 21300000, guid: 42391c09d8e7d9549a8ab5f21cef46c5, type: 3}
+  - {fileID: 21300000, guid: 60f20a49881b39f44aaa5ef1a6c121b2, type: 3}
+  - {fileID: 21300000, guid: e10bccd93b1b0fd419b2544e7e6e0baf, type: 3}
+  - {fileID: 21300000, guid: b981840a57c8c1341b465e5ba2901e40, type: 3}
+  - {fileID: 21300000, guid: 1f89c93ae0776534b87cc4822cdcfedc, type: 3}
+  - {fileID: 21300000, guid: 790a426a68c69614f9d6c5546da7c070, type: 3}
+  - {fileID: 21300000, guid: 087a90ab56c6f874e84f0b4a3296b30b, type: 3}
+  - {fileID: 21300000, guid: aa59500c2a58de2438103a5555903a34, type: 3}
+  - {fileID: 21300000, guid: d62011dcd6ba67241a2a1161fe6d5b29, type: 3}
+  - {fileID: 21300000, guid: 91e08eece907be34aa9425cfa326e77f, type: 3}
+  - {fileID: 21300000, guid: c9aef90edf33b5d43a6ffa0d8b625e53, type: 3}
+  - {fileID: 21300000, guid: ae0c748e9e975e14aa27f7c2b4ba5eb2, type: 3}
+  - {fileID: 21300000, guid: 9bce890f7547eb3458848d6a9549fcab, type: 3}
+  - {fileID: 21300000, guid: 0db73a8f9b657ad43a810548bb84612c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - _ResourceBase
+  - OreB
+  - Belt
+  - Miner
+  - Resource09
+  - OreG
+  - OreF
+  - Resource14
+  - Player
+  - Crafter
+  - Resource03
+  - Resource12
+  - Resource08
+  - OreE
+  - Resource15
+  - Resource13
+  - Storage
+  - Resource11
+  - Resource02
+  - Resource06
+  - Resource04
+  - Smelter
+  - Resource05
+  - OreC
+  - Manipulator
+  - Resource01
+  - OreA
+  - OreD
+  - Resource10
+  - _OreBase
+  - Resource07
+  m_RenderDataMap: {}
+  m_Tag: GameplayAtlas
+  m_IsVariant: 0

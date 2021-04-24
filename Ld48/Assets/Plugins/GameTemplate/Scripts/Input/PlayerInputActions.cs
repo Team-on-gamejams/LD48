@@ -714,6 +714,52 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Cheats"",
+            ""id"": ""f4961852-612a-4f82-96c5-73ecb305ebe8"",
+            ""actions"": [
+                {
+                    ""name"": ""ToggleDebugMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""7b4e4b2c-4218-4da9-a7fe-45b408b67bf6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleConsole"",
+                    ""type"": ""Button"",
+                    ""id"": ""57279444-1189-491b-a55e-747e7d2cfea6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""190373b0-ab88-4eb6-88b4-b720d1a928fb"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ToggleConsole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e98e1bab-5303-43cd-9909-95f982992be7"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ToggleDebugMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -774,6 +820,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TabLeft = m_UI.FindAction("TabLeft", throwIfNotFound: true);
         m_UI_TabRight = m_UI.FindAction("TabRight", throwIfNotFound: true);
+        // Cheats
+        m_Cheats = asset.FindActionMap("Cheats", throwIfNotFound: true);
+        m_Cheats_ToggleDebugMode = m_Cheats.FindAction("ToggleDebugMode", throwIfNotFound: true);
+        m_Cheats_ToggleConsole = m_Cheats.FindAction("ToggleConsole", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -983,6 +1033,47 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Cheats
+    private readonly InputActionMap m_Cheats;
+    private ICheatsActions m_CheatsActionsCallbackInterface;
+    private readonly InputAction m_Cheats_ToggleDebugMode;
+    private readonly InputAction m_Cheats_ToggleConsole;
+    public struct CheatsActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public CheatsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ToggleDebugMode => m_Wrapper.m_Cheats_ToggleDebugMode;
+        public InputAction @ToggleConsole => m_Wrapper.m_Cheats_ToggleConsole;
+        public InputActionMap Get() { return m_Wrapper.m_Cheats; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CheatsActions set) { return set.Get(); }
+        public void SetCallbacks(ICheatsActions instance)
+        {
+            if (m_Wrapper.m_CheatsActionsCallbackInterface != null)
+            {
+                @ToggleDebugMode.started -= m_Wrapper.m_CheatsActionsCallbackInterface.OnToggleDebugMode;
+                @ToggleDebugMode.performed -= m_Wrapper.m_CheatsActionsCallbackInterface.OnToggleDebugMode;
+                @ToggleDebugMode.canceled -= m_Wrapper.m_CheatsActionsCallbackInterface.OnToggleDebugMode;
+                @ToggleConsole.started -= m_Wrapper.m_CheatsActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.performed -= m_Wrapper.m_CheatsActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.canceled -= m_Wrapper.m_CheatsActionsCallbackInterface.OnToggleConsole;
+            }
+            m_Wrapper.m_CheatsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ToggleDebugMode.started += instance.OnToggleDebugMode;
+                @ToggleDebugMode.performed += instance.OnToggleDebugMode;
+                @ToggleDebugMode.canceled += instance.OnToggleDebugMode;
+                @ToggleConsole.started += instance.OnToggleConsole;
+                @ToggleConsole.performed += instance.OnToggleConsole;
+                @ToggleConsole.canceled += instance.OnToggleConsole;
+            }
+        }
+    }
+    public CheatsActions @Cheats => new CheatsActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1028,5 +1119,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTabLeft(InputAction.CallbackContext context);
         void OnTabRight(InputAction.CallbackContext context);
+    }
+    public interface ICheatsActions
+    {
+        void OnToggleDebugMode(InputAction.CallbackContext context);
+        void OnToggleConsole(InputAction.CallbackContext context);
     }
 }

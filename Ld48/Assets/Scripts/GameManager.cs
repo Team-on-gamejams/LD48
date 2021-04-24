@@ -11,7 +11,19 @@ using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "GameManager", menuName = "Singletons/GameManager")]
 public class GameManager : Singleton<GameManager> {
+	public bool IsDebugMode {
+		get => isDebugMode;
+		set {
+			if(isDebugMode != value) {
+				isDebugMode = value;
+				OnDebugModeChange?.Invoke(isDebugMode);
+			}
+		}
+	}
+	public Action<bool> OnDebugModeChange;
+	bool isDebugMode = true;
 
+	public Player player;
 
 	protected override void Initialize() {
 		base.Initialize();

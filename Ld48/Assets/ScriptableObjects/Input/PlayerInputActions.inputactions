@@ -692,6 +692,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Cheats",
+            "id": "f4961852-612a-4f82-96c5-73ecb305ebe8",
+            "actions": [
+                {
+                    "name": "ToggleDebugMode",
+                    "type": "Button",
+                    "id": "7b4e4b2c-4218-4da9-a7fe-45b408b67bf6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ToggleConsole",
+                    "type": "Button",
+                    "id": "57279444-1189-491b-a55e-747e7d2cfea6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "190373b0-ab88-4eb6-88b4-b720d1a928fb",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ToggleConsole",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e98e1bab-5303-43cd-9909-95f982992be7",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ToggleDebugMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
