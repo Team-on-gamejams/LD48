@@ -86,6 +86,7 @@
                     "interactions": ""
                 },
                 {
+
                     "name": "ToggleInventory",
                     "type": "Button",
                     "id": "d01eafff-b3c5-43c6-a5a8-b763face193f",
@@ -97,6 +98,14 @@
                     "name": "HoldShift",
                     "type": "Button",
                     "id": "ba7e16b8-73c1-4a56-8563-b6d77766013b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "ed997a09-9d46-4496-b4cb-d1e74a3023f9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -386,6 +395,16 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "HoldShift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "id": "85a5d8b5-2d85-419f-bcb4-9efd9c1006d8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

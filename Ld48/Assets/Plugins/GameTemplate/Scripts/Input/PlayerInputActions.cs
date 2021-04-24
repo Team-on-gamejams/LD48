@@ -122,6 +122,14 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""ed997a09-9d46-4496-b4cb-d1e74a3023f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -408,6 +416,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""HoldShift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85a5d8b5-2d85-419f-bcb4-9efd9c1006d8"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1021,6 +1040,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_SelectHotbar5 = m_Player.FindAction("SelectHotbar5", throwIfNotFound: true);
         m_Player_ToggleInventory = m_Player.FindAction("ToggleInventory", throwIfNotFound: true);
         m_Player_HoldShift = m_Player.FindAction("HoldShift", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1108,6 +1128,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SelectHotbar5;
     private readonly InputAction m_Player_ToggleInventory;
     private readonly InputAction m_Player_HoldShift;
+    private readonly InputAction m_Player_Jump;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1124,6 +1145,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @SelectHotbar5 => m_Wrapper.m_Player_SelectHotbar5;
         public InputAction @ToggleInventory => m_Wrapper.m_Player_ToggleInventory;
         public InputAction @HoldShift => m_Wrapper.m_Player_HoldShift;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1169,6 +1191,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @HoldShift.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldShift;
                 @HoldShift.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldShift;
                 @HoldShift.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldShift;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1209,6 +1234,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @HoldShift.started += instance.OnHoldShift;
                 @HoldShift.performed += instance.OnHoldShift;
                 @HoldShift.canceled += instance.OnHoldShift;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
         }
     }
@@ -1400,6 +1428,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnSelectHotbar5(InputAction.CallbackContext context);
         void OnToggleInventory(InputAction.CallbackContext context);
         void OnHoldShift(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

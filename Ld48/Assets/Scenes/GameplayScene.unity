@@ -443,6 +443,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99809cf5b63d79645a627fd7946b1e8b, type: 3}
+--- !u!70 &1438061933 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 997265127, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5969215078536877141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443544736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1784,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5969215078248819925, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.323
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969215078248819925, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9350001
+      objectReference: {fileID: 0}
     - target: {fileID: 5969215078860843068, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
         type: 3}
       propertyPath: m_Name
@@ -1843,6 +1859,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5969215078962614009, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969215078962614015, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
+        type: 3}
+      propertyPath: thrust
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969215078962614015, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
+        type: 3}
+      propertyPath: collider2D
+      value: 
+      objectReference: {fileID: 1438061933}
     - target: {fileID: 5979975260391611378, guid: 1623e47fde5ecd24bb071dbe08c98bc1,
         type: 3}
       propertyPath: m_AnchorMax.y
