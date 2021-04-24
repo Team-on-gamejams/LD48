@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager> {
 	public bool IsDebugMode {
 		get => isDebugMode;
 		set {
-			if(isDebugMode != value) {
+			if (isDebugMode != value) {
 				isDebugMode = value;
 				OnDebugModeChange?.Invoke(isDebugMode);
 			}
@@ -23,7 +23,20 @@ public class GameManager : Singleton<GameManager> {
 	public Action<bool> OnDebugModeChange;
 	bool isDebugMode = true;
 
-	public Player player;
+	[NonSerialized]  public Player player;
+
+	[Header("Sprites"), Space]
+	public Sprite foregroundDirtSprite;
+	public Sprite backgroundDirtSprite;
+
+	public Sprite foregroundStoneSprite;
+	public Sprite backgroundStoneSprite;
+	
+	public Sprite foregroundBedrockSprite;
+	public Sprite backgroundBedrockSprite;
+
+	public Sprite oreGoldSprite;
+	public Sprite oreIronSprite;
 
 	protected override void Initialize() {
 		base.Initialize();

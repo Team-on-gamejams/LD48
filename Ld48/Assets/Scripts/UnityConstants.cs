@@ -41,13 +41,37 @@ namespace UnityConstants
         /// </summary>
         public const int Background = -1338812095;
         /// <summary>
+        /// ID of sorting layer 'BlockBackground'.
+        /// </summary>
+        public const int BlockBackground = 83631791;
+        /// <summary>
+        /// ID of sorting layer 'BlockForeground'.
+        /// </summary>
+        public const int BlockForeground = -947575329;
+        /// <summary>
+        /// ID of sorting layer 'BlockOre'.
+        /// </summary>
+        public const int BlockOre = 546467409;
+        /// <summary>
         /// ID of sorting layer 'Default'.
         /// </summary>
         public const int Default = 0;
         /// <summary>
+        /// ID of sorting layer 'Buildings'.
+        /// </summary>
+        public const int Buildings = -1534242151;
+        /// <summary>
+        /// ID of sorting layer 'Player'.
+        /// </summary>
+        public const int Player = -811588317;
+        /// <summary>
         /// ID of sorting layer 'Foreground'.
         /// </summary>
         public const int Foreground = 1569790775;
+        /// <summary>
+        /// ID of sorting layer 'DebugText'.
+        /// </summary>
+        public const int DebugText = -256942837;
     }
 
     public static class Layers
@@ -102,9 +126,9 @@ namespace UnityConstants
         /// </summary>
         public const int MainMenu = 0;
         /// <summary>
-        /// ID of scene 'SampleScene2D'.
+        /// ID of scene 'GameplayScene'.
         /// </summary>
-        public const int SampleScene2D = 1;
+        public const int GameplayScene = 1;
     }
 
     public static class Axes
