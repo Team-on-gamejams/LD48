@@ -13,10 +13,14 @@ public class Player : MonoBehaviour {
 	[Header("Refs"), Space]
 	public PlayerMoving mover;
 	[SerializeField] Hotbar hotbar;
+	[SerializeField] Inventory inventory;
 	[SerializeField] DebugText debugText;
+	[Space]
 	public int Wallet = 1000;
 	public InstrumentsDB inventoryDB;
 	public List<DungeonObject> PlayerInventory = new List<DungeonObject>();
+
+	bool isHoldShift = false;
 
 #if UNITY_EDITOR
 	private void OnValidate() {
@@ -45,16 +49,63 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	public void OnHotbarScroll(InputAction.CallbackContext context) {
+	public void UseItemL(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				Debug.Log("Scroll Started");
+				Debug.Log("Use item L - Started");
 				break;
 			case InputActionPhase.Performed:
-				Debug.Log("Scroll Performed");
+				Debug.Log("Use item L - Performed");
 				break;
 			case InputActionPhase.Canceled:
-				Debug.Log("Scroll Canceled");
+				Debug.Log("Use item L - Canceled");
+				break;
+		}
+	}
+
+	public void UseItemR(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Started:
+				Debug.Log("Use item R - Started");
+				break;
+			case InputActionPhase.Performed:
+				Debug.Log("Use item R - Performed");
+				break;
+			case InputActionPhase.Canceled:
+				Debug.Log("Use item R - Canceled");
+				break;
+		}
+	}
+
+	public void OnToggleInventory(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Performed:
+				inventory.ToggleVisible();
+				break;
+		}
+	}
+
+	public void OnHoldShift(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Started:
+				isHoldShift = true;
+				break;
+			case InputActionPhase.Canceled:
+				isHoldShift = false;
+				break;
+		}
+	}
+
+	public void OnHotbarScroll(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Performed:
+				Vector2 value = context.ReadValue<Vector2>();
+				if(value.y > 0) {
+					hotbar.MoveSelectionUp(!isHoldShift);
+				}
+				else if (value.y < 0) {
+					hotbar.MoveSelectionDown(!isHoldShift);
+				}
 				break;
 		}
 	}
@@ -62,7 +113,7 @@ public class Player : MonoBehaviour {
 	public void OnSelectHotbar0(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				hotbar.SetSelection(0, true);
+				hotbar.SetSelection(0, !isHoldShift);
 				break;
 		}
 	}
@@ -70,7 +121,7 @@ public class Player : MonoBehaviour {
 	public void OnSelectHotbar1(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				hotbar.SetSelection(1, true);
+				hotbar.SetSelection(1, !isHoldShift);
 				break;
 		}
 	}
@@ -78,7 +129,7 @@ public class Player : MonoBehaviour {
 	public void OnSelectHotbar2(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				hotbar.SetSelection(2, true);
+				hotbar.SetSelection(2, !isHoldShift);
 				break;
 		}
 	}
@@ -86,7 +137,7 @@ public class Player : MonoBehaviour {
 	public void OnSelectHotbar3(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				hotbar.SetSelection(3, true);
+				hotbar.SetSelection(3, !isHoldShift);
 				break;
 		}
 	}
@@ -94,7 +145,7 @@ public class Player : MonoBehaviour {
 	public void OnSelectHotbar4(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				hotbar.SetSelection(4, true);
+				hotbar.SetSelection(4, !isHoldShift);
 				break;
 		}
 	}
@@ -102,7 +153,7 @@ public class Player : MonoBehaviour {
 	public void OnSelectHotbar5(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				hotbar.SetSelection(5, true);
+				hotbar.SetSelection(5, !isHoldShift);
 				break;
 		}
 	}

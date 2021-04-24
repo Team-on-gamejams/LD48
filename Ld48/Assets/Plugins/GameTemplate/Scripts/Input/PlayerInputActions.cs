@@ -106,6 +106,22 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""d01eafff-b3c5-43c6-a5a8-b763face193f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HoldShift"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba7e16b8-73c1-4a56-8563-b6d77766013b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -370,6 +386,28 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""UseItemR"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c76d1c6c-1e29-4997-8dfd-da22e3603313"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ToggleInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a8caee7-5800-49cf-9395-7e4489650a80"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""HoldShift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -981,6 +1019,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_SelectHotbar3 = m_Player.FindAction("SelectHotbar3", throwIfNotFound: true);
         m_Player_SelectHotbar4 = m_Player.FindAction("SelectHotbar4", throwIfNotFound: true);
         m_Player_SelectHotbar5 = m_Player.FindAction("SelectHotbar5", throwIfNotFound: true);
+        m_Player_ToggleInventory = m_Player.FindAction("ToggleInventory", throwIfNotFound: true);
+        m_Player_HoldShift = m_Player.FindAction("HoldShift", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1066,6 +1106,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SelectHotbar3;
     private readonly InputAction m_Player_SelectHotbar4;
     private readonly InputAction m_Player_SelectHotbar5;
+    private readonly InputAction m_Player_ToggleInventory;
+    private readonly InputAction m_Player_HoldShift;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1080,6 +1122,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @SelectHotbar3 => m_Wrapper.m_Player_SelectHotbar3;
         public InputAction @SelectHotbar4 => m_Wrapper.m_Player_SelectHotbar4;
         public InputAction @SelectHotbar5 => m_Wrapper.m_Player_SelectHotbar5;
+        public InputAction @ToggleInventory => m_Wrapper.m_Player_ToggleInventory;
+        public InputAction @HoldShift => m_Wrapper.m_Player_HoldShift;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1119,6 +1163,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @SelectHotbar5.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar5;
                 @SelectHotbar5.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar5;
                 @SelectHotbar5.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar5;
+                @ToggleInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
+                @ToggleInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
+                @ToggleInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
+                @HoldShift.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldShift;
+                @HoldShift.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldShift;
+                @HoldShift.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHoldShift;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1153,6 +1203,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @SelectHotbar5.started += instance.OnSelectHotbar5;
                 @SelectHotbar5.performed += instance.OnSelectHotbar5;
                 @SelectHotbar5.canceled += instance.OnSelectHotbar5;
+                @ToggleInventory.started += instance.OnToggleInventory;
+                @ToggleInventory.performed += instance.OnToggleInventory;
+                @ToggleInventory.canceled += instance.OnToggleInventory;
+                @HoldShift.started += instance.OnHoldShift;
+                @HoldShift.performed += instance.OnHoldShift;
+                @HoldShift.canceled += instance.OnHoldShift;
             }
         }
     }
@@ -1342,6 +1398,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnSelectHotbar3(InputAction.CallbackContext context);
         void OnSelectHotbar4(InputAction.CallbackContext context);
         void OnSelectHotbar5(InputAction.CallbackContext context);
+        void OnToggleInventory(InputAction.CallbackContext context);
+        void OnHoldShift(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

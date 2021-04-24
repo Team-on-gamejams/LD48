@@ -63,4 +63,3 @@ MonoBehaviour:
     width: 2
     height: 2
   playerStartPos: {x: 16, y: 23}
-  playerGo: {fileID: 0}
