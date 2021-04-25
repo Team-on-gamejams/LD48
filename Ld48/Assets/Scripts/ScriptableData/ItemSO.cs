@@ -18,6 +18,7 @@ public class ItemSO : ScriptableObject {
 
 		Dirt = 500,
 		Stone,
+		Bedrock,
 
 		OreIron = 1000,
 		OreGold,

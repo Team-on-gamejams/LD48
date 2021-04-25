@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4864332047625639344}
+  - component: {fileID: -1352568017744036420}
   - component: {fileID: 4864332047625639347}
   - component: {fileID: 55917380964152775}
   m_Layer: 0
-  m_Name: CellForegroundPlatform
+  m_Name: CellBuildingForegroundPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,6 +33,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1352568017744036420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4864332047625639346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5030e3db25842c1419561ed8c07fc682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToDrop: {fileID: 2472264174518022290, guid: ca125e8690838e64caf9ff769d54fdd4,
+    type: 3}
+  type: 0
+  foregroud: 6
+  background: 0
+  ore: 0
 --- !u!212 &4864332047625639347
 SpriteRenderer:
   m_ObjectHideFlags: 0

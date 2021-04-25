@@ -9,7 +9,8 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class Cell : MonoBehaviour {
-	public enum CellContentForegroud { None, Dirt, Stone, Bedrock, Brick, Ladder, Platform }
+	public enum CellBlockType { Foreground, Background, Ore }
+	public enum CellContentForegroud { None, Dirt, Stone, Bedrock, Brick, Ladder, Platform, IronOreBlock, GoldOreBlock, IronIgnotBlock, GoldIgnotBlock }
 	public enum CellContentBackground { None, Dirt, Stone, Bedrock }
 	public enum CellContentOre { None, OreIron, OreGold }
 

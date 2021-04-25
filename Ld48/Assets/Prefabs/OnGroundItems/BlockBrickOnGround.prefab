@@ -49,6 +49,8 @@ MonoBehaviour:
   item:
     itemSO: {fileID: 11400000, guid: 152800ad04e815c488a950c15a1e9a45, type: 2}
     count: 0
+  placebleBlock: {fileID: -8470503787209177685, guid: fcfa6900098eead468323750f0d93ee0,
+    type: 3}
   sr: {fileID: 5300970618864623069}
   boxCollider: {fileID: 5300970618864623068}
   rb: {fileID: 5300970618864623071}

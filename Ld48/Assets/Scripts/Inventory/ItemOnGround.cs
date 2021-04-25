@@ -9,7 +9,11 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class ItemOnGround : MonoBehaviour {
+	[Header("Item data"), Space]
 	public ItemData item;
+
+	[Header("Place data"), Space]
+	public PlacebleBlock placebleBlock;
 
 	[Header("Refs"), Space]
 	[SerializeField] SpriteRenderer sr;

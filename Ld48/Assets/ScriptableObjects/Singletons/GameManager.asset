@@ -31,6 +31,18 @@ MonoBehaviour:
   - type: 6
     prefab: {fileID: 4864332047625639346, guid: caa59adb18a9f854daf08c31fe8747e3,
       type: 3}
+  - type: 7
+    prefab: {fileID: 4864332047625639346, guid: 4921c4420621bda48aad677472508110,
+      type: 3}
+  - type: 8
+    prefab: {fileID: 4864332047625639346, guid: ef531299947ec5649803bff1cc1c4517,
+      type: 3}
+  - type: 9
+    prefab: {fileID: 4864332047625639346, guid: ec8e023b8ac1f7742bf7172dedd510be,
+      type: 3}
+  - type: 10
+    prefab: {fileID: 4864332047625639346, guid: bd9831a825697e14a95beaef9b4b7330,
+      type: 3}
   backgroundCells:
   - type: 1
     prefab: {fileID: 4739629537346512162, guid: 79e7f59941b5ff6488fb27f874511229,
@@ -49,7 +61,12 @@ MonoBehaviour:
     prefab: {fileID: 6391394958975780893, guid: 7f402e02616c9f74bb54e2feb89a76d9,
       type: 3}
   itemsOnGroundPrefabs:
+  - {fileID: 8950979663126627037, guid: 88461aeaad84d8947935669c00ac377f, type: 3}
   - {fileID: 5300970618864623057, guid: 8b9182852efab1442a24481aaf48542f, type: 3}
+  - {fileID: 5300970618864623057, guid: 686cc286ac19eb74697f65c6ac87b1ba, type: 3}
+  - {fileID: 5300970618864623057, guid: 2771a504bdaf4a34aa36a728c3e41304, type: 3}
+  - {fileID: 5300970618864623057, guid: 10c6c7ad1d7013e4ea0fd8362872dffa, type: 3}
+  - {fileID: 5300970618864623057, guid: 53d0afdb0255d9c41bd333b6dd987b1f, type: 3}
   - {fileID: 3713613722133090353, guid: 88bd996ea411e3e45ab9ddd8cc3c8c0f, type: 3}
   - {fileID: 2472264174518022290, guid: ca125e8690838e64caf9ff769d54fdd4, type: 3}
   - {fileID: 8950979663126627037, guid: 4c5b381aac758084d991bfb850bfc1be, type: 3}

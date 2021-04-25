@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6391394958975780963}
+  - component: {fileID: -5177306336374575931}
   - component: {fileID: 6391394958975780962}
   m_Layer: 0
   m_Name: CellOreGold
@@ -31,6 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5177306336374575931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391394958975780893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5030e3db25842c1419561ed8c07fc682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToDrop: {fileID: 3096303608801617609, guid: 2fe7fdfa080e03f45b59a5631eecb63d,
+    type: 3}
+  type: 2
+  foregroud: 0
+  background: 0
+  ore: 2
 --- !u!212 &6391394958975780962
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69,7 +88,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 546467409
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

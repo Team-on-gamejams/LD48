@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6185896496189356705}
+  - component: {fileID: 7509827978261266196}
   - component: {fileID: 6185896496189356704}
   m_Layer: 0
   m_Name: CellBackgroundBedrock
@@ -31,6 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7509827978261266196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185896496189356707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5030e3db25842c1419561ed8c07fc682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToDrop: {fileID: 8950979663126627037, guid: 88461aeaad84d8947935669c00ac377f,
+    type: 3}
+  type: 1
+  foregroud: 0
+  background: 3
+  ore: 0
 --- !u!212 &6185896496189356704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69,7 +88,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 83631791
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e9b0a958bae80ae4dbc6120d42482754, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
