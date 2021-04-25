@@ -760,6 +760,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4703521975138864865, guid: 85284dbd7b525fc489e720561e346a4f,
+        type: 3}
+      propertyPath: cellSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703521975138864865, guid: 85284dbd7b525fc489e720561e346a4f,
+        type: 3}
+      propertyPath: cellSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4703521975138864878, guid: 85284dbd7b525fc489e720561e346a4f,
         type: 3}
       propertyPath: m_RootOrder
