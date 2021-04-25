@@ -54,6 +54,12 @@ public class Grid : MonoBehaviour {
 					c.ore = Cell.CellContentOre.None;
 				}
 
+				if (c.background == Cell.CellContentBackground.Stone && RandomEx.GetEventWithChance(1)) {
+					c.ore = Cell.CellContentOre.OreGold;
+				}
+				else if ((c.background == Cell.CellContentBackground.Stone || c.background == Cell.CellContentBackground.Dirt) && RandomEx.GetEventWithChance(1)) {
+					c.ore = Cell.CellContentOre.OreIron;
+				}
 
 				if (startRoom.Contains(new Vector2(x, y))) {
 					c.foregroud = Cell.CellContentForegroud.None;
