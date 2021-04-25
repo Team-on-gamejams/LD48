@@ -9,10 +9,10 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class Grid : MonoBehaviour {
-	[NonSerialized] public Vector2 cellSize = Vector2.one;
 
 	[Header("Data"), Space]
     public Vector2Int gridSize = new Vector2Int(128, 128);
+	public Vector2 cellSize = Vector2.one;
 
 	[Header("Positions"), Space]
 	[SerializeField] Rect startRoom;

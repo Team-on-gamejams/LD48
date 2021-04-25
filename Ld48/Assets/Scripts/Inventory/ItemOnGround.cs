@@ -20,22 +20,7 @@ public class ItemOnGround : MonoBehaviour {
 	[SerializeField] BoxCollider2D boxCollider;
 	[SerializeField] Rigidbody2D rb;
 
-	private void OnMouseUpAsButton() {
-		if((transform.position - GameManager.Instance.player.mover.transform.position).magnitude <= GameManager.Instance.player.maxInteractDistance){
-			ItemData leftItem = GameManager.Instance.player.inventory.AddItem(item);
-
-			if (leftItem.count == 0) {
-				Destroy(gameObject);
-			}
-			else {
-				//TODO: Inventory full popup text
-				item = leftItem;
-				Init();
-			}
-		}
-	}
-
-	void Init() {
+	public void Init() {
 		gameObject.transform.localScale = Vector2.one * item.itemSO.scaleFactorOnGround * Mathf.Lerp(0.2f, 0.8f, (float)(item.count) / item.itemSO.maxCount);
 
 		rb.mass = item.count * item.itemSO.singleMass;
