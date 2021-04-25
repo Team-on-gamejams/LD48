@@ -74,6 +74,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		if(cell && cell.foregroud == Cell.CellContentForegroud.None) {
 			ItemOnGround.CreateOnGround(item, dropPos);
 			item.itemSO = null;
+			inventory.onInventoryChange();
 		}
 
 		DrawItem();
@@ -103,6 +104,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		draggingSlot.DrawItem();
 
 		draggingSlot = null;
+		inventory.onInventoryChange();
 	}
 
 	public void DrawItem() {

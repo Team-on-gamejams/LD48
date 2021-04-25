@@ -9,7 +9,11 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class HightlightBlockUnderMouse : MonoBehaviour {
-	Cell lastHightlightedCell;
+	[NonSerialized] public Cell lastHightlightedCell;
+
+	private void Awake() {
+		GameManager.Instance.hightlightBlockUnderMouse = this;
+	}
 
 	void Update() {
 		Cell cell = GameManager.Instance.GetCellAtMousePosWithInteractClamp();

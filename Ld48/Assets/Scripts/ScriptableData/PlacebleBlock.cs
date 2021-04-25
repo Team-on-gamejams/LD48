@@ -11,7 +11,11 @@ using Random = UnityEngine.Random;
 public class PlacebleBlock : MonoBehaviour {
 	[Header("Drop data"), Space]
 	public ItemOnGround itemToDrop;
-	
+
+	[Header("Break data"), Space]
+	public int neededForceToBroke = 1;
+	public float neededTimeToBroke = 1.0f;
+
 	[Header("Place data"), Space]
 	public Cell.CellBlockType type;
 	[NaughtyAttributes.ShowIf("IsForeground")] public Cell.CellContentForegroud foregroud;

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToDrop: {fileID: 3096303608801617609, guid: 2fe7fdfa080e03f45b59a5631eecb63d,
     type: 3}
+  neededForceToBroke: 1
+  neededTimeToBroke: 0.5
   type: 2
   foregroud: 0
   background: 0

@@ -53,14 +53,11 @@ TagManager:
   - name: BlockBuilding
     uniqueID: 2494082449
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
-  - name: Buildings
-    uniqueID: 2760725145
-    locked: 0
   - name: ItemsOnGround
     uniqueID: 3016227609
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 3483378979

@@ -28,6 +28,10 @@ public class Cell : MonoBehaviour {
 	}
 	Vector2Int coord;
 
+	[NonSerialized] public PlacebleBlock foregroundBlock;
+	[NonSerialized] public PlacebleBlock backgroundBlock;
+	[NonSerialized] public PlacebleBlock oreBlock;
+
 	[Header("Data"), Space]
 	public CellContentForegroud foregroud;
 	public CellContentBackground background;
@@ -45,12 +49,17 @@ public class Cell : MonoBehaviour {
 	//#endif
 
 	public void Init() {
-		CreateCell();
+		CreateAllVisuals();
+		CreateDebugText();
 
 		debugText.text = $"{coord.x} {coord.y}";
 
 		transform.localScale = new Vector3(MyGrid.cellSize.x, MyGrid.cellSize.y, 1.0f);
 		transform.position = new Vector3(MyGrid.cellSize.x * coord.x, MyGrid.cellSize.y * coord.y, 0.0f)/* - new Vector3(MyGrid.gridSize.x / 2 * MyGrid.cellSize.x, MyGrid.gridSize.y / 2 * MyGrid.cellSize.y, 0.0f)*/;
+	}
+
+	public void RecreateVisualAfterPlacing() {
+		CreateAllVisuals();
 	}
 
 	public void Hightlight() {
@@ -63,38 +72,38 @@ public class Cell : MonoBehaviour {
 		LeanTweenEx.ChangeAlpha(hightlightSr, 0.0f, 0.1f);
 	}
 
-
-	void CreateCell() {
-		CreateAllVisuals();
-		CreateDebugText();
-	}
-
 	void CreateAllVisuals() {
 		gameObject.transform.localScale = new Vector3(1, 1, 1.0f);
 
-		if (foregroud != CellContentForegroud.None)
-			Instantiate(GameManager.Instance.GetCellForeground(foregroud), Vector3.zero, Quaternion.identity, gameObject.transform);
+		if(foregroundBlock != null && foregroud != foregroundBlock.foregroud) {
+			Destroy(foregroundBlock.gameObject);
+			foregroundBlock = null;
+		}
 
-		if (background != CellContentBackground.None)
-			Instantiate(GameManager.Instance.GetCellBackground(background), Vector3.zero, Quaternion.identity, gameObject.transform);
+		if (backgroundBlock != null && background != backgroundBlock.background) {
+			Destroy(backgroundBlock.gameObject);
+			backgroundBlock = null;
+		}
 
-		if (ore != CellContentOre.None)
-			Instantiate(GameManager.Instance.GetCellOre(ore), Vector3.zero, Quaternion.identity, gameObject.transform);
+		if (oreBlock != null && ore != oreBlock.ore) {
+			Destroy(oreBlock.gameObject);
+			oreBlock = null;
+		}
+
+		if (foregroundBlock == null && foregroud != CellContentForegroud.None)
+			foregroundBlock = Instantiate(GameManager.Instance.GetCellForeground(foregroud), gameObject.transform.position, Quaternion.identity, gameObject.transform).GetComponent<PlacebleBlock>();
+
+		if (backgroundBlock == null && background != CellContentBackground.None)
+			backgroundBlock = Instantiate(GameManager.Instance.GetCellBackground(background), gameObject.transform.position, Quaternion.identity, gameObject.transform).GetComponent<PlacebleBlock>();
+
+		if (oreBlock == null && ore != CellContentOre.None)
+			oreBlock = Instantiate(GameManager.Instance.GetCellOre(ore), gameObject.transform.position, Quaternion.identity, gameObject.transform).GetComponent<PlacebleBlock>();
 	}
 
 	void CreateDebugText() {
-		Transform debugTransform = transform.Find(debugTextName);
-		GameObject debugGO;
-		if (debugTransform)
-			debugGO = debugTransform.gameObject;
-		else
-			debugGO = new GameObject(debugTextName);
-		debugGO.transform.SetParent(gameObject.transform, true);
-		debugGO.transform.localPosition = Vector3.zero;
+		debugText.transform.SetParent(gameObject.transform, true);
+		debugText.transform.localPosition = Vector3.zero;
 
-		debugText = debugGO.GetComponent<TextMeshPro>();
-		if (!debugText)
-			debugText = debugGO.AddComponent<TextMeshPro>();
 		debugText.text = $"({0} {0})";
 		debugText.alignment = TextAlignmentOptions.Center;
 		debugText.color = Color.black;
@@ -105,13 +114,7 @@ public class Cell : MonoBehaviour {
 		debugText.fontSizeMin = 0.0f;
 		debugText.enableWordWrapping = false;
 
-		DebugText debug = debugGO.GetComponent<DebugText>();
-		if (!debug)
-			debug = debugGO.AddComponent<DebugText>();
-
-		RectTransform textFieldrt = debugGO.GetComponent<RectTransform>();
-		if (!textFieldrt)
-			textFieldrt = debugGO.AddComponent<RectTransform>();
+		RectTransform textFieldrt = debugText.GetComponent<RectTransform>();
 		textFieldrt.sizeDelta = MyGrid.cellSize;
 	}
 }

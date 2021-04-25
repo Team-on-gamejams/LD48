@@ -53,13 +53,17 @@ namespace UnityConstants
         /// </summary>
         public const int BlockOre = 546467409;
         /// <summary>
+        /// ID of sorting layer 'BlockBuilding'.
+        /// </summary>
+        public const int BlockBuilding = -1800884847;
+        /// <summary>
+        /// ID of sorting layer 'ItemsOnGround'.
+        /// </summary>
+        public const int ItemsOnGround = -1278739687;
+        /// <summary>
         /// ID of sorting layer 'Default'.
         /// </summary>
         public const int Default = 0;
-        /// <summary>
-        /// ID of sorting layer 'Buildings'.
-        /// </summary>
-        public const int Buildings = -1534242151;
         /// <summary>
         /// ID of sorting layer 'Player'.
         /// </summary>

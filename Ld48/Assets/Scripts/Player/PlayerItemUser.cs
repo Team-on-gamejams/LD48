@@ -18,8 +18,15 @@ public class PlayerItemUser : MonoBehaviour {
 	[Header("Refs"), Space]
 	[SerializeField] Hotbar hotbar;
 
+	ItemData itemInBothHands;
+	ItemData itemInLeftHand;
+	ItemData itemInRightHand;
+
+	bool isUseLeftItem, isUseRightItem;
+
 	private void Awake() {
 		hotbar.onChangeSelection += RedrawItemsInHand;
+		hotbar.onInventoryChange += RedrawItemsInHand;
 	}
 
 	void Start() {
@@ -28,50 +35,71 @@ public class PlayerItemUser : MonoBehaviour {
 
 	private void OnDestroy() {
 		hotbar.onChangeSelection -= RedrawItemsInHand;
+		hotbar.onInventoryChange -= RedrawItemsInHand;
+	}
+
+	private void Update() {
+		if (isUseLeftItem && itemInLeftHand.itemSO != null) {
+			bool needUIRedraw = itemInLeftHand.UseItemWhileInHotbar();
+			if (needUIRedraw) {
+				hotbar.UpdateItemLeftHand();
+				hotbar.onInventoryChange();
+			}
+		}
+
+		if (isUseRightItem && itemInRightHand.itemSO != null) {
+			bool needUIRedraw = itemInRightHand.UseItemWhileInHotbar();
+			if (needUIRedraw) {
+				hotbar.UpdateItemRightHand();
+				hotbar.onInventoryChange();
+			}
+		}
 	}
 
 	public void StartUseLeftItem() {
-
+		isUseLeftItem = true;
 	}
 
 	public void StoptUseLeftItem() {
-
+		isUseLeftItem = false;
 	}
 
 	public void StartUseRightItem() {
-
+		isUseRightItem = true;
 	}
 
 	public void StoptUseRightItem() {
-
+		isUseRightItem = false;
 	}
 
 	void RedrawItemsInHand() {
-		ItemData? itemInBothHands = hotbar.GetItemInBothHands();
+		itemInBothHands = hotbar.GetItemInBothHands();
+		itemInLeftHand = hotbar.GetLeftItem();
+		itemInRightHand = hotbar.GetRightItem();
 
-		if (itemInBothHands.HasValue) {
+		if (itemInBothHands != null) {
 			leftItemSr.color = leftItemSr.color.SetA(0.0f);
 			rightItemSr.color = rightItemSr.color.SetA(0.0f);
 			bothItemSr.color = bothItemSr.color.SetA(1.0f);
-			bothItemSr.sprite = itemInBothHands.Value.itemSO.sprite;
+			bothItemSr.sprite = itemInBothHands.itemSO.sprite;
 		}
 		else {
 			bothItemSr.color = bothItemSr.color.SetA(0.0f);
 		
-			if (hotbar.GetLeftItem().itemSO == null) {
+			if (itemInLeftHand.itemSO == null) {
 				leftItemSr.color = leftItemSr.color.SetA(0.0f);
 			}
 			else {
 				leftItemSr.color = leftItemSr.color.SetA(1.0f);
-				leftItemSr.sprite = hotbar.GetLeftItem().itemSO.sprite;
+				leftItemSr.sprite = itemInLeftHand.itemSO.sprite;
 			}
 
-			if (hotbar.GetRightItem().itemSO == null) {
+			if (itemInRightHand.itemSO == null) {
 				rightItemSr.color = rightItemSr.color.SetA(0.0f);
 			}
 			else {
 				rightItemSr.color = rightItemSr.color.SetA(1.0f);
-				rightItemSr.sprite = hotbar.GetRightItem().itemSO.sprite;
+				rightItemSr.sprite = itemInRightHand.itemSO.sprite;
 			}
 		}
 	}

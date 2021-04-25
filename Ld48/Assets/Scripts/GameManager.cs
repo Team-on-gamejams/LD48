@@ -24,9 +24,12 @@ public class GameManager : Singleton<GameManager> {
 	public Action<bool> OnDebugModeChange;
 	bool isDebugMode = true;
 
-	[NonSerialized]  public Player player;
-	[NonSerialized]  public Grid grid;
-	[NonSerialized]  public GameObject draggedParent;
+	public Cell SelectedCell => hightlightBlockUnderMouse.lastHightlightedCell;
+
+	[NonSerialized] public Player player;
+	[NonSerialized] public HightlightBlockUnderMouse hightlightBlockUnderMouse;
+	[NonSerialized] public Grid grid;
+	[NonSerialized] public GameObject draggedParent;
 
 	[Header("Cells"), Space]
 	public ForegroundGoData[] foregroundCells;
@@ -107,6 +110,16 @@ public class GameManager : Singleton<GameManager> {
 
 		Debug.LogError($"Can't find item on ground - {type}");
 		return itemsOnGroundPrefabs[0].gameObject;
+	}
+
+	public PlacebleBlock GetItemPlacable(ItemSO.ItemType type) {
+		foreach (var data in itemsOnGroundPrefabs) {
+			if (data.item.itemSO.type == type)
+				return data.placebleBlock;
+		}
+
+		Debug.LogError($"Can't find placeble item on ground - {type}");
+		return itemsOnGroundPrefabs[0].placebleBlock;
 	}
 
 	[Serializable]

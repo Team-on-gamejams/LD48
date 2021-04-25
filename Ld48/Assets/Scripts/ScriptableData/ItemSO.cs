@@ -11,6 +11,10 @@ using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "ItemSO", menuName = "Item")]
 public class ItemSO : ScriptableObject {
+	public enum ItemMetaType : int { 
+		BuildableForeground,
+		MiningTool
+	}
 	public enum ItemType : int { 
 		None = 0,
 
@@ -32,6 +36,7 @@ public class ItemSO : ScriptableObject {
 	}
 
 	[Header("Item data"), Space]
+	public ItemMetaType metaType;
 	public ItemType type;
 	public int maxCount = 10;
 
@@ -43,4 +48,11 @@ public class ItemSO : ScriptableObject {
 	[Header("On ground data"), Space]
 	public int singleMass = 500;
 	public float scaleFactorOnGround = 1.0f;
+
+	[Header("Mining item data"), Space]
+	[NaughtyAttributes.ShowIf("IsMiningItem")] public int miningForce = 1;
+
+	bool IsMiningItem() {
+		return metaType == ItemMetaType.MiningTool;
+	}
 }

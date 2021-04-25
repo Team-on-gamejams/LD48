@@ -64,7 +64,8 @@ public class Player : MonoBehaviour {
 	public void UseItemL(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				itemUser.StartUseLeftItem();
+				if(!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+					itemUser.StartUseLeftItem();
 				break;
 			case InputActionPhase.Canceled:
 				itemUser.StoptUseLeftItem();
@@ -75,7 +76,8 @@ public class Player : MonoBehaviour {
 	public void UseItemR(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				itemUser.StartUseRightItem();
+				if(!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+					itemUser.StartUseRightItem();
 				break;
 			case InputActionPhase.Canceled:
 				itemUser.StoptUseRightItem();

@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour {
+	public Action onInventoryChange;
+
 	[Header("Refs"), Space]
 	[SerializeField] protected Inventory delegatedInventory;
 	[SerializeField] protected InventoryItem[] items;
@@ -65,6 +67,8 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 
+		onInventoryChange?.Invoke();
+
 		return item;
 	}
 
@@ -91,6 +95,8 @@ public class Inventory : MonoBehaviour {
 					return item;
 			}
 		}
+
+		onInventoryChange?.Invoke();
 
 		return item;
 	}
@@ -128,5 +134,7 @@ public class Inventory : MonoBehaviour {
 		//	if (item.Count == 0)
 		//		break;
 		//}
+
+		onInventoryChange?.Invoke();
 	}
 }

@@ -36,6 +36,14 @@ public class Hotbar : Inventory {
 		return items[selectedRight].item;
 	}
 
+	public void UpdateItemLeftHand() {
+		items[selectedLeft].DrawItem();
+	}
+
+	public void UpdateItemRightHand() {
+		items[selectedRight].DrawItem();
+	}
+
 	public void SetSelection(byte id, bool isLeftHand) {
 		if (isLeftHand) {
 			(items[selectedLeft] as HotbarItem).RemoveSelectedFrame(true);
