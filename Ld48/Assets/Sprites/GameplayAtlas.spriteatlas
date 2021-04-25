@@ -48,14 +48,13 @@ SpriteAtlas:
     - {fileID: 102900000, guid: d73e1c21044a31b488b160de0eed0558, type: 3}
     - {fileID: 102900000, guid: 229227f9af1cdf2478656e6433b96676, type: 3}
     - {fileID: 102900000, guid: 802b46da9058d55408dc3dedd5190bab, type: 3}
-    totalSpriteSurfaceArea: 442368
+    totalSpriteSurfaceArea: 475136
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: ae827f80537e6df47aad08cef6e07221, type: 3}
-  - {fileID: 21300000, guid: a5b8a4f047fe58f4bac1b35e291b68b3, type: 3}
   - {fileID: 21300000, guid: 5d49ecd180973ff4c89ae12df2d9bb95, type: 3}
   - {fileID: 21300000, guid: 8d90cc32321eadb44b4358566c149074, type: 3}
   - {fileID: 21300000, guid: 3b829df2706f31a4c9deeb7fc181c572, type: 3}
@@ -64,11 +63,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e31991c35ce64af439d93d632f7ab52f, type: 3}
   - {fileID: 21300000, guid: dd792bd3143895e4f8f0ad638addfaea, type: 3}
   - {fileID: 21300000, guid: 8dd882841bd8e6e4d8a88d908fe0e4a2, type: 3}
+  - {fileID: 21300000, guid: 55b769753b37a6c4588e847f509b2e07, type: 3}
   - {fileID: 21300000, guid: fa6445a5f6d25bd428423048b5720ba9, type: 3}
   - {fileID: 21300000, guid: b1352336caf584b4bb00483d7d4263d0, type: 3}
   - {fileID: 21300000, guid: a90227f6b06cb544db7aab76da2bc3c3, type: 3}
   - {fileID: 21300000, guid: 7734ce1797afc3641a0f0542297a97dd, type: 3}
   - {fileID: 21300000, guid: e9b0a958bae80ae4dbc6120d42482754, type: 3}
+  - {fileID: 21300000, guid: 7f6619496c0a2244a965e3820a3cd6ca, type: 3}
   - {fileID: 21300000, guid: e11b9c593a620fd4a8110f5421022005, type: 3}
   - {fileID: 21300000, guid: 8cd881e9d9230dc47a3ed069c98f51db, type: 3}
   - {fileID: 21300000, guid: a2cae91af8c6e1f49bb33a849fd0c2a8, type: 3}
@@ -77,13 +78,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 31d0bbba8d7f865459a62bdbca2dd65d, type: 3}
   - {fileID: 21300000, guid: 6c3125eb8b0838340a20f00df3742689, type: 3}
   - {fileID: 21300000, guid: 471fb6fca7de6e045a0ec9cf3f962fba, type: 3}
+  - {fileID: 21300000, guid: 409cd93d98a7b7a49ae4065674ba622b, type: 3}
   - {fileID: 21300000, guid: b4b299ddd24d66d4fb3b3cc2a59f90a0, type: 3}
   - {fileID: 21300000, guid: b1dc567ee0dbb6f41ab5deac676376a6, type: 3}
   - {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
   - {fileID: 21300000, guid: fe9fd63f05e20644483bfe34a72e2639, type: 3}
   m_PackedSpriteNamesToIndex:
   - IgnotIron
-  - Pickaxe
   - BlockLadder
   - BlockIronIgnot
   - BlockBrick
@@ -92,11 +93,13 @@ SpriteAtlas:
   - OreIron
   - Player
   - DestroyAnimation3
+  - ShovelaxeStone
   - BlockPlatform
   - DestroyAnimation0
   - IgnotGold
   - BlockGoldIgnot
   - BedrockBackground
+  - ShovelaxeIron
   - SelectionLeft
   - BedrockForeground
   - StoneBackground
@@ -105,6 +108,7 @@ SpriteAtlas:
   - DirtForeground
   - BlockGoldOre
   - StoneForeground
+  - ShovelaxeDiamond
   - DestroyAnimation1
   - BlockSelection
   - OreGold

@@ -126,7 +126,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 				count.text = item.count.ToString();
 			}
 
-			popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nMax Stack: {item.itemSO.maxCount}");
+			if(item.itemSO.maxCount == 0)
+				popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nNot stackable");
+			else
+				popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nMax Stack: {item.itemSO.maxCount}");
 
 			itemImage.sprite = item.itemSO.sprite;
 			LeanTweenEx.ChangeAlpha(itemImage, 1.0f, 0.05f);

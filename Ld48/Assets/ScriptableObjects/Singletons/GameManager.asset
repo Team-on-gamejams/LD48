@@ -63,10 +63,6 @@ MonoBehaviour:
   itemsOnGroundPrefabs:
   - {fileID: 8950979663126627037, guid: 88461aeaad84d8947935669c00ac377f, type: 3}
   - {fileID: 5300970618864623057, guid: 8b9182852efab1442a24481aaf48542f, type: 3}
-  - {fileID: 5300970618864623057, guid: 686cc286ac19eb74697f65c6ac87b1ba, type: 3}
-  - {fileID: 5300970618864623057, guid: 2771a504bdaf4a34aa36a728c3e41304, type: 3}
-  - {fileID: 5300970618864623057, guid: 10c6c7ad1d7013e4ea0fd8362872dffa, type: 3}
-  - {fileID: 5300970618864623057, guid: 53d0afdb0255d9c41bd333b6dd987b1f, type: 3}
   - {fileID: 3713613722133090353, guid: 88bd996ea411e3e45ab9ddd8cc3c8c0f, type: 3}
   - {fileID: 2472264174518022290, guid: ca125e8690838e64caf9ff769d54fdd4, type: 3}
   - {fileID: 8950979663126627037, guid: 4c5b381aac758084d991bfb850bfc1be, type: 3}

@@ -18,7 +18,9 @@ public class ItemSO : ScriptableObject {
 	public enum ItemType : int { 
 		None = 0,
 
-		Pickaxe = 1,
+		ShowelaxeStone = 1,
+		ShowelaxeIron,
+		ShowelaxeDiamond,
 
 		Dirt = 500,
 		Stone,
