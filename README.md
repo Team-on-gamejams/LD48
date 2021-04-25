@@ -1,6 +1,6 @@
-# [GAME_NAME](GAME_LINK)
-Made in X hours for [JAM_NAME](JAM_LINK)  
-Theme: THEME  
+# [Terrario](https://teamon.itch.io/terrario)
+Made in X hours for [Ludum Dare 48](https://ldjam.com/)  
+Theme: Deeper and deeper  
 
 Short desc(player should get game genre and USP)
 
@@ -36,18 +36,13 @@ A bit longer desc.
  * Tips
  
  
-# What is TriJam?
-TriJam is a jam where your goal is to try and make something playable (and fun) in only 3 hours! How is that even possible, you ask? Well, just look at the history of previous TriJams and we're sure you'll be convinced that it is not only possible, but very manageable!  
-Video about TriJam from Rocknight Studios: https://www.youtube.com/watch?v=6PysBXflWdg&ab_channel=RocknightStudios
-
-
-# Diversifiers
- * Share the source code of your project
+# What is Ludum dare?
+Ludum Dare is one of the world's largest and longest running Game Jam events. Is an event where you create a game from scratch in a weekend based on a theme.  
+[Zoo Keeper in Ludum Dare #46](https://ldjam.com/events/ludum-dare/46/$178354)  
 
 
 # Credits
  * [Team-on](https://github.com/Team-on) - programmer
- * [Who](LINK) - role
 
 
 # Used tools
@@ -64,7 +59,7 @@ Video about TriJam from Rocknight Studios: https://www.youtube.com/watch?v=6PysB
  
  
 # Downloads and Links
-Available in [Windows, OSX, Linux, Android and Web](GAME_LINK).  
+Available in [Windows, OSX and Linux](https://teamon.itch.io/terrario).  
 Consider downloading a game instead of playing the web version for better performance and stability.  
 If you encounter any problem, please leave a issue!  
 
