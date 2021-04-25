@@ -92,7 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d80dd59d6027ef489593b486120d777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentForDraggedSlot: {fileID: 7640367974082798976}
   delegatedInventory: {fileID: 1078199796117548111}
   items:
   - {fileID: 4744442419878682657}
@@ -647,8 +646,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxInteractDistance: 5
   mover: {fileID: 5969215078962614015}
-  hotbar: {fileID: 1078199796117548111}
   inventory: {fileID: 8577348348140773068}
+  hotbar: {fileID: 1078199796117548111}
   debugText: {fileID: 5969215079171518381}
   Wallet: 1000
   inventoryDB: {fileID: 0}
@@ -1421,7 +1420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a5c03fa8d7c5949a6ac20834e6fb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentForDraggedSlot: {fileID: 7640367974082798976}
   delegatedInventory: {fileID: 0}
   items:
   - {fileID: 1227037589662167658}
@@ -1663,11 +1661,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (38)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1963,11 +1956,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (18)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2105,11 +2093,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (36)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2247,11 +2230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (35)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2389,11 +2367,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2531,11 +2504,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (21)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2673,11 +2641,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2973,11 +2936,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3115,11 +3073,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3562,11 +3515,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (31)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3704,11 +3652,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (19)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3846,11 +3789,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (33)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3988,11 +3926,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4130,11 +4063,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (16)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4272,11 +4200,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (17)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4414,11 +4337,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4556,11 +4474,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (27)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4698,11 +4611,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (28)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4840,11 +4748,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (24)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4982,11 +4885,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (22)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5124,11 +5022,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (23)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5266,11 +5159,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5410,20 +5298,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: item.count
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
       propertyPath: item.itemSO
       value: 
-      objectReference: {fileID: 11400000, guid: a627876475467df4eaa667706c575afe,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5561,11 +5438,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (30)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5703,11 +5575,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (37)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5845,11 +5712,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (29)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5987,22 +5849,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: item.count
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: item.itemSO
-      value: 
-      objectReference: {fileID: 11400000, guid: a627876475467df4eaa667706c575afe,
-        type: 2}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6140,11 +5986,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6282,11 +6123,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (34)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6424,11 +6260,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6566,11 +6397,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (32)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6708,11 +6534,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6850,11 +6671,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (39)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6992,11 +6808,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (26)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7134,11 +6945,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7276,11 +7082,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (25)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7418,11 +7219,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7560,22 +7356,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: item.count
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: item.itemSO
-      value: 
-      objectReference: {fileID: 11400000, guid: a627876475467df4eaa667706c575afe,
-        type: 2}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7715,20 +7495,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: item.count
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
       propertyPath: item.itemSO
       value: 
-      objectReference: {fileID: 11400000, guid: a627876475467df4eaa667706c575afe,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -8013,11 +7782,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryItemSlot (15)
       objectReference: {fileID: 0}
-    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 8577348348140773068}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x

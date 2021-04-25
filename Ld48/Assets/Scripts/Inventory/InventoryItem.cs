@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
 	static protected InventoryItem draggingSlot;
 
 	[NonSerialized] public byte id;
@@ -19,14 +19,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
 	[Header("Refs"), Space]
 	[SerializeField] protected Inventory inventory;
+	[SerializeField] protected Popup popup;
 
 	protected virtual void Awake() {
 		DrawItem();
 	}
 
+	public void OnPointerEnter(PointerEventData eventData) {
+		if (item.itemSO != null)
+			popup.Show();
+	}
+
+	public void OnPointerExit(PointerEventData eventData) {
+		if (item.itemSO != null)
+			popup.Hide();
+	}
+
 	public void OnBeginDrag(PointerEventData eventData) {
 		if (item.itemSO == null)
 			return;
+
+		popup.Hide();
 
 		draggingSlot = this;
 
@@ -94,7 +107,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		LeanTween.cancel(itemImage.gameObject, false);
 
 		itemImage.transform.SetParent(transform, true);
+		itemImage.transform.SetAsFirstSibling();
 		count.transform.SetParent(transform, true);
+		count.transform.SetAsLastSibling();
 
 		itemImage.transform.localPosition = Vector3.zero;
 		count.rectTransform.anchoredPosition = Vector3.zero;
@@ -107,11 +122,15 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 				count.text = item.count.ToString();
 			}
 
+			popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nMax Stack: {item.itemSO.maxCount}");
+
 			itemImage.sprite = item.itemSO.sprite;
 			LeanTweenEx.ChangeAlpha(itemImage, 1.0f, 0.05f);
 		}
 		else {
 			count.text = "";
+
+			popup.SetText("");
 			
 			itemImage.sprite = null;
 			itemImage.color = itemImage.color.SetA(0.0f);
