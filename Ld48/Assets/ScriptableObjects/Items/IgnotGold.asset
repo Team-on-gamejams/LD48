@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Valuable and rare material
   sprite: {fileID: 21300000, guid: a90227f6b06cb544db7aab76da2bc3c3, type: 3}
   maxCount: 10
+  singleMass: 500

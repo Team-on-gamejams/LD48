@@ -56,10 +56,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			return;
 		}
 
-		Vector3 newItemPos = TemplateGameManager.Instance.Camera.ScreenToWorldPoint(eventData.position);
-		Vector3 diff = Vector3.ClampMagnitude(newItemPos - GameManager.Instance.player.transform.position, GameManager.Instance.player.maxInteractDistance); ;
+		Vector3 newItemPos = TemplateGameManager.Instance.Camera.ScreenToWorldPoint(eventData.position).SetZ(0.0f);
+		Vector3 diff = Vector3.ClampMagnitude(newItemPos - GameManager.Instance.player.mover.transform.position, GameManager.Instance.player.maxInteractDistance);
 
-		//OnGroundItem.CreateOnGround(item, newItemPos);
+		ItemOnGround.CreateOnGround(item, GameManager.Instance.player.mover.transform.position + diff);
 		item.itemSO = null;
 		DrawItem();
 	}

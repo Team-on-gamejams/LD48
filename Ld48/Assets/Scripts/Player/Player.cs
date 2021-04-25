@@ -15,8 +15,8 @@ public class Player : MonoBehaviour {
 
 	[Header("Refs"), Space]
 	public PlayerMoving mover;
+	public Inventory inventory;
 	[SerializeField] Hotbar hotbar;
-	[SerializeField] Inventory inventory;
 	[SerializeField] DebugText debugText;
 	[Space]
 	public int Wallet = 1000;

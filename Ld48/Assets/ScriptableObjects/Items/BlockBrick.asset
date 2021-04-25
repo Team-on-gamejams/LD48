@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Block to build
   sprite: {fileID: 21300000, guid: 3b829df2706f31a4c9deeb7fc181c572, type: 3}
   maxCount: 10
+  singleMass: 500

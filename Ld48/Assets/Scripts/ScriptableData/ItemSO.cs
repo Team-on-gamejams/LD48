@@ -37,4 +37,5 @@ public class ItemSO : ScriptableObject {
 	public Sprite sprite;
 	[Space]
 	public int maxCount = 10;
+	public int singleMass = 3;
 }

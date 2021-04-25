@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Material for almost everything
   sprite: {fileID: 21300000, guid: ae827f80537e6df47aad08cef6e07221, type: 3}
   maxCount: 10
+  singleMass: 500

@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Up and down, down and up
   sprite: {fileID: 21300000, guid: 5d49ecd180973ff4c89ae12df2d9bb95, type: 3}
   maxCount: 10
+  singleMass: 500

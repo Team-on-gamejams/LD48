@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Solid from top, but you can fall through when press S
   sprite: {fileID: 21300000, guid: fa6445a5f6d25bd428423048b5720ba9, type: 3}
   maxCount: 10
+  singleMass: 500

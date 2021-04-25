@@ -9,7 +9,7 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 [Serializable]
-public class ItemData {
+public struct ItemData {
 	public ItemSO itemSO;
 	public int count;
 

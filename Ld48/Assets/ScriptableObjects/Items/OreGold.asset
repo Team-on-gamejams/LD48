@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Smelt this ore in furnace to get gold
   sprite: {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
   maxCount: 10
+  singleMass: 500

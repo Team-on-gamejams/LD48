@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Not the best building material
   sprite: {fileID: 21300000, guid: 31d0bbba8d7f865459a62bdbca2dd65d, type: 3}
   maxCount: 10
+  singleMass: 500
