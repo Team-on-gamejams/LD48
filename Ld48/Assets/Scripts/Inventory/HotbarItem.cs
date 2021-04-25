@@ -40,7 +40,6 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 	}
 
 	public void SetSelectedFrame(bool isLeftHand) {
-		LeanTween.cancel(gameObject, false);
 
 		if (isLeftHand)
 			isSelectLeft = true;
@@ -49,19 +48,29 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 
 		if (isLeftHand) {
 			if (isSelectRight) {
+				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
+				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
+				
 				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 0.0f, 0.1f);
 				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 1.0f, 0.1f);
 			}
 			else {
+				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
+				
 				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 1.0f, 0.1f);
 			}
 		}
 		else {
 			if (isSelectLeft) {
+				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
+				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
+
 				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 0.0f, 0.1f);
 				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 1.0f, 0.1f);
 			}
 			else {
+				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
+				
 				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 1.0f, 0.1f);
 			}
 		}
@@ -77,19 +86,29 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 
 		if (isLeftHand) {
 			if (isSelectRight) {
+				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
+				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
+
 				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 0.0f, 0.1f);
 				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 1.0f, 0.1f);
 			}
 			else {
+				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
+				
 				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 0.0f, 0.1f);
 			}
 		}
 		else {
 			if (isSelectLeft) {
+				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
+				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
+
 				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 0.0f, 0.1f);
 				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 1.0f, 0.1f);
 			}
 			else {
+				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
+			
 				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 0.0f, 0.1f);
 			}
 		}

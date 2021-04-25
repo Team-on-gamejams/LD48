@@ -58,10 +58,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: dd792bd3143895e4f8f0ad638addfaea, type: 3}
   - {fileID: 21300000, guid: fa6445a5f6d25bd428423048b5720ba9, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Ladder
-  - Block
+  - BlockLadder
+  - BlockBrick
   - Player
-  - Platform
+  - BlockPlatform
   m_RenderDataMap: {}
   m_Tag: GameplayAtlas
   m_IsVariant: 0
