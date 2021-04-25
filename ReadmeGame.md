@@ -1,5 +1,5 @@
-Game page - https://teamon.itch.io/gametemplate
-Source code - https://github.com/Team-on/UnityGameTemplate
+Game page - https://teamon.itch.io/terrario
+Source code - https://github.com/Team-on/LD48https://github.com/Team-on/LD48
 
 
 Available in Windows, OSX, Linux, Android and Web 

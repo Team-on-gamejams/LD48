@@ -111,42 +111,6 @@ MonoBehaviour:
       needGamejolthPush: 0
       needSteamPush: 0
       needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/
-      middlePath: $NAME_$PLATFORM/
-      dirPathForPostProcess: $NAME_$PLATFORM
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 13
-      target: 20
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 0
-      needZip: 1
-      needItchPush: 0
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/
-      middlePath: $NAME_$PLATFORM$EXECUTABLE
-      dirPathForPostProcess: $NAME_$PLATFORM$EXECUTABLE
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 7
-      target: 13
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 0
-      needZip: 1
-      needItchPush: 0
-      itchChannel: android
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release + zip
     scriptingDefineSymbolsOverride: 
@@ -219,42 +183,6 @@ MonoBehaviour:
       needZip: 1
       needItchPush: 0
       itchChannel: osx-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM/
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 13
-      target: 20
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 0
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 7
-      target: 13
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 0
-      itchChannel: android
       needGithubPush: 0
       needGamejolthPush: 0
       needSteamPush: 0
@@ -335,42 +263,6 @@ MonoBehaviour:
       needGamejolthPush: 0
       needSteamPush: 0
       needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM/
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 13
-      target: 20
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 1
-      itchChannel: webgl
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 7
-      target: 13
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 1
-      itchChannel: android
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release itch only
     scriptingDefineSymbolsOverride: 
@@ -443,42 +335,6 @@ MonoBehaviour:
       needZip: 1
       needItchPush: 1
       itchChannel: osx-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM/
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 13
-      target: 20
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 1
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      isPassbyBuild: 0
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 7
-      target: 13
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 1
-      itchChannel: android
       needGithubPush: 0
       needGamejolthPush: 0
       needSteamPush: 0
@@ -559,43 +415,7 @@ MonoBehaviour:
       needGamejolthPush: 0
       needSteamPush: 0
       needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM/
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
-      isPassbyBuild: 1
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 13
-      target: 20
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 1
-      itchChannel: webgl
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
-      outputRoot: Builds/Releases/
-      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      dirPathForPostProcess: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      isPassbyBuild: 1
-      scriptingDefineSymbolsOverride: 
-      targetGroup: 7
-      target: 13
-      options: 0
-      isVirtualRealitySupported: 0
-      isReleaseBuild: 1
-      needZip: 1
-      needItchPush: 1
-      itchChannel: android
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   scriptingDefineSymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED;POLYGLOT;GAME_TEMPLATE
-  itchGameLink: teamon/GameTemplate
+  itchGameLink: teamon/Terrario
   githubUserName: Team-on
-  githubRepoName: TemplateTest
+  githubRepoName: LD48
