@@ -13,6 +13,15 @@ public class ItemData {
 	public ItemSO itemSO;
 	public int count;
 
+	public ItemData() {
+
+	}
+
+	public ItemData(ItemSO itemSO, int count) {
+		this.itemSO = itemSO;
+		this.count = count;
+	}
+
 	public bool IsMaxStack() {
 		return count == itemSO.maxCount;
 	}
@@ -20,25 +29,28 @@ public class ItemData {
 	public bool UseItemWhileInHotbar() {
 		switch (itemSO.metaType) {
 			case ItemSO.ItemMetaType.BuildableForeground:
-				if (GameManager.Instance.SelectedCell != null && GameManager.Instance.SelectedCell.foregroud == Cell.CellContentForegroud.None) {
-					GameManager.Instance.SelectedCell.foregroud = GameManager.Instance.GetItemPlacable(itemSO.type).foregroud;
-					GameManager.Instance.SelectedCell.RecreateVisualAfterPlacing();
+				if (!GameManager.Instance.SelectedCell || GameManager.Instance.SelectedCell.foregroud != Cell.CellContentForegroud.None)
+					return false;
 
-					--count;
-					if(count <= 0) {
-						itemSO = null;
-					}
+				GameManager.Instance.SelectedCell.foregroud = GameManager.Instance.GetItemPlacable(itemSO.type).foregroud;
+				GameManager.Instance.SelectedCell.RecreateVisualAfterChangeType();
 
-					return true;
+				--count;
+				if (count <= 0) {
+					itemSO = null;
 				}
-				break;
+
+				return true;
 
 			case ItemSO.ItemMetaType.MiningTool:
-				if(GameManager.Instance.SelectedCell.foregroud != Cell.CellContentForegroud.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.foregroundBlock.neededForceToBroke) {
+				if (!GameManager.Instance.SelectedCell)
+					return false;
 
-				}
-				else if (GameManager.Instance.SelectedCell.ore != Cell.CellContentOre.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.oreBlock.neededForceToBroke) {
-
+				if (
+					(GameManager.Instance.SelectedCell.foregroud != Cell.CellContentForegroud.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.foregroundBlock.neededForceToBroke) || 
+					(GameManager.Instance.SelectedCell.ore != Cell.CellContentOre.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.oreBlock.neededForceToBroke)
+					) {
+					GameManager.Instance.SelectedCell.Mine(Time.deltaTime, itemSO.miningForce);
 				}
 				break;
 

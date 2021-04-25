@@ -43,7 +43,7 @@ public class PlayerItemUser : MonoBehaviour {
 			bool needUIRedraw = itemInLeftHand.UseItemWhileInHotbar();
 			if (needUIRedraw) {
 				hotbar.UpdateItemLeftHand();
-				hotbar.onInventoryChange();
+				hotbar?.onInventoryChange();
 			}
 		}
 
@@ -51,7 +51,7 @@ public class PlayerItemUser : MonoBehaviour {
 			bool needUIRedraw = itemInRightHand.UseItemWhileInHotbar();
 			if (needUIRedraw) {
 				hotbar.UpdateItemRightHand();
-				hotbar.onInventoryChange();
+				hotbar?.onInventoryChange();
 			}
 		}
 	}

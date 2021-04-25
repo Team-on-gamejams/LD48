@@ -40,6 +40,9 @@ public class Cell : MonoBehaviour {
 	[Header("Refs"), Space]
 	[SerializeField] TextMeshPro debugText;
 	[SerializeField] SpriteRenderer hightlightSr;
+	[SerializeField] BlockDestoyVisual destoyVisual;
+
+	float currMineTime = 0.0f;
 
 	//#if UNITY_EDITOR
 	//	void OnValidate() {
@@ -52,13 +55,11 @@ public class Cell : MonoBehaviour {
 		CreateAllVisuals();
 		CreateDebugText();
 
-		debugText.text = $"{coord.x} {coord.y}";
-
 		transform.localScale = new Vector3(MyGrid.cellSize.x, MyGrid.cellSize.y, 1.0f);
 		transform.position = new Vector3(MyGrid.cellSize.x * coord.x, MyGrid.cellSize.y * coord.y, 0.0f)/* - new Vector3(MyGrid.gridSize.x / 2 * MyGrid.cellSize.x, MyGrid.gridSize.y / 2 * MyGrid.cellSize.y, 0.0f)*/;
 	}
 
-	public void RecreateVisualAfterPlacing() {
+	public void RecreateVisualAfterChangeType() {
 		CreateAllVisuals();
 	}
 
@@ -70,6 +71,45 @@ public class Cell : MonoBehaviour {
 	public void UnHightlight() {
 		LeanTween.cancel(hightlightSr.gameObject, false);
 		LeanTweenEx.ChangeAlpha(hightlightSr, 0.0f, 0.1f);
+	}
+
+	public void Mine(float deltaTime, float mineToolForce) {
+		if (foregroundBlock) {
+			currMineTime += deltaTime * (mineToolForce - foregroundBlock.neededForceToBroke + 1);
+			float brokePersent = currMineTime / foregroundBlock.neededTimeToBroke;
+
+			if(brokePersent >= 1) {
+				currMineTime = 0;
+				destoyVisual.UpdateVisual(0);
+
+				ItemOnGround.CreateOnGround(new ItemData(foregroundBlock.itemToDrop.item.itemSO, 1), transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)));
+
+				foregroud = CellContentForegroud.None;
+				RecreateVisualAfterChangeType();
+				debugText.text = $"{coord.x} {coord.y}";
+			}
+			else {
+				destoyVisual.UpdateVisual(brokePersent);
+				debugText.text = $"{coord.x} {coord.y}\n{currMineTime.ToString("0.00")} {foregroundBlock.neededTimeToBroke.ToString("0.00")}";
+			}
+
+		}
+		else if (oreBlock) {
+			currMineTime += deltaTime * (mineToolForce - oreBlock.neededForceToBroke + 1);
+			float brokePersent = currMineTime / oreBlock.neededTimeToBroke;
+
+			if (brokePersent >= 1) {
+				currMineTime -= oreBlock.neededTimeToBroke;
+				destoyVisual.UpdateVisual(0);
+
+				ItemOnGround.CreateOnGround(new ItemData(oreBlock.itemToDrop.item.itemSO, 1), transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)));
+			}
+			else {
+				destoyVisual.UpdateVisual(brokePersent);
+			}
+
+			debugText.text = $"{coord.x} {coord.y}\n{currMineTime.ToString("0.00")} {oreBlock.neededTimeToBroke.ToString("0.00")}";
+		}
 	}
 
 	void CreateAllVisuals() {
@@ -104,7 +144,7 @@ public class Cell : MonoBehaviour {
 		debugText.transform.SetParent(gameObject.transform, true);
 		debugText.transform.localPosition = Vector3.zero;
 
-		debugText.text = $"({0} {0})";
+		debugText.text = $"{coord.x} {coord.y}";
 		debugText.alignment = TextAlignmentOptions.Center;
 		debugText.color = Color.black;
 		debugText.sortingLayerID = UnityConstants.SortingLayers.Foreground;

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SupportedDevices:
   - Keyboard
-  - Gamepad
   - Pointer
   m_UpdateMode: 1
   m_CompensateForScreenOrientation: 1

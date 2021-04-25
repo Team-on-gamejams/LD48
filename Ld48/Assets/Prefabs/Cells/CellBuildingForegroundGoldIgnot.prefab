@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5030e3db25842c1419561ed8c07fc682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToDrop: {fileID: 5300970618864623057, guid: 686cc286ac19eb74697f65c6ac87b1ba,
+  itemToDrop: {fileID: 3497252751638088289, guid: 4e4778d2a0f587347bfd2ef6d6b3278f,
     type: 3}
   neededForceToBroke: 1
   neededTimeToBroke: 2
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1800884847
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7734ce1797afc3641a0f0542297a97dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
