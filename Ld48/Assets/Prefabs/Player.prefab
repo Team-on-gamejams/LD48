@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5969215078248819753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.5810156, z: -10}
+  m_LocalPosition: {x: -0.323, y: 1.9350001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5969215078860843071}
@@ -991,6 +991,8 @@ MonoBehaviour:
   rb: {fileID: 5969215078962614009}
   debugText: {fileID: 5969215079171518381}
   moveVector: {x: 0, y: 0}
+  thrust: 15
+  collider2D: {fileID: 997265127}
 --- !u!50 &5969215078962614009
 Rigidbody2D:
   serializedVersion: 4
@@ -1006,7 +1008,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
