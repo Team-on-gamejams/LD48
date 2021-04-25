@@ -9,9 +9,12 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class Grid : MonoBehaviour {
-    [Header("Data"), Space]
+	[NonSerialized] public Vector2 cellSize = Vector2.one;
+
+	[Header("Data"), Space]
     public Vector2Int gridSize = new Vector2Int(128, 128);
-	[Space]
+
+	[Header("Positions"), Space]
 	[SerializeField] Rect startRoom;
 	[SerializeField] Rect startOreGold;
 	[SerializeField] Rect startOreIron;
@@ -19,11 +22,18 @@ public class Grid : MonoBehaviour {
 
 	Transform visualParent;
 
+	List<Cell> cells;
+
 #if UNITY_EDITOR
 	private void OnValidate() {
 
 	}
 #endif
+
+	private void Awake() {
+		cells = new List<Cell>(gridSize.x * gridSize.y);
+		GameManager.Instance.grid = this;
+	}
 
 	void Start() {
 		visualParent = new GameObject("GridVisual").transform;
@@ -36,56 +46,69 @@ public class Grid : MonoBehaviour {
 				GameObject go = new GameObject($"Cell-{x}-{y}");
 				go.transform.parent = visualParent;
 
-				Cell c = go.AddComponent<Cell>();
+				Cell cell = go.AddComponent<Cell>();
 
 				if(x <= Random.Range(0, 2) || y <= Random.Range(0, 2) || x >= gridSize.x - Random.Range(1, 3) || y >= gridSize.y -Random.Range(1, 3)) {
-					c.foregroud = Cell.CellContentForegroud.Bedrock;
-					c.background = Cell.CellContentBackground.Bedrock;
-					c.ore = Cell.CellContentOre.None;
+					cell.foregroud = Cell.CellContentForegroud.Bedrock;
+					cell.background = Cell.CellContentBackground.Bedrock;
+					cell.ore = Cell.CellContentOre.None;
 				}
 				else if(y + Random.Range(-2, 2) < gridSize.y / 2) {
-					c.foregroud = Cell.CellContentForegroud.Stone;
-					c.background = Cell.CellContentBackground.Stone;
-					c.ore = Cell.CellContentOre.None;
+					cell.foregroud = Cell.CellContentForegroud.Stone;
+					cell.background = Cell.CellContentBackground.Stone;
+					cell.ore = Cell.CellContentOre.None;
 				}
 				else {
-					c.foregroud = Cell.CellContentForegroud.Dirt;
-					c.background = Cell.CellContentBackground.Dirt;
-					c.ore = Cell.CellContentOre.None;
+					cell.foregroud = Cell.CellContentForegroud.Dirt;
+					cell.background = Cell.CellContentBackground.Dirt;
+					cell.ore = Cell.CellContentOre.None;
 				}
 
-				if (c.background == Cell.CellContentBackground.Stone && RandomEx.GetEventWithChance(1)) {
-					c.ore = Cell.CellContentOre.OreGold;
+				if (cell.background == Cell.CellContentBackground.Stone && RandomEx.GetEventWithChance(1)) {
+					cell.ore = Cell.CellContentOre.OreGold;
 				}
-				else if ((c.background == Cell.CellContentBackground.Stone || c.background == Cell.CellContentBackground.Dirt) && RandomEx.GetEventWithChance(1)) {
-					c.ore = Cell.CellContentOre.OreIron;
+				else if ((cell.background == Cell.CellContentBackground.Stone || cell.background == Cell.CellContentBackground.Dirt) && RandomEx.GetEventWithChance(1)) {
+					cell.ore = Cell.CellContentOre.OreIron;
 				}
 
 				if (startRoom.Contains(new Vector2(x, y))) {
-					c.foregroud = Cell.CellContentForegroud.None;
-					c.ore = Cell.CellContentOre.None;
+					cell.foregroud = Cell.CellContentForegroud.None;
+					cell.ore = Cell.CellContentOre.None;
 				}
 
 				if (startOreGold.Contains(new Vector2(x, y))) {
-					c.ore = Cell.CellContentOre.OreGold;
+					cell.ore = Cell.CellContentOre.OreGold;
 				}
 				else if (startOreIron.Contains(new Vector2(x, y))) {
-					c.ore = Cell.CellContentOre.OreIron;
+					cell.ore = Cell.CellContentOre.OreIron;
 				}
 
-				c.MyGrid = this;
-				c.Coord = new Vector2Int(x, y);
+				cell.MyGrid = this;
+				cell.Coord = new Vector2Int(x, y);
 
-				c.Init();
+				cell.Init();
 
 				if (x == playerStartPos.x && y == playerStartPos.y) {
-					GameManager.Instance.player.mover.transform.position = c.transform.position;
+					GameManager.Instance.player.mover.transform.position = cell.transform.position;
 				}
+
+				cells.Add(cell);
 			}
 		}
 	}
 
 	private void OnDestroy() {
 		Destroy(visualParent.gameObject);
+	}
+
+	public Cell GetCellWorldPos(Vector3 pos) {
+		Vector2Int cellCoord = new Vector2Int(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
+
+		foreach (var cell in cells) {
+			if (cell.Coord == cellCoord)
+				return cell;
+		}
+
+		return null;
 	}
 }

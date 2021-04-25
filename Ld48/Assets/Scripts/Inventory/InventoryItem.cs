@@ -71,9 +71,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
 		Vector3 newItemPos = TemplateGameManager.Instance.Camera.ScreenToWorldPoint(eventData.position).SetZ(0.0f);
 		Vector3 diff = Vector3.ClampMagnitude(newItemPos - GameManager.Instance.player.mover.transform.position, GameManager.Instance.player.maxInteractDistance);
+		Cell cell = GameManager.Instance.GetCellAtPos(GameManager.Instance.player.mover.transform.position + diff);
 
-		ItemOnGround.CreateOnGround(item, GameManager.Instance.player.mover.transform.position + diff);
-		item.itemSO = null;
+		if(cell && cell.foregroud == Cell.CellContentForegroud.None) {
+			ItemOnGround.CreateOnGround(item, GameManager.Instance.player.mover.transform.position + diff);
+			item.itemSO = null;
+		}
+
 		DrawItem();
 	}
 

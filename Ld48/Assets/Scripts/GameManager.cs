@@ -25,6 +25,7 @@ public class GameManager : Singleton<GameManager> {
 	bool isDebugMode = true;
 
 	[NonSerialized]  public Player player;
+	[NonSerialized]  public Grid grid;
 	[NonSerialized]  public GameObject draggedParent;
 
 	[Header("Cells"), Space]
@@ -42,6 +43,10 @@ public class GameManager : Singleton<GameManager> {
 
 	protected override void Deinitialize() {
 		base.Deinitialize();
+	}
+
+	public Cell GetCellAtPos(Vector3 pos) {
+		return grid.GetCellWorldPos(pos);
 	}
 
 	public GameObject GetCellForeground(Cell.CellContentForegroud type) {

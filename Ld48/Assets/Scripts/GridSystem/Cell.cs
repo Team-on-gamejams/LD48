@@ -16,7 +16,6 @@ public class Cell : MonoBehaviour {
 
 	const string debugTextName = "DebugText";
 
-	Vector2 cellSize = Vector2.one;
 	public Grid MyGrid { get; set; }
 	public Vector2Int Coord {
 		get {
@@ -49,8 +48,8 @@ public class Cell : MonoBehaviour {
 
 		debugText.text = $"{coord.x} {coord.y}";
 
-		transform.localScale = new Vector3(cellSize.x, cellSize.y, 1.0f);
-		transform.position = new Vector3(cellSize.x * coord.x, cellSize.y * coord.y, 0.0f) - new Vector3(MyGrid.gridSize.x / 2 * cellSize.x, MyGrid.gridSize.y / 2 * cellSize.y, 0.0f);
+		transform.localScale = new Vector3(MyGrid.cellSize.x, MyGrid.cellSize.y, 1.0f);
+		transform.position = new Vector3(MyGrid.cellSize.x * coord.x, MyGrid.cellSize.y * coord.y, 0.0f)/* - new Vector3(MyGrid.gridSize.x / 2 * MyGrid.cellSize.x, MyGrid.gridSize.y / 2 * MyGrid.cellSize.y, 0.0f)*/;
 	}
 
 	void CreateCell() {
@@ -101,6 +100,6 @@ public class Cell : MonoBehaviour {
 		RectTransform textFieldrt = debugGO.GetComponent<RectTransform>();
 		if (!textFieldrt)
 			textFieldrt = debugGO.AddComponent<RectTransform>();
-		textFieldrt.sizeDelta = cellSize;
+		textFieldrt.sizeDelta = MyGrid.cellSize;
 	}
 }

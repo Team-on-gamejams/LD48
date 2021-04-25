@@ -21,20 +21,22 @@ public class ItemOnGround : MonoBehaviour {
 	[SerializeField] Rigidbody2D rb;
 
 	private void OnMouseUpAsButton() {
-		ItemData leftItem = GameManager.Instance.player.inventory.AddItem(item);
+		if((transform.position - GameManager.Instance.player.mover.transform.position).magnitude <= GameManager.Instance.player.maxInteractDistance){
+			ItemData leftItem = GameManager.Instance.player.inventory.AddItem(item);
 
-		if (leftItem.count == 0) {
-			Destroy(gameObject);
-		}
-		else {
-			//TODO: Inventory full popup text
-			item = leftItem;
-			Init();
+			if (leftItem.count == 0) {
+				Destroy(gameObject);
+			}
+			else {
+				//TODO: Inventory full popup text
+				item = leftItem;
+				Init();
+			}
 		}
 	}
 
 	void Init() {
-		gameObject.transform.localScale = Vector2.one * item.itemSO.scaleFactorOnGround * Mathf.Lerp(0.1f, 0.5f, (float)(item.count) / item.itemSO.maxCount);
+		gameObject.transform.localScale = Vector2.one * item.itemSO.scaleFactorOnGround * Mathf.Lerp(0.2f, 0.8f, (float)(item.count) / item.itemSO.maxCount);
 
 		rb.mass = item.count * item.itemSO.singleMass;
 		rb.angularDrag = rb.drag = Mathf.Lerp(1.0f, 2.0f, (float)(item.count) / item.itemSO.maxCount);
@@ -42,7 +44,6 @@ public class ItemOnGround : MonoBehaviour {
 
 	static public ItemOnGround CreateOnGround(ItemData item, Vector3 pos) {
 		pos.z = 0;
-
 
 		ItemOnGround groundItem = Instantiate(GameManager.Instance.GetItemOnGround(item.itemSO.type), pos, Quaternion.identity, null).GetComponent<ItemOnGround>();
 		groundItem.item.count = item.count;
