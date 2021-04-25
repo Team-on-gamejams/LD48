@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2382167398789963916}
   - component: {fileID: -7472135734933966460}
   - component: {fileID: 2382167398789963915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CellForegroundStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -947575329
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 471fb6fca7de6e045a0ec9cf3f962fba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

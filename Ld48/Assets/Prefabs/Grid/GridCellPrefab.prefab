@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8928278144947691950}
   - component: {fileID: 2135858687299901922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hightlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1569790775
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b1dc567ee0dbb6f41ab5deac676376a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3939073421201425227}
   - component: {fileID: 3939073421201425224}
   - component: {fileID: 3939073421201425226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DebugText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -256942837
-  m_SortingLayer: 5
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3939073421201425224
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3939073422345311660}
   - component: {fileID: 3939073422345311661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GridCellPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

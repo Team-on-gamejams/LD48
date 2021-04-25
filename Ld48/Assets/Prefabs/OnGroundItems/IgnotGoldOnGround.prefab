@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3497252751638088318}
   - component: {fileID: 3497252751638088319}
   - component: {fileID: 3497252751638088316}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IgnotGoldOnGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   item:
     itemSO: {fileID: 11400000, guid: 06ac6ffad13f70a44b736b48c8037007, type: 2}
     count: 0
+  placebleBlock: {fileID: 0}
   sr: {fileID: 3497252751638088318}
   boxCollider: {fileID: 3497252751638088319}
   rb: {fileID: 3497252751638088316}
@@ -90,7 +91,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1278739687
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a90227f6b06cb544db7aab76da2bc3c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,9 +119,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.04, y: 0.04, z: 0.04, w: 0.04}
+    border: {x: 0.03125, y: 0.03125, z: 0.03125, w: 0.03125}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

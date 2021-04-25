@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3713613722133090354}
   - component: {fileID: 3713613722133090355}
   - component: {fileID: 3713613722133090356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BlockLadderOnGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1278739687
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5d49ecd180973ff4c89ae12df2d9bb95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

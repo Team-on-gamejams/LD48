@@ -77,7 +77,7 @@ public class PlayerItemUser : MonoBehaviour {
 		itemInLeftHand = hotbar.GetLeftItem();
 		itemInRightHand = hotbar.GetRightItem();
 
-		if (itemInBothHands != null) {
+		if (itemInBothHands != null && itemInBothHands.itemSO != null) {
 			leftItemSr.color = leftItemSr.color.SetA(0.0f);
 			rightItemSr.color = rightItemSr.color.SetA(0.0f);
 			bothItemSr.color = bothItemSr.color.SetA(1.0f);

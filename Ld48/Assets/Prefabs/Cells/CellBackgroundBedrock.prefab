@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6185896496189356705}
   - component: {fileID: 7509827978261266196}
   - component: {fileID: 6185896496189356704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CellBackgroundBedrock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 83631791
-  m_SortingLayer: -4
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e9b0a958bae80ae4dbc6120d42482754, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

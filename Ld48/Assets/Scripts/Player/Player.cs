@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
 	public void UseItemL(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				if(!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+				if(IsCanUseItemInToolbar())
 					itemUser.StartUseLeftItem();
 				break;
 			case InputActionPhase.Canceled:
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour {
 	public void UseItemR(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				if(!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+				if (IsCanUseItemInToolbar())
 					itemUser.StartUseRightItem();
 				break;
 			case InputActionPhase.Canceled:
@@ -164,5 +164,18 @@ public class Player : MonoBehaviour {
 				hotbar.SetSelection(5, !isHoldShift);
 				break;
 		}
+	}
+
+	bool IsCanUseItemInToolbar() {
+		bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+		if (isOverUI)
+			return false;
+
+		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.ItemsOnGroundMask);
+		bool isOverItemOnGround = hit.collider != null;
+		if (isOverItemOnGround)
+			return false;
+
+		return true;
 	}
 }

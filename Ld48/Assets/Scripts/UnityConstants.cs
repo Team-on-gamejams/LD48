@@ -100,6 +100,18 @@ namespace UnityConstants
         /// Index of layer 'UI'.
         /// </summary>
         public const int UI = 5;
+        /// <summary>
+        /// Index of layer 'Entities'.
+        /// </summary>
+        public const int Entities = 6;
+        /// <summary>
+        /// Index of layer 'ItemsOnGround'.
+        /// </summary>
+        public const int ItemsOnGround = 7;
+        /// <summary>
+        /// Index of layer 'WorldObjects'.
+        /// </summary>
+        public const int WorldObjects = 8;
 
         /// <summary>
         /// Bitmask of layer 'Default'.
@@ -121,6 +133,18 @@ namespace UnityConstants
         /// Bitmask of layer 'UI'.
         /// </summary>
         public const int UIMask = 1 << 5;
+        /// <summary>
+        /// Bitmask of layer 'Entities'.
+        /// </summary>
+        public const int EntitiesMask = 1 << 6;
+        /// <summary>
+        /// Bitmask of layer 'ItemsOnGround'.
+        /// </summary>
+        public const int ItemsOnGroundMask = 1 << 7;
+        /// <summary>
+        /// Bitmask of layer 'WorldObjects'.
+        /// </summary>
+        public const int WorldObjectsMask = 1 << 8;
     }
 
     public static class Scenes

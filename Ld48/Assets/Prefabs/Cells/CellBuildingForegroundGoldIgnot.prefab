@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8470503787209177685}
   - component: {fileID: 4864332047625639347}
   - component: {fileID: 55917380964152775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CellBuildingForegroundGoldIgnot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
