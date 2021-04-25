@@ -10,6 +10,9 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour {
+	[Header("Inventory Data"), Space]
+	public float maxInteractDistance = 5.0f;
+
 	[Header("Refs"), Space]
 	public PlayerMoving mover;
 	[SerializeField] Hotbar hotbar;
@@ -19,6 +22,7 @@ public class Player : MonoBehaviour {
 	public int Wallet = 1000;
 	public InstrumentsDB inventoryDB;
 	public List<DungeonObject> PlayerInventory = new List<DungeonObject>();
+
 	bool isHoldShift = false;
 
 #if UNITY_EDITOR
@@ -49,11 +53,8 @@ public class Player : MonoBehaviour {
 	}
 
 	public void OnJump(InputAction.CallbackContext context) {
-		Debug.Log("jumpBefore");
-
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				Debug.Log("jump");
 				mover.Jump();
 				break;
 		}

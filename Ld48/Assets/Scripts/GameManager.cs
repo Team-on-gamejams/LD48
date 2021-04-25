@@ -25,6 +25,7 @@ public class GameManager : Singleton<GameManager> {
 	bool isDebugMode = true;
 
 	[NonSerialized]  public Player player;
+	[NonSerialized]  public GameObject draggedParent;
 
 	[Header("Sprites"), Space]
 	public Sprite foregroundDirtSprite;

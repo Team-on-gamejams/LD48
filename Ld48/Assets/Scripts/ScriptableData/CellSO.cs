@@ -8,12 +8,7 @@ using TMPro;
 using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
-[Serializable]
-public class ItemData {
-	public ItemSO itemSO;
-	public int count;
-
-	public bool IsMaxStack() {
-		return count == itemSO.maxCount;
-	}
+[CreateAssetMenu(fileName = "CellSO", menuName = "Cell")]
+public class CellSO : ScriptableObject {
+	public Sprite sprite;
 }
