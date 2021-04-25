@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   type: 1
+  maxCount: 1
   name: Pickaxe
   description: Tool to broke things
   sprite: {fileID: 21300000, guid: a5b8a4f047fe58f4bac1b35e291b68b3, type: 3}
-  maxCount: 1
   singleMass: 500
+  scaleFactorOnGround: 1

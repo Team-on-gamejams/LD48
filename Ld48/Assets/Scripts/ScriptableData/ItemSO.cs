@@ -30,12 +30,16 @@ public class ItemSO : ScriptableObject {
 		BlockLadder,
 	}
 
+	[Header("Item data"), Space]
 	public ItemType type;
-	[Space]
+	public int maxCount = 10;
+
+	[Header("Visual"), Space]
 	public string name = "Item name";
 	public string description = "Item desc";
 	public Sprite sprite;
-	[Space]
-	public int maxCount = 10;
-	public int singleMass = 3;
+
+	[Header("On ground data"), Space]
+	public int singleMass = 500;
+	public float scaleFactorOnGround = 1.0f;
 }

@@ -9,10 +9,9 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class ItemOnGround : MonoBehaviour {
-	[NonSerialized] public ItemData item;
+	public ItemData item;
 
 	[Header("Refs"), Space]
-
 	[SerializeField] SpriteRenderer sr;
 	[SerializeField] BoxCollider2D boxCollider;
 	[SerializeField] Rigidbody2D rb;
@@ -31,21 +30,8 @@ public class ItemOnGround : MonoBehaviour {
 	}
 
 	void Init() {
-		gameObject.transform.localScale = Vector2.Lerp(Vector2.one * 0.1f, Vector2.one, (float)(item.count) / item.itemSO.maxCount);
+		gameObject.transform.localScale = Vector2.one * item.itemSO.scaleFactorOnGround * Mathf.Lerp(0.1f, 0.5f, (float)(item.count) / item.itemSO.maxCount);
 
-		sr = gameObject.GetComponent<SpriteRenderer>();
-		if (!sr)
-			sr = gameObject.AddComponent<SpriteRenderer>();
-		sr.sprite = item.itemSO.sprite;
-
-		boxCollider = gameObject.GetComponent<BoxCollider2D>();
-		if (!boxCollider)
-			boxCollider = gameObject.AddComponent<BoxCollider2D>();
-		boxCollider.size = Vector2.one;
-
-		rb = gameObject.GetComponent<Rigidbody2D>();
-		if (!rb)
-			rb = gameObject.AddComponent<Rigidbody2D>();
 		rb.mass = item.count * item.itemSO.singleMass;
 		rb.angularDrag = rb.drag = Mathf.Lerp(1.0f, 2.0f, (float)(item.count) / item.itemSO.maxCount);
 	}
@@ -53,13 +39,11 @@ public class ItemOnGround : MonoBehaviour {
 	static public ItemOnGround CreateOnGround(ItemData item, Vector3 pos) {
 		pos.z = 0;
 
-		GameObject go = new GameObject($"OnGroundItem-{item.itemSO.name}");
-		go.transform.position = pos;
 
-		ItemOnGround newItem = go.AddComponent<ItemOnGround>();
-		newItem.item = item;
-		newItem.Init();
+		ItemOnGround groundItem = Instantiate(GameManager.Instance.GetItemOnGround(item.itemSO.type), pos, Quaternion.identity, null).GetComponent<ItemOnGround>();
+		groundItem.item.count = item.count;
+		groundItem.Init();
 
-		return newItem;
+		return groundItem;
 	}
 }

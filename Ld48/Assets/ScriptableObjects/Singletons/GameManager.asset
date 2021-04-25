@@ -12,17 +12,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591d662dec81b754394feb90f575ad46, type: 3}
   m_Name: GameManager
   m_EditorClassIdentifier: 
-  foregroundDirtSprite: {fileID: 21300000, guid: 31d0bbba8d7f865459a62bdbca2dd65d,
-    type: 3}
-  backgroundDirtSprite: {fileID: 21300000, guid: a83f4f7af87780242bf08d0a3c6a102a,
-    type: 3}
-  foregroundStoneSprite: {fileID: 21300000, guid: 471fb6fca7de6e045a0ec9cf3f962fba,
-    type: 3}
-  backgroundStoneSprite: {fileID: 21300000, guid: a2cae91af8c6e1f49bb33a849fd0c2a8,
-    type: 3}
-  foregroundBedrockSprite: {fileID: 21300000, guid: 8cd881e9d9230dc47a3ed069c98f51db,
-    type: 3}
-  backgroundBedrockSprite: {fileID: 21300000, guid: e9b0a958bae80ae4dbc6120d42482754,
-    type: 3}
-  oreGoldSprite: {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
-  oreIronSprite: {fileID: 21300000, guid: e31991c35ce64af439d93d632f7ab52f, type: 3}
+  foregroundCells:
+  - type: 1
+    prefab: {fileID: 4864332047625639346, guid: 7c1b5e8b4a2042449a56e9d622421827,
+      type: 3}
+  - type: 2
+    prefab: {fileID: 2382167398789963914, guid: 32a22ddd6f56d6f49bc120ecb38f33eb,
+      type: 3}
+  - type: 3
+    prefab: {fileID: 6499621534073305115, guid: b0510823d53023c45acadabd9007217a,
+      type: 3}
+  - type: 4
+    prefab: {fileID: 4864332047625639346, guid: fcfa6900098eead468323750f0d93ee0,
+      type: 3}
+  - type: 5
+    prefab: {fileID: 4864332047625639346, guid: d72676587b20927428b75473ec67e4d0,
+      type: 3}
+  - type: 6
+    prefab: {fileID: 4864332047625639346, guid: caa59adb18a9f854daf08c31fe8747e3,
+      type: 3}
+  backgroundCells:
+  - type: 1
+    prefab: {fileID: 4739629537346512162, guid: 79e7f59941b5ff6488fb27f874511229,
+      type: 3}
+  - type: 2
+    prefab: {fileID: 1496271279457309720, guid: 929e1eeca1837b54f9e98830c78af62c,
+      type: 3}
+  - type: 3
+    prefab: {fileID: 6185896496189356707, guid: 1bad94244ce1baf4fa6ff373a57a24b3,
+      type: 3}
+  oreCells:
+  - type: 1
+    prefab: {fileID: 4794339601739730451, guid: 87f0d49e3bdc80e4a9d79f0b27c0f667,
+      type: 3}
+  - type: 2
+    prefab: {fileID: 6391394958975780893, guid: 7f402e02616c9f74bb54e2feb89a76d9,
+      type: 3}
+  itemsOnGroundPrefabs:
+  - {fileID: 5300970618864623057, guid: 8b9182852efab1442a24481aaf48542f, type: 3}
+  - {fileID: 3713613722133090353, guid: 88bd996ea411e3e45ab9ddd8cc3c8c0f, type: 3}
+  - {fileID: 2472264174518022290, guid: ca125e8690838e64caf9ff769d54fdd4, type: 3}
+  - {fileID: 8950979663126627037, guid: 4c5b381aac758084d991bfb850bfc1be, type: 3}
+  - {fileID: 3497252751638088289, guid: 4e4778d2a0f587347bfd2ef6d6b3278f, type: 3}
+  - {fileID: 6651729550987098902, guid: 44ab01bea3c47cf40b7563c3201a0d85, type: 3}
+  - {fileID: 3096303608801617609, guid: 2fe7fdfa080e03f45b59a5631eecb63d, type: 3}
+  - {fileID: 1766230487101284412, guid: f76ac6f682049b240a909659cacb0aca, type: 3}
+  - {fileID: 5192838622781181673, guid: 5628e495b13520e43a2d1cb0eadea202, type: 3}
+  - {fileID: 3836034631832452897, guid: 5084d075d0524ef499fac9002e4c9b2f, type: 3}

@@ -27,18 +27,14 @@ public class GameManager : Singleton<GameManager> {
 	[NonSerialized]  public Player player;
 	[NonSerialized]  public GameObject draggedParent;
 
-	[Header("Sprites"), Space]
-	public Sprite foregroundDirtSprite;
-	public Sprite backgroundDirtSprite;
+	[Header("Cells"), Space]
+	public ForegroundGoData[] foregroundCells;
+	public BackgroundGoData[] backgroundCells;
+	public OreGoData[] oreCells;
 
-	public Sprite foregroundStoneSprite;
-	public Sprite backgroundStoneSprite;
+	[Header("Item on ground"), Space]
+	public ItemOnGround[] itemsOnGroundPrefabs;
 	
-	public Sprite foregroundBedrockSprite;
-	public Sprite backgroundBedrockSprite;
-
-	public Sprite oreGoldSprite;
-	public Sprite oreIronSprite;
 
 	protected override void Initialize() {
 		base.Initialize();
@@ -46,5 +42,63 @@ public class GameManager : Singleton<GameManager> {
 
 	protected override void Deinitialize() {
 		base.Deinitialize();
+	}
+
+	public GameObject GetCellForeground(Cell.CellContentForegroud type) {
+		foreach (var data in foregroundCells) {
+			if (data.type == type)
+				return data.prefab;
+		}
+
+		Debug.LogError($"Can't find Cell Foreground - {type}");
+		return foregroundCells[0].prefab;
+	}
+
+	public GameObject GetCellBackground(Cell.CellContentBackground type) {
+		foreach (var data in backgroundCells) {
+			if (data.type == type)
+				return data.prefab;
+		}
+
+		Debug.LogError($"Can't find Cell Background - {type}");
+		return backgroundCells[0].prefab;
+	}
+
+	public GameObject GetCellOre(Cell.CellContentOre type) {
+		foreach (var data in oreCells) {
+			if (data.type == type)
+				return data.prefab;
+		}
+
+		Debug.LogError($"Can't find Cell Ore - {type}");
+		return oreCells[0].prefab;
+	}
+
+	public GameObject GetItemOnGround(ItemSO.ItemType type) {
+		foreach (var data in itemsOnGroundPrefabs) {
+			if (data.item.itemSO.type == type)
+				return data.gameObject;
+		}
+
+		Debug.LogError($"Can't find item on ground - {type}");
+		return itemsOnGroundPrefabs[0].gameObject;
+	}
+
+	[Serializable]
+	public struct ForegroundGoData {
+		public Cell.CellContentForegroud type;
+		public GameObject prefab;
+	}
+
+	[Serializable]
+	public struct BackgroundGoData {
+		public Cell.CellContentBackground type;
+		public GameObject prefab;
+	}
+
+	[Serializable]
+	public struct OreGoData {
+		public Cell.CellContentOre type;
+		public GameObject prefab;
 	}
 }
