@@ -9,6 +9,8 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class Hotbar : Inventory {
+	public Action onChangeSelection;
+
 	int selectedLeft;
 	int selectedRight;
 
@@ -18,6 +20,20 @@ public class Hotbar : Inventory {
 
 		(items[selectedLeft] as HotbarItem).SetSelectedFrame(true);
 		(items[selectedRight] as HotbarItem).SetSelectedFrame(false);
+	}
+
+	public ItemData? GetItemInBothHands() {
+		if(selectedLeft == selectedRight)
+			return items[selectedLeft].item;
+		return null;
+	}
+
+	public ItemData GetLeftItem() {
+		return items[selectedLeft].item;
+	}
+
+	public ItemData GetRightItem() {
+		return items[selectedRight].item;
 	}
 
 	public void SetSelection(byte id, bool isLeftHand) {
@@ -31,6 +47,8 @@ public class Hotbar : Inventory {
 			selectedRight = (byte)id;
 			(items[selectedRight] as HotbarItem).SetSelectedFrame(false);
 		}
+
+		onChangeSelection?.Invoke();
 	}
 
 	public void MoveSelectionUp(bool isLeftHand) {
@@ -52,6 +70,8 @@ public class Hotbar : Inventory {
 
 			(items[selectedRight] as HotbarItem).SetSelectedFrame(false);
 		}
+
+		onChangeSelection?.Invoke();
 	}
 
 	public void MoveSelectionDown(bool isLeftHand) {
@@ -73,5 +93,7 @@ public class Hotbar : Inventory {
 
 			(items[selectedRight] as HotbarItem).SetSelectedFrame(false);
 		}
+
+		onChangeSelection?.Invoke();
 	}
 }

@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 	public Inventory inventory;
 	[SerializeField] Hotbar hotbar;
 	[SerializeField] DebugText debugText;
+	[SerializeField] PlayerItemUser itemUser;
 	[Space]
 	public int Wallet = 1000;
 	public InstrumentsDB inventoryDB;
@@ -63,13 +64,10 @@ public class Player : MonoBehaviour {
 	public void UseItemL(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				Debug.Log("Use item L - Started");
-				break;
-			case InputActionPhase.Performed:
-				Debug.Log("Use item L - Performed");
+				itemUser.StartUseLeftItem();
 				break;
 			case InputActionPhase.Canceled:
-				Debug.Log("Use item L - Canceled");
+				itemUser.StoptUseLeftItem();
 				break;
 		}
 	}
@@ -77,13 +75,10 @@ public class Player : MonoBehaviour {
 	public void UseItemR(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				Debug.Log("Use item R - Started");
-				break;
-			case InputActionPhase.Performed:
-				Debug.Log("Use item R - Performed");
+				itemUser.StartUseRightItem();
 				break;
 			case InputActionPhase.Canceled:
-				Debug.Log("Use item R - Canceled");
+				itemUser.StoptUseRightItem();
 				break;
 		}
 	}
