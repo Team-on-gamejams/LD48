@@ -63,3 +63,5 @@ MonoBehaviour:
     width: 2
     height: 2
   playerStartPos: {x: 16, y: 23}
+  cellPrefab: {fileID: 3939073422345311658, guid: 16e169cf135324544820e22f9f193cf8,
+    type: 3}

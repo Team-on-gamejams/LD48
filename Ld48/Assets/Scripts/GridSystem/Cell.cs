@@ -23,7 +23,7 @@ public class Cell : MonoBehaviour {
 		}
 		set {
 			coord = value;
-			
+
 		}
 	}
 	Vector2Int coord;
@@ -35,13 +35,14 @@ public class Cell : MonoBehaviour {
 
 	[Header("Refs"), Space]
 	[SerializeField] TextMeshPro debugText;
+	[SerializeField] SpriteRenderer hightlightSr;
 
-//#if UNITY_EDITOR
-//	void OnValidate() {
-//		CreateCellVisuals();
-//		UnityEditor.EditorUtility.SetDirty(gameObject);
-//	}
-//#endif
+	//#if UNITY_EDITOR
+	//	void OnValidate() {
+	//		CreateCellVisuals();
+	//		UnityEditor.EditorUtility.SetDirty(gameObject);
+	//	}
+	//#endif
 
 	public void Init() {
 		CreateCell();
@@ -52,6 +53,17 @@ public class Cell : MonoBehaviour {
 		transform.position = new Vector3(MyGrid.cellSize.x * coord.x, MyGrid.cellSize.y * coord.y, 0.0f)/* - new Vector3(MyGrid.gridSize.x / 2 * MyGrid.cellSize.x, MyGrid.gridSize.y / 2 * MyGrid.cellSize.y, 0.0f)*/;
 	}
 
+	public void Hightlight() {
+		LeanTween.cancel(hightlightSr.gameObject, false);
+		LeanTweenEx.ChangeAlpha(hightlightSr, 1.0f, 0.1f);
+	}
+
+	public void UnHightlight() {
+		LeanTween.cancel(hightlightSr.gameObject, false);
+		LeanTweenEx.ChangeAlpha(hightlightSr, 0.0f, 0.1f);
+	}
+
+
 	void CreateCell() {
 		CreateAllVisuals();
 		CreateDebugText();
@@ -60,7 +72,7 @@ public class Cell : MonoBehaviour {
 	void CreateAllVisuals() {
 		gameObject.transform.localScale = new Vector3(1, 1, 1.0f);
 
-		if(foregroud != CellContentForegroud.None)
+		if (foregroud != CellContentForegroud.None)
 			Instantiate(GameManager.Instance.GetCellForeground(foregroud), Vector3.zero, Quaternion.identity, gameObject.transform);
 
 		if (background != CellContentBackground.None)

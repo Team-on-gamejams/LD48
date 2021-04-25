@@ -45,8 +45,28 @@ public class GameManager : Singleton<GameManager> {
 		base.Deinitialize();
 	}
 
+	public Cell GetCellAtMousePosWithInteractClamp() {
+		return GetCellAtPosWithInteractClamp(TemplateGameManager.Instance.Camera.ScreenToWorldPoint(UnityEngine.InputSystem.Mouse.current.position.ReadValue()).SetZ(0.0f));
+	}
+
+	public Cell GetCellAtPosWithInteractClamp(Vector3 pos) {
+		Vector3 diff = Vector3.ClampMagnitude(pos - player.mover.transform.position, player.maxInteractDistance);
+		return GetCellAtPos(player.mover.transform.position + diff);
+	}
+
 	public Cell GetCellAtPos(Vector3 pos) {
 		return grid.GetCellWorldPos(pos);
+	}
+
+	public Cell GetCellAtMousePosWithInteractClamp(out Vector2 actualPos) {
+		actualPos = TemplateGameManager.Instance.Camera.ScreenToWorldPoint(UnityEngine.InputSystem.Mouse.current.position.ReadValue()).SetZ(0.0f);
+		return GetCellAtPosWithInteractClamp(actualPos, out actualPos);
+	}
+
+	public Cell GetCellAtPosWithInteractClamp(Vector3 pos, out Vector2 actualPos) {
+		Vector3 diff = Vector3.ClampMagnitude(pos - player.mover.transform.position, player.maxInteractDistance);
+		actualPos = player.mover.transform.position + diff;
+		return GetCellAtPos(actualPos);
 	}
 
 	public GameObject GetCellForeground(Cell.CellContentForegroud type) {

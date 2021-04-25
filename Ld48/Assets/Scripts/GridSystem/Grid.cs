@@ -20,6 +20,9 @@ public class Grid : MonoBehaviour {
 	[SerializeField] Rect startOreIron;
 	[SerializeField] Vector2Int playerStartPos;
 
+	[Header("Refs"), Space]
+	[SerializeField] GameObject cellPrefab;
+
 	Transform visualParent;
 
 	List<Cell> cells;
@@ -43,12 +46,14 @@ public class Grid : MonoBehaviour {
 
 		for (int x = 0; x < gridSize.x; ++x) {
 			for (int y = 0; y < gridSize.y; ++y) {
-				GameObject go = new GameObject($"Cell-{x}-{y}");
-				go.transform.parent = visualParent;
+				GameObject go = Instantiate(cellPrefab, visualParent);
+				go.name = $"Cell-{x}-{y}";
 
-				Cell cell = go.AddComponent<Cell>();
+				Cell cell = go.GetComponent<Cell>();
+				cell.MyGrid = this;
+				cell.Coord = new Vector2Int(x, y);
 
-				if(x <= Random.Range(0, 2) || y <= Random.Range(0, 2) || x >= gridSize.x - Random.Range(1, 3) || y >= gridSize.y -Random.Range(1, 3)) {
+				if (x <= Random.Range(0, 2) || y <= Random.Range(0, 2) || x >= gridSize.x - Random.Range(1, 3) || y >= gridSize.y -Random.Range(1, 3)) {
 					cell.foregroud = Cell.CellContentForegroud.Bedrock;
 					cell.background = Cell.CellContentBackground.Bedrock;
 					cell.ore = Cell.CellContentOre.None;
@@ -83,16 +88,12 @@ public class Grid : MonoBehaviour {
 					cell.ore = Cell.CellContentOre.OreIron;
 				}
 
-				cell.MyGrid = this;
-				cell.Coord = new Vector2Int(x, y);
-
 				cell.Init();
+				cells.Add(cell);
 
 				if (x == playerStartPos.x && y == playerStartPos.y) {
 					GameManager.Instance.player.mover.transform.position = cell.transform.position;
 				}
-
-				cells.Add(cell);
 			}
 		}
 	}

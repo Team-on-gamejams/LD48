@@ -48,7 +48,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: d73e1c21044a31b488b160de0eed0558, type: 3}
     - {fileID: 102900000, guid: 229227f9af1cdf2478656e6433b96676, type: 3}
     - {fileID: 102900000, guid: 802b46da9058d55408dc3dedd5190bab, type: 3}
-    totalSpriteSurfaceArea: 425984
+    totalSpriteSurfaceArea: 442368
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -78,6 +78,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6c3125eb8b0838340a20f00df3742689, type: 3}
   - {fileID: 21300000, guid: 471fb6fca7de6e045a0ec9cf3f962fba, type: 3}
   - {fileID: 21300000, guid: b4b299ddd24d66d4fb3b3cc2a59f90a0, type: 3}
+  - {fileID: 21300000, guid: b1dc567ee0dbb6f41ab5deac676376a6, type: 3}
   - {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
   - {fileID: 21300000, guid: fe9fd63f05e20644483bfe34a72e2639, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -105,6 +106,7 @@ SpriteAtlas:
   - BlockGoldOre
   - StoneForeground
   - DestroyAnimation1
+  - BlockSelection
   - OreGold
   - SelectionRight
   m_RenderDataMap: {}
