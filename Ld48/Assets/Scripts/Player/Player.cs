@@ -19,10 +19,6 @@ public class Player : MonoBehaviour {
 	[SerializeField] Hotbar hotbar;
 	[SerializeField] DebugText debugText;
 	[SerializeField] PlayerItemUser itemUser;
-	[Space]
-	public int Wallet = 1000;
-	public InstrumentsDB inventoryDB;
-	public List<DungeonObject> PlayerInventory = new List<DungeonObject>();
 
 	bool isHoldShift = false;
 	ItemOnGround buttonDownItem;
