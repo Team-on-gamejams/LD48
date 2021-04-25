@@ -73,16 +73,21 @@ public class Cell : MonoBehaviour {
 		LeanTweenEx.ChangeAlpha(hightlightSr, 0.0f, 0.1f);
 	}
 
-	public void Mine(float deltaTime, float mineToolForce) {
+	public void Mine(float deltaTime, float mineToolForce, bool isNeedLoot = true) {
 		if (foregroundBlock) {
 			currMineTime += deltaTime * (mineToolForce - foregroundBlock.neededForceToBroke + 1);
 			float brokePersent = currMineTime / foregroundBlock.neededTimeToBroke;
 
-			if(brokePersent >= 1) {
+			if (brokePersent >= 1) {
 				currMineTime = 0;
 				destoyVisual.UpdateVisual(0);
 
-				ItemOnGround.CreateOnGround(new ItemData(foregroundBlock.itemToDrop.item.itemSO, 1), transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)));
+				if (isNeedLoot) {
+					ItemOnGround.CreateOnGround(new ItemData(
+						foregroundBlock.itemToDrop.item.itemSO, 1), 
+						transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)
+					));
+				}
 
 				foregroud = CellContentForegroud.None;
 				RecreateVisualAfterChangeType();
@@ -94,7 +99,7 @@ public class Cell : MonoBehaviour {
 			}
 
 		}
-		else if (oreBlock) {
+		else if (oreBlock && isNeedLoot) {
 			currMineTime += deltaTime * (mineToolForce - oreBlock.neededForceToBroke + 1);
 			float brokePersent = currMineTime / oreBlock.neededTimeToBroke;
 

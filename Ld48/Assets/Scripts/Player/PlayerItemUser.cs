@@ -39,19 +39,38 @@ public class PlayerItemUser : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (isUseLeftItem && itemInLeftHand.itemSO != null) {
-			bool needUIRedraw = itemInLeftHand.UseItemWhileInHotbar();
-			if (needUIRedraw) {
-				hotbar.UpdateItemLeftHand();
-				hotbar?.onInventoryChange();
+		if (itemInBothHands != null) {
+			if (isUseLeftItem && itemInLeftHand.itemSO != null) {
+				bool needUIRedraw = itemInLeftHand.UseItemWhileInHotbar();
+				if (needUIRedraw) {
+					hotbar.UpdateItemLeftHand();
+					hotbar?.onInventoryChange();
+				}
+			}
+
+			if (isUseRightItem && itemInRightHand.itemSO != null) {
+				bool needUIRedraw = itemInRightHand.UseItemWhileInHotbarDualWield();
+				if (needUIRedraw) {
+					hotbar.UpdateItemRightHand();
+					hotbar?.onInventoryChange();
+				}
 			}
 		}
+		else {
+			if (isUseLeftItem && itemInLeftHand.itemSO != null) {
+				bool needUIRedraw = itemInLeftHand.UseItemWhileInHotbar();
+				if (needUIRedraw) {
+					hotbar.UpdateItemLeftHand();
+					hotbar?.onInventoryChange();
+				}
+			}
 
-		if (isUseRightItem && itemInRightHand.itemSO != null) {
-			bool needUIRedraw = itemInRightHand.UseItemWhileInHotbar();
-			if (needUIRedraw) {
-				hotbar.UpdateItemRightHand();
-				hotbar?.onInventoryChange();
+			if (isUseRightItem && itemInRightHand.itemSO != null) {
+				bool needUIRedraw = itemInRightHand.UseItemWhileInHotbar();
+				if (needUIRedraw) {
+					hotbar.UpdateItemRightHand();
+					hotbar?.onInventoryChange();
+				}
 			}
 		}
 	}

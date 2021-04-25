@@ -61,4 +61,29 @@ public class ItemData {
 
 		return false;
 	}
+
+	public bool UseItemWhileInHotbarDualWield() {
+		switch (itemSO.metaType) {
+			case ItemSO.ItemMetaType.BuildableForeground:
+				return UseItemWhileInHotbar();
+
+			case ItemSO.ItemMetaType.MiningTool:
+				if (!GameManager.Instance.SelectedCell)
+					return false;
+
+				if (
+					(GameManager.Instance.SelectedCell.foregroud != Cell.CellContentForegroud.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.foregroundBlock.neededForceToBroke) ||
+					(GameManager.Instance.SelectedCell.ore != Cell.CellContentOre.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.oreBlock.neededForceToBroke)
+					) {
+					GameManager.Instance.SelectedCell.Mine(Time.deltaTime, itemSO.miningForce + 2, false);
+				}
+				break;
+
+			default:
+				Debug.LogError("Unsupported ItemMetaType for using");
+				break;
+		}
+
+		return false;
+	}
 }

@@ -126,7 +126,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 				count.text = item.count.ToString();
 			}
 
-			if(item.itemSO.maxCount == 0)
+			if(item.itemSO.maxCount == 1)
 				popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nNot stackable");
 			else
 				popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nMax Stack: {item.itemSO.maxCount}");

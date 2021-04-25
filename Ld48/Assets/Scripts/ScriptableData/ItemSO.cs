@@ -18,9 +18,9 @@ public class ItemSO : ScriptableObject {
 	public enum ItemType : int { 
 		None = 0,
 
-		ShowelaxeStone = 1,
-		ShowelaxeIron,
-		ShowelaxeDiamond,
+		ShovelaxeStone = 1,
+		ShovelaxeIron,
+		ShovelaxeDiamond,
 
 		Dirt = 500,
 		Stone,
@@ -44,7 +44,7 @@ public class ItemSO : ScriptableObject {
 
 	[Header("Visual"), Space]
 	public string name = "Item name";
-	public string description = "Item desc";
+	[Multiline] public string description = "Item desc";
 	public Sprite sprite;
 
 	[Header("On ground data"), Space]

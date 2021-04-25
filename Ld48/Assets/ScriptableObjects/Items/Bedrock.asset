@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de15dd71d923f844096aa22d4dbdc961, type: 3}
   m_Name: Bedrock
   m_EditorClassIdentifier: 
+  metaType: 0
   type: 502
-  maxCount: 10
-  name: Stone
-  description: Building material
+  maxCount: 1
+  name: Bedrock
+  description: Unbreakable thing
   sprite: {fileID: 21300000, guid: 8cd881e9d9230dc47a3ed069c98f51db, type: 3}
   singleMass: 500
   scaleFactorOnGround: 1
+  miningForce: 1
