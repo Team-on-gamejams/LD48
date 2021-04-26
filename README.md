@@ -1,40 +1,44 @@
 # [Terrario](https://teamon.itch.io/terrario)
-Made in X hours for [Ludum Dare 48](https://ldjam.com/)  
+Made in 72 hours for [Ludum Dare 48](https://ldjam.com/)  
 Theme: Deeper and deeper  
 
-Short desc(player should get game genre and USP)
+Terrario, it's a game where terraria meets factorio.
 
 ![Cover](Screenshots/ItchioPage/CoverImage.png) 
 
-A bit longer desc. 
-(e.g. Dyson Sphere Program is a sci-fi simulation game with space, adventure, exploration and factory automation elements where you can build your own galactic industrial empire from scratch)
-
-
-# Plot: 
- A quick summary of the story
- (E.g. In the distant future, the power of science and technology has ushered a new age to the human race. Space and time have become irrelevant thanks to virtual reality. A new kind of supercomputer has been developed – a machine whose superior artificial intelligence and computing capability will push humanity even further. There is only one problem: there isn’t enough energy in the whole planet to feed this machine.)
-
-
 # Key features
- * A list of features if your project is a tool or a game
+ * Broke and build blocks
+ * Mine resource
+ * Smelting & crafting
+ * Dual wielding. You can hold items in both hands and use them simultaneously.
+ * Two-handed use for tools. Hold tool in both hands to use special ability
 
+# Game in development
+The game is in active development. This demo contains only a small portion of the planned content. In addition, during the game, you can find errors and bugs.
+
+# What to expect from the full version
+ * Much bigger world with random generation
+ * Automation with assemblers, conveyors and inserters
+ * Enemies and battles
+ * Bosses
+ * Dungeons with loot
+ * RPG-like progression
+ * Research new tech
+ * Gamepad control?
+ * Android/Web port?
+ * Multiplayer?
 
 # Controls and supported input devices
- * Devices
- * You can play with keyboard or any gamepad
- * Controls
+ * You can play only with a keyboard and mouse for now
  * WASD - move
+ * Space - jump
+ * E - dash
  * Mouse - aim
-
-
-# How to play
- * Do this to win
- * Do that to lose
- 
- 
-# Tips
- * Tips
- 
+ * LBM - use item in left hand
+ * RMB - use item in right hand
+ * 1..6 - select item in left hand
+ * Shift + 1..6 - select item in right hand
+ * Click on toolbar with LMB or RMB to select item. Click with middle mouse button to hold item in both hands
  
 # What is Ludum dare?
 Ludum Dare is one of the world's largest and longest running Game Jam events. Is an event where you create a game from scratch in a weekend based on a theme.  
@@ -55,7 +59,6 @@ Ludum Dare is one of the world's largest and longest running Game Jam events. Is
 # Used assets
  * Unity game template - https://github.com/Team-on/UnityGameTemplate
  * Assets from template - https://github.com/Team-on/UnityGameTemplate/wiki/Used-assets
- * link - where used
  
  
 # Downloads and Links
