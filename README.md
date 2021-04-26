@@ -24,6 +24,7 @@ The game is in active development. This demo contains only a small portion of th
  * Dungeons with loot
  * RPG-like progression
  * Research new tech
+ * More supported languages
  * Gamepad control?
  * Android/Web port?
  * Multiplayer?
