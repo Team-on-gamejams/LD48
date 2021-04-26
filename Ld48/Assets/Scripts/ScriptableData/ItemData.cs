@@ -32,15 +32,20 @@ public class ItemData {
 				if (!GameManager.Instance.SelectedCell || GameManager.Instance.SelectedCell.foregroud != Cell.CellContentForegroud.None)
 					return false;
 
-				GameManager.Instance.SelectedCell.foregroud = GameManager.Instance.GetItemPlacable(itemSO.type).foregroud;
-				GameManager.Instance.SelectedCell.RecreateVisualAfterChangeType();
+				PlacebleBlock placebleBlock = GameManager.Instance.GetItemPlacable(itemSO.type);
 
-				--count;
-				if (count <= 0) {
-					itemSO = null;
+				if (placebleBlock.isCanPlaceOnPlayerPos || !GameManager.Instance.SelectedCell.IsPlayerInside()) {
+					GameManager.Instance.SelectedCell.foregroud = placebleBlock.foregroud;
+					GameManager.Instance.SelectedCell.RecreateVisualAfterChangeType();
+
+					--count;
+					if (count <= 0) {
+						itemSO = null;
+					}
+
+					return true;
 				}
-
-				return true;
+				break;
 
 			case ItemSO.ItemMetaType.MiningTool:
 				if (!GameManager.Instance.SelectedCell)

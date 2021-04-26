@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicDashModule
   m_EditorClassIdentifier: 
   m_DashTime: 0.2
-  m_DashDistance: 5
+  m_DashDistance: 2
   m_UseCollision: 1
   m_ResetVelocityY: 1
   m_ChangeFacing: 1

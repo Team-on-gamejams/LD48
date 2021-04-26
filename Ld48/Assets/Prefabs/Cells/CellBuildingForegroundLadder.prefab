@@ -53,6 +53,7 @@ MonoBehaviour:
   neededTimeToBroke: 0.5
   type: 0
   foregroud: 5
+  isCanPlaceOnPlayerPos: 1
   background: 0
   ore: 0
 --- !u!212 &4864332047625639347

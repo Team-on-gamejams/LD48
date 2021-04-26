@@ -73,6 +73,29 @@ public class Cell : MonoBehaviour {
 		LeanTweenEx.ChangeAlpha(hightlightSr, 0.0f, 0.1f);
 	}
 
+	public bool IsPlayerInside() {
+		if (GameManager.Instance.player.mover.collider.OverlapPoint(transform.position))
+			return true;
+
+		int count = 0;
+
+		if (GameManager.Instance.player.mover.collider.OverlapPoint(transform.position + new Vector3(MyGrid.cellSize.x / 2, MyGrid.cellSize.y / 2)))
+			++count;
+		if (GameManager.Instance.player.mover.collider.OverlapPoint(transform.position + new Vector3(-MyGrid.cellSize.x / 2, -MyGrid.cellSize.y / 2)))
+			++count;
+		if (count >= 2)
+			return true;
+
+		if (GameManager.Instance.player.mover.collider.OverlapPoint(transform.position + new Vector3(-MyGrid.cellSize.x / 2, MyGrid.cellSize.y / 2)))
+			++count;
+		if (count >= 2)
+			return true;
+
+		if (GameManager.Instance.player.mover.collider.OverlapPoint(transform.position + new Vector3(MyGrid.cellSize.x / 2, -MyGrid.cellSize.y / 2)))
+			++count;
+		return count >= 2;
+	}
+
 	public void Mine(float deltaTime, float mineToolForce, bool isNeedLoot = true) {
 		if (foregroundBlock) {
 			currMineTime += deltaTime * (mineToolForce - foregroundBlock.neededForceToBroke + 1);
@@ -84,7 +107,7 @@ public class Cell : MonoBehaviour {
 
 				if (isNeedLoot) {
 					ItemOnGround.CreateOnGround(new ItemData(
-						foregroundBlock.itemToDrop.item.itemSO, 1), 
+						foregroundBlock.itemToDrop.item.itemSO, 1),
 						transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)
 					));
 				}
@@ -120,7 +143,7 @@ public class Cell : MonoBehaviour {
 	void CreateAllVisuals() {
 		gameObject.transform.localScale = new Vector3(1, 1, 1.0f);
 
-		if(foregroundBlock != null && foregroud != foregroundBlock.foregroud) {
+		if (foregroundBlock != null && foregroud != foregroundBlock.foregroud) {
 			Destroy(foregroundBlock.gameObject);
 			foregroundBlock = null;
 		}

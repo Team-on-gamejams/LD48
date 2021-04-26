@@ -12,6 +12,7 @@ using DYP;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMoving : MonoBehaviour {
 	[Header("Refs"), Space]
+	public Collider2D collider;
 	[SerializeField] Rigidbody2D rb;
 	[SerializeField] DebugText debugText;
 	[SerializeField] BasicMovementController2D controller;
@@ -28,6 +29,8 @@ public class PlayerMoving : MonoBehaviour {
 	private void OnValidate() {
 		if (!rb)
 			rb = GetComponent<Rigidbody2D>();
+		if (!collider)
+			collider = GetComponent<Collider2D>();
 		if (!debugText)
 			debugText = GetComponentInChildren<DebugText>();
 	}

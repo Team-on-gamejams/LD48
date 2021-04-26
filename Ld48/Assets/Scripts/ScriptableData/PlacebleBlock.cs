@@ -19,6 +19,7 @@ public class PlacebleBlock : MonoBehaviour {
 	[Header("Place data"), Space]
 	public Cell.CellBlockType type;
 	[NaughtyAttributes.ShowIf("IsForeground")] public Cell.CellContentForegroud foregroud;
+	[NaughtyAttributes.ShowIf("IsForeground")] public bool isCanPlaceOnPlayerPos = false;
 	[NaughtyAttributes.ShowIf("IsBackground")] public Cell.CellContentBackground background;
 	[NaughtyAttributes.ShowIf("IsOre")] public Cell.CellContentOre ore;
 
