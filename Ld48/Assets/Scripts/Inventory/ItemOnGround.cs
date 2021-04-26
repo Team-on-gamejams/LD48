@@ -17,8 +17,15 @@ public class ItemOnGround : MonoBehaviour {
 
 	[Header("Refs"), Space]
 	[SerializeField] SpriteRenderer sr;
-	[SerializeField] BoxCollider2D boxCollider;
+	[SerializeField] Collider2D collider;
 	[SerializeField] Rigidbody2D rb;
+
+#if UNITY_EDITOR
+	void OnValidate() {
+		if (!collider)
+			collider = GetComponent<Collider2D>();
+	}
+#endif
 
 	public void Init() {
 		gameObject.transform.localScale = Vector2.one * item.itemSO.scaleFactorOnGround * Mathf.Lerp(0.2f, 0.8f, (float)(item.count) / item.itemSO.maxCount);

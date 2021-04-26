@@ -51,7 +51,7 @@ MonoBehaviour:
     count: 0
   placebleBlock: {fileID: 0}
   sr: {fileID: 5192838622781181674}
-  boxCollider: {fileID: 5192838622781181675}
+  collider: {fileID: 5192838622781181675}
   rb: {fileID: 5192838622781181668}
 --- !u!212 &5192838622781181674
 SpriteRenderer:
@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.039296627, y: -0.022268057}
   m_SpriteTilingProperty:
     border: {x: 0.03125, y: 0.03125, z: 0.03125, w: 0.03125}
     pivot: {x: 0.5, y: 0.5}
@@ -128,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8794899, y: 0.8506727}
   m_EdgeRadius: 0
 --- !u!50 &5192838622781181668
 Rigidbody2D:

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] Hotbar hotbar;
 	[SerializeField] DebugText debugText;
 	[SerializeField] PlayerItemUser itemUser;
+	[SerializeField] UITabGroup uiTabGroup;
 
 	bool isHoldShift = false;
 	ItemOnGround buttonDownItem;
@@ -105,7 +106,7 @@ public class Player : MonoBehaviour {
 	public void OnToggleInventory(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Performed:
-				inventory.ToggleVisible();
+				uiTabGroup.ToggleVisible();
 				break;
 		}
 	}
