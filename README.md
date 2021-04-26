@@ -34,6 +34,7 @@ The game is in active development. This demo contains only a small portion of th
  * WASD - move
  * Space - jump
  * E - dash
+ * Tab - open/close inventory and crafts
  * Mouse - aim
  * LBM - use item in left hand
  * RMB - use item in right hand
