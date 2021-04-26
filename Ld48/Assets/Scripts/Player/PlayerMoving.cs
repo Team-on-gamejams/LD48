@@ -7,19 +7,22 @@ using UnityEngine.UI;
 using TMPro;
 using NaughtyAttributes;
 using Random = UnityEngine.Random;
+using DYP;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMoving : MonoBehaviour {
-	[Header("Data"), Space]
-	[SerializeField] float speed = 8.0f;
-	[SerializeField] float jumpForce = 6.5f;
-
 	[Header("Refs"), Space]
 	[SerializeField] Rigidbody2D rb;
 	[SerializeField] DebugText debugText;
-	[SerializeField] CapsuleCollider2D collider2D;
+	[SerializeField] BasicMovementController2D controller;
 
 	Vector2 moveVector;
+
+	bool isPressJump;
+	bool isReleaseJump;
+	bool isHoldJump;
+
+	bool isHoldDash;
 
 #if UNITY_EDITOR
 	private void OnValidate() {
@@ -30,9 +33,18 @@ public class PlayerMoving : MonoBehaviour {
 	}
 #endif
 
-	void FixedUpdate() {
-		rb.velocity = rb.velocity.SetX(moveVector.x * speed);
+	private void Update() {
+		controller.InputMovement(moveVector);
 
+		controller.PressJump(isPressJump);
+		controller.HoldJump(isHoldJump);
+		controller.ReleaseJump(isReleaseJump);
+		isPressJump = isReleaseJump = false;
+
+		controller.HoldDash(isHoldDash);
+	}
+
+	void FixedUpdate() {
 		debugText.SetText($"Speed: {rb.velocity.magnitude.ToString("0.0")} m/s");
 	}
 
@@ -48,13 +60,22 @@ public class PlayerMoving : MonoBehaviour {
 		moveVector = Vector2.zero;
 	}
 
-	public void Jump() {
-		if (IsGrounded())
-			rb.AddForce(transform.up * jumpForce, ForceMode2DEx.Acceleration);
+	public void JumpStart() {
+		isPressJump = true;
+		isHoldJump = true;
 	}
 
-	public bool IsGrounded() {
-		RaycastHit2D raycastHit2D = Physics2D.BoxCast(collider2D.bounds.center, collider2D.bounds.size, 0f, Vector2.down * .1f);
-		return raycastHit2D.collider != null;
+	public void JumpEnd() {
+		isReleaseJump = true;
+		isHoldJump = false;
+	}
+
+	public void DashStart() {
+		controller.PressDash(true);
+		isHoldDash = true;
+	}
+
+	public void DashEnd() {
+		isHoldDash = false;
 	}
 }

@@ -52,8 +52,24 @@ public class Player : MonoBehaviour {
 
 	public void OnJump(InputAction.CallbackContext context) {
 		switch (context.phase) {
-			case InputActionPhase.Performed:
-				mover.Jump();
+			case InputActionPhase.Started:
+				mover.JumpStart();
+
+				break;
+			case InputActionPhase.Canceled:
+				mover.JumpEnd();
+				break;
+		}
+	}
+
+	public void OnDash(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Started:
+				mover.DashStart();
+
+				break;
+			case InputActionPhase.Canceled:
+				mover.DashEnd();
 				break;
 		}
 	}
