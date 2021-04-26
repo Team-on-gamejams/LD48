@@ -2,7 +2,7 @@ Game page - https://teamon.itch.io/terrario
 Source code - https://github.com/Team-on/LD48https://github.com/Team-on/LD48
 
 
-Available in Windows, OSX, Linux, Android and Web 
+Available in Windows, OSX and Linux
 If you encounter any problem, please leave a issue! 
 Use in-game form for that, report it in discord, or email me directly to timonsol13@gmail.com
 
