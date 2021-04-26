@@ -38,7 +38,10 @@ public class GameManager : Singleton<GameManager> {
 
 	[Header("Item on ground"), Space]
 	public ItemOnGround[] itemsOnGroundPrefabs;
-	
+
+	[Header("Crafts"), Space]
+	public CraftSO[] crafts;
+
 
 	protected override void Initialize() {
 		base.Initialize();

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98c4a3fe410e9845918b6011d970a22, type: 3}
+  m_Name: BlockLadderCraft
+  m_EditorClassIdentifier: 
+  place: 5
+  craftTime: 0.5
+  ingradients:
+  - itemSO: {fileID: 11400000, guid: a627876475467df4eaa667706c575afe, type: 2}
+    count: 1
+  results:
+  - itemSO: {fileID: 11400000, guid: 3c54d474733ff8b41bbb77019c523420, type: 2}
+    count: 1
