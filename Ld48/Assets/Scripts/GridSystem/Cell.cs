@@ -60,6 +60,8 @@ public class Cell : MonoBehaviour {
 	}
 
 	public void RecreateVisualAfterChangeType() {
+		currMineTime = 0;
+		destoyVisual.UpdateVisual(0);
 		CreateAllVisuals();
 	}
 
