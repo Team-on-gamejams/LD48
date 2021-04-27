@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de15dd71d923f844096aa22d4dbdc961, type: 3}
-  m_Name: Stone
+  m_Name: ToolShowelaxeDiamond
   m_EditorClassIdentifier: 
-  type: 501
-  name: Stone
-  description: Building material
-  sprite: {fileID: 21300000, guid: 471fb6fca7de6e045a0ec9cf3f962fba, type: 3}
-  maxCount: 10
-  singleMass: 500
+  metaType: 1
+  type: 3
+  maxCount: 1
+  name: Notch Shovelaxe
+  description: "The best shovelaxe\n\nDual wielding:\nLMB - Mine block. \nRMB - Dig
+    through block. 2 times faster, but no loot"
+  sprite: {fileID: 21300000, guid: 409cd93d98a7b7a49ae4065674ba622b, type: 3}
+  singleMass: 5000
+  scaleFactorOnGround: 1
+  miningForce: 5

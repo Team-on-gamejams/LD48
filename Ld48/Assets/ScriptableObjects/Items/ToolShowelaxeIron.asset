@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de15dd71d923f844096aa22d4dbdc961, type: 3}
+  m_Name: ToolShowelaxeIron
+  m_EditorClassIdentifier: 
+  metaType: 1
+  type: 2
+  maxCount: 1
+  name: Iron Shovelaxe
+  description: "Tool to broke things much faster\n\nTwo-handed use:\nLMB - Mine block.
+    \nRMB - Dig through block. 2 times faster, but no loot"
+  sprite: {fileID: 21300000, guid: 7f6619496c0a2244a965e3820a3cd6ca, type: 3}
+  singleMass: 500
+  scaleFactorOnGround: 1
+  miningForce: 2

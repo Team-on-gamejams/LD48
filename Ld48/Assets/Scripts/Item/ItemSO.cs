@@ -18,23 +18,34 @@ public class ItemSO : ScriptableObject {
 	public enum ItemType : int { 
 		None = 0,
 
-		ShovelaxeStone = 1,
+		//Tools
+		ShovelaxeStone = 1,		
 		ShovelaxeIron,
 		ShovelaxeDiamond,
 
+		//Tiles (use in world gen)
 		Dirt = 500,
 		Stone,
 		Bedrock,
 
+		//Ores (use in world gen).
+		//Used for both ores and blocks
 		OreIron = 1000,
 		OreGold,
 
+		//Ignot from ores
 		IgnotIron = 1500,
 		IgnotGold,
 
+		//Hand-made blocks
 		BlockBrick = 2000,
 		BlockPlatform,
 		BlockLadder,
+
+		//Places for crafting
+		PlaceChest = 3000,
+		PlaceFurnace,
+		PlaceAssembler,
 	}
 
 	[Header("Item data"), Space]

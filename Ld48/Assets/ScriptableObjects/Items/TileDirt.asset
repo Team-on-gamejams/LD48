@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de15dd71d923f844096aa22d4dbdc961, type: 3}
-  m_Name: ShowelaxeIron
+  m_Name: TileDirt
   m_EditorClassIdentifier: 
-  metaType: 1
-  type: 2
-  maxCount: 1
-  name: Iron Shovelaxe
-  description: "Tool to broke things much faster\n\nTwo-handed use:\nLMB - Mine block.
-    \nRMB - Dig through block. 2 times faster, but no loot"
-  sprite: {fileID: 21300000, guid: 7f6619496c0a2244a965e3820a3cd6ca, type: 3}
+  metaType: 0
+  type: 500
+  maxCount: 10
+  name: Dirt
+  description: Not the best building material
+  sprite: {fileID: 21300000, guid: 31d0bbba8d7f865459a62bdbca2dd65d, type: 3}
   singleMass: 500
   scaleFactorOnGround: 1
-  miningForce: 2
+  miningForce: 1

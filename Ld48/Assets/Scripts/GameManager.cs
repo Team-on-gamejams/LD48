@@ -22,7 +22,11 @@ public class GameManager : Singleton<GameManager> {
 		}
 	}
 	public Action<bool> OnDebugModeChange;
+#if UNITY_EDITOR
 	bool isDebugMode = true;
+#else
+	bool isDebugMode = false;
+#endif
 
 	public Cell SelectedCell => hightlightBlockUnderMouse.lastHightlightedCell;
 

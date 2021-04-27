@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98c4a3fe410e9845918b6011d970a22, type: 3}
+  m_Name: PlaceAssembler
+  m_EditorClassIdentifier: 
+  place: 5
+  craftTime: 2
+  ingradients:
+  - itemSO: {fileID: 11400000, guid: a627876475467df4eaa667706c575afe, type: 2}
+    count: 3
+  - itemSO: {fileID: 11400000, guid: 4176adcd7e6c2864682b9be455ded946, type: 2}
+    count: 3
+  results:
+  - itemSO: {fileID: 11400000, guid: 22bf6f636383cd5428c58c48efec4373, type: 2}
+    count: 1
+  resultSpriteOverride: {fileID: 0}

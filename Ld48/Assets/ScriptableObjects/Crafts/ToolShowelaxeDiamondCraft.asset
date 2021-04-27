@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f98c4a3fe410e9845918b6011d970a22, type: 3}
-  m_Name: ShowelaxeDiamondCraft
+  m_Name: ToolShowelaxeDiamondCraft
   m_EditorClassIdentifier: 
   place: 5
   craftTime: 5
@@ -24,3 +24,4 @@ MonoBehaviour:
   results:
   - itemSO: {fileID: 11400000, guid: aca127da2c927a14ca0495cd63fb4366, type: 2}
     count: 1
+  resultSpriteOverride: {fileID: 0}
