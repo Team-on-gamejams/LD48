@@ -44,7 +44,7 @@ The game is in active development. This demo contains only a small portion of th
  
 # What is Ludum dare?
 Ludum Dare is one of the world's largest and longest running Game Jam events. Is an event where you create a game from scratch in a weekend based on a theme.  
-[Zoo Keeper in Ludum Dare #46](https://ldjam.com/events/ludum-dare/46/$178354)  
+[Terrario in Ludum Dare #46](https://ldjam.com/events/ludum-dare/48/terrario)  
 
 
 # Credits
