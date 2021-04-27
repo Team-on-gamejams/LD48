@@ -72,3 +72,13 @@ MonoBehaviour:
   - {fileID: 1766230487101284412, guid: f76ac6f682049b240a909659cacb0aca, type: 3}
   - {fileID: 5192838622781181673, guid: 5628e495b13520e43a2d1cb0eadea202, type: 3}
   - {fileID: 3836034631832452897, guid: 5084d075d0524ef499fac9002e4c9b2f, type: 3}
+  crafts:
+  - {fileID: 11400000, guid: 131a9ad073f6d1842a18dfb8b0b21e79, type: 2}
+  - {fileID: 11400000, guid: 6f57377123b92684f96aba019689cc26, type: 2}
+  - {fileID: 11400000, guid: 8af60f9c26efd7b49aa72468b22f95ae, type: 2}
+  - {fileID: 11400000, guid: 847f0611c47b7584c82958044450f552, type: 2}
+  - {fileID: 11400000, guid: 8c0c7304b04bdea439a3e1a3a50a409f, type: 2}
+  - {fileID: 11400000, guid: ba4e2a05dd2b50e459a7926c26d0434c, type: 2}
+  - {fileID: 11400000, guid: d6c079e24aff3a04faff9c40ce13518c, type: 2}
+  - {fileID: 11400000, guid: 844bb8ca653e67549b7a407d15c59340, type: 2}
+  - {fileID: 11400000, guid: 86a20c25ce6763f41a518d813209da92, type: 2}

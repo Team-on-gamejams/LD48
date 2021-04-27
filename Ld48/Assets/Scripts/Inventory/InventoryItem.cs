@@ -25,6 +25,11 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		DrawItem();
 	}
 
+	private void OnDestroy() {
+		if (popup)
+			Destroy(popup.gameObject);
+	}
+
 	public void OnPointerEnter(PointerEventData eventData) {
 		if (item.itemSO != null)
 			popup.Show();
@@ -74,7 +79,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		if(cell && cell.foregroud == Cell.CellContentForegroud.None) {
 			ItemOnGround.CreateOnGround(item, dropPos);
 			item.itemSO = null;
-			inventory?.onInventoryChange();
+			inventory?.onInventoryChangeEvent();
 		}
 
 		DrawItem();
@@ -104,7 +109,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		draggingSlot.DrawItem();
 
 		draggingSlot = null;
-		inventory?.onInventoryChange();
+		inventory?.onInventoryChangeEvent();
 	}
 
 	public void DrawItem() {
@@ -126,13 +131,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 				count.text = item.count.ToString();
 			}
 
-			if(item.itemSO.maxCount == 1)
-				popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nNot stackable");
-			else
-				popup.SetText($"<b>{item.itemSO.name}</b>\n\n{item.itemSO.description}\n\nMax Stack: {item.itemSO.maxCount}");
-
 			itemImage.sprite = item.itemSO.sprite;
 			LeanTweenEx.ChangeAlpha(itemImage, 1.0f, 0.05f);
+
+			
+			popup.SetText(item.GetInfoForPopup());
+
 		}
 		else {
 			count.text = "";

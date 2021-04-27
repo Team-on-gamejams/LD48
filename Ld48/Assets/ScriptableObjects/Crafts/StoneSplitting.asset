@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f98c4a3fe410e9845918b6011d970a22, type: 3}
-  m_Name: BlockBrickCraft
+  m_Name: StoneSplitting
   m_EditorClassIdentifier: 
   place: 5
-  craftTime: 1
+  craftTime: 5
   ingradients:
   - itemSO: {fileID: 11400000, guid: 4176adcd7e6c2864682b9be455ded946, type: 2}
-    count: 2
+    count: 5
   results:
-  - itemSO: {fileID: 11400000, guid: 152800ad04e815c488a950c15a1e9a45, type: 2}
+  - itemSO: {fileID: 11400000, guid: a0e32aca324147e41947e69557add846, type: 2}
     count: 1
-  resultSpriteOverride: {fileID: 0}
+  - itemSO: {fileID: 11400000, guid: af89aa6567980d14da5de3070e05e3e9, type: 2}
+    count: 1
+  resultSpriteOverride: {fileID: 21300000, guid: bf9cbd4848183034fb4c0417af0eb95c,
+    type: 3}

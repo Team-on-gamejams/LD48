@@ -108,6 +108,38 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""SelectHotbar6"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d187990-9260-44c3-89e4-3ecb1229e35c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SelectHotbar7"",
+                    ""type"": ""Button"",
+                    ""id"": ""b87ca336-f073-4378-9494-befc7ad116f2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SelectHotbar8"",
+                    ""type"": ""Button"",
+                    ""id"": ""ceb66c3d-e3cd-4138-8298-336744f61d35"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SelectHotbar9"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb1d3c27-fcd2-4ef0-bf63-8e0a68fa6da1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""ToggleInventory"",
                     ""type"": ""Button"",
                     ""id"": ""d01eafff-b3c5-43c6-a5a8-b763face193f"",
@@ -446,6 +478,94 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b97fdd5a-ded9-4215-a107-d17cf75ec2c6"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3196dd2-0889-44e5-8e72-d0f28e5666a9"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd784173-a414-4fa6-b0eb-9eb95a878562"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f130a88-7831-4347-926c-f13a77109c0b"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c10d77a-a8fe-4650-9ead-47018199400b"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd16955c-f72e-4c91-9504-dc8ef1038b4a"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4df56508-46aa-4e03-91ce-bb266ef9a69c"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03208f1c-5751-4e19-bc6e-50de72b303bc"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SelectHotbar9"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1057,6 +1177,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_SelectHotbar3 = m_Player.FindAction("SelectHotbar3", throwIfNotFound: true);
         m_Player_SelectHotbar4 = m_Player.FindAction("SelectHotbar4", throwIfNotFound: true);
         m_Player_SelectHotbar5 = m_Player.FindAction("SelectHotbar5", throwIfNotFound: true);
+        m_Player_SelectHotbar6 = m_Player.FindAction("SelectHotbar6", throwIfNotFound: true);
+        m_Player_SelectHotbar7 = m_Player.FindAction("SelectHotbar7", throwIfNotFound: true);
+        m_Player_SelectHotbar8 = m_Player.FindAction("SelectHotbar8", throwIfNotFound: true);
+        m_Player_SelectHotbar9 = m_Player.FindAction("SelectHotbar9", throwIfNotFound: true);
         m_Player_ToggleInventory = m_Player.FindAction("ToggleInventory", throwIfNotFound: true);
         m_Player_HoldShift = m_Player.FindAction("HoldShift", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
@@ -1146,6 +1270,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SelectHotbar3;
     private readonly InputAction m_Player_SelectHotbar4;
     private readonly InputAction m_Player_SelectHotbar5;
+    private readonly InputAction m_Player_SelectHotbar6;
+    private readonly InputAction m_Player_SelectHotbar7;
+    private readonly InputAction m_Player_SelectHotbar8;
+    private readonly InputAction m_Player_SelectHotbar9;
     private readonly InputAction m_Player_ToggleInventory;
     private readonly InputAction m_Player_HoldShift;
     private readonly InputAction m_Player_Jump;
@@ -1164,6 +1292,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @SelectHotbar3 => m_Wrapper.m_Player_SelectHotbar3;
         public InputAction @SelectHotbar4 => m_Wrapper.m_Player_SelectHotbar4;
         public InputAction @SelectHotbar5 => m_Wrapper.m_Player_SelectHotbar5;
+        public InputAction @SelectHotbar6 => m_Wrapper.m_Player_SelectHotbar6;
+        public InputAction @SelectHotbar7 => m_Wrapper.m_Player_SelectHotbar7;
+        public InputAction @SelectHotbar8 => m_Wrapper.m_Player_SelectHotbar8;
+        public InputAction @SelectHotbar9 => m_Wrapper.m_Player_SelectHotbar9;
         public InputAction @ToggleInventory => m_Wrapper.m_Player_ToggleInventory;
         public InputAction @HoldShift => m_Wrapper.m_Player_HoldShift;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
@@ -1207,6 +1339,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @SelectHotbar5.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar5;
                 @SelectHotbar5.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar5;
                 @SelectHotbar5.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar5;
+                @SelectHotbar6.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar6;
+                @SelectHotbar6.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar6;
+                @SelectHotbar6.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar6;
+                @SelectHotbar7.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar7;
+                @SelectHotbar7.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar7;
+                @SelectHotbar7.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar7;
+                @SelectHotbar8.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar8;
+                @SelectHotbar8.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar8;
+                @SelectHotbar8.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar8;
+                @SelectHotbar9.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar9;
+                @SelectHotbar9.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar9;
+                @SelectHotbar9.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelectHotbar9;
                 @ToggleInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
                 @ToggleInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
                 @ToggleInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInventory;
@@ -1253,6 +1397,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @SelectHotbar5.started += instance.OnSelectHotbar5;
                 @SelectHotbar5.performed += instance.OnSelectHotbar5;
                 @SelectHotbar5.canceled += instance.OnSelectHotbar5;
+                @SelectHotbar6.started += instance.OnSelectHotbar6;
+                @SelectHotbar6.performed += instance.OnSelectHotbar6;
+                @SelectHotbar6.canceled += instance.OnSelectHotbar6;
+                @SelectHotbar7.started += instance.OnSelectHotbar7;
+                @SelectHotbar7.performed += instance.OnSelectHotbar7;
+                @SelectHotbar7.canceled += instance.OnSelectHotbar7;
+                @SelectHotbar8.started += instance.OnSelectHotbar8;
+                @SelectHotbar8.performed += instance.OnSelectHotbar8;
+                @SelectHotbar8.canceled += instance.OnSelectHotbar8;
+                @SelectHotbar9.started += instance.OnSelectHotbar9;
+                @SelectHotbar9.performed += instance.OnSelectHotbar9;
+                @SelectHotbar9.canceled += instance.OnSelectHotbar9;
                 @ToggleInventory.started += instance.OnToggleInventory;
                 @ToggleInventory.performed += instance.OnToggleInventory;
                 @ToggleInventory.canceled += instance.OnToggleInventory;
@@ -1454,6 +1610,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnSelectHotbar3(InputAction.CallbackContext context);
         void OnSelectHotbar4(InputAction.CallbackContext context);
         void OnSelectHotbar5(InputAction.CallbackContext context);
+        void OnSelectHotbar6(InputAction.CallbackContext context);
+        void OnSelectHotbar7(InputAction.CallbackContext context);
+        void OnSelectHotbar8(InputAction.CallbackContext context);
+        void OnSelectHotbar9(InputAction.CallbackContext context);
         void OnToggleInventory(InputAction.CallbackContext context);
         void OnHoldShift(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);

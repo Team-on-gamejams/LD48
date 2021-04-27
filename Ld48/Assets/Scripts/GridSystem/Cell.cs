@@ -106,8 +106,7 @@ public class Cell : MonoBehaviour {
 				destoyVisual.UpdateVisual(0);
 
 				if (isNeedLoot) {
-					ItemOnGround.CreateOnGround(new ItemData(
-						foregroundBlock.itemToDrop.item.itemSO, 1),
+					ItemOnGround.CreateOnGround(foregroundBlock.itemToDrop.item.CloneItem().SetCount(1),
 						transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)
 					));
 				}
@@ -130,7 +129,7 @@ public class Cell : MonoBehaviour {
 				currMineTime -= oreBlock.neededTimeToBroke;
 				destoyVisual.UpdateVisual(0);
 
-				ItemOnGround.CreateOnGround(new ItemData(oreBlock.itemToDrop.item.itemSO, 1), transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)));
+				ItemOnGround.CreateOnGround(oreBlock.itemToDrop.item.CloneItem().SetCount(1), transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)));
 			}
 			else {
 				destoyVisual.UpdateVisual(brokePersent);

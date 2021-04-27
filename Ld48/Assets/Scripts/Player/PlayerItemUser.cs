@@ -26,7 +26,7 @@ public class PlayerItemUser : MonoBehaviour {
 
 	private void Awake() {
 		hotbar.onChangeSelection += RedrawItemsInHand;
-		hotbar.onInventoryChange += RedrawItemsInHand;
+		hotbar.onInventoryChangeEvent += RedrawItemsInHand;
 	}
 
 	void Start() {
@@ -35,7 +35,7 @@ public class PlayerItemUser : MonoBehaviour {
 
 	private void OnDestroy() {
 		hotbar.onChangeSelection -= RedrawItemsInHand;
-		hotbar.onInventoryChange -= RedrawItemsInHand;
+		hotbar.onInventoryChangeEvent -= RedrawItemsInHand;
 	}
 
 	private void Update() {
@@ -44,7 +44,7 @@ public class PlayerItemUser : MonoBehaviour {
 				bool needUIRedraw = itemInLeftHand.UseItemWhileInHotbar();
 				if (needUIRedraw) {
 					hotbar.UpdateItemLeftHand();
-					hotbar?.onInventoryChange();
+					hotbar?.onInventoryChangeEvent();
 				}
 			}
 
@@ -52,7 +52,7 @@ public class PlayerItemUser : MonoBehaviour {
 				bool needUIRedraw = itemInRightHand.UseItemWhileInHotbarDualWield();
 				if (needUIRedraw) {
 					hotbar.UpdateItemRightHand();
-					hotbar?.onInventoryChange();
+					hotbar?.onInventoryChangeEvent();
 				}
 			}
 		}
@@ -61,7 +61,7 @@ public class PlayerItemUser : MonoBehaviour {
 				bool needUIRedraw = itemInLeftHand.UseItemWhileInHotbar();
 				if (needUIRedraw) {
 					hotbar.UpdateItemLeftHand();
-					hotbar?.onInventoryChange();
+					hotbar?.onInventoryChangeEvent();
 				}
 			}
 
@@ -69,7 +69,7 @@ public class PlayerItemUser : MonoBehaviour {
 				bool needUIRedraw = itemInRightHand.UseItemWhileInHotbar();
 				if (needUIRedraw) {
 					hotbar.UpdateItemRightHand();
-					hotbar?.onInventoryChange();
+					hotbar?.onInventoryChangeEvent();
 				}
 			}
 		}

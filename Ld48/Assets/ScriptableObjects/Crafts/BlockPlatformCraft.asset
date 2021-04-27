@@ -19,4 +19,5 @@ MonoBehaviour:
     count: 1
   results:
   - itemSO: {fileID: 11400000, guid: 5e1484011a4dcf64f9d6819854e07012, type: 2}
-    count: 2
+    count: 1
+  resultSpriteOverride: {fileID: 0}

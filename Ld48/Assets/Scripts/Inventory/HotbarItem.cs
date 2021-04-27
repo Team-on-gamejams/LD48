@@ -24,6 +24,10 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 		base.Awake();
 
 		hotbar = inventory as Hotbar;
+
+		selectedFrameLeftImage.color = selectedFrameLeftImage.color.SetA(0.0f);
+		selectedFrameRightImage.color = selectedFrameRightImage.color.SetA(0.0f);
+		selectedFrameBothImage.color = selectedFrameBothImage.color.SetA(0.0f);
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {

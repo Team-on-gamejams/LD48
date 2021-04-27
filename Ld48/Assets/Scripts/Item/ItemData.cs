@@ -9,7 +9,7 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 [Serializable]
-public class ItemData {
+public class ItemData : ICloneable {
 	public ItemSO itemSO;
 	public int count;
 
@@ -90,5 +90,38 @@ public class ItemData {
 		}
 
 		return false;
+	}
+
+	public string GetInfoForPopup() {
+		string popupText = "";
+		popupText += $"<b>{itemSO.name}</b>\n\n";
+		popupText += $"{itemSO.description}\n\n";
+		if (itemSO.maxCount == 1)
+			popupText += $"Not stackable\n\n";
+		else
+			popupText += $"Max Stack: {itemSO.maxCount}\n\n";
+
+		popupText += $"Meta type: {itemSO.metaType}";
+
+		switch (itemSO.metaType) {
+			case ItemSO.ItemMetaType.MiningTool:
+				popupText += $"\nMining force: {itemSO.miningForce}";
+				break;
+		}
+
+		return popupText;
+	}
+
+	public object Clone() {
+		return MemberwiseClone();
+	}
+
+	public ItemData CloneItem() {
+		return Clone() as ItemData;
+	}
+
+	public ItemData SetCount(int _count) {
+		count = _count;
+		return this;
 	}
 }

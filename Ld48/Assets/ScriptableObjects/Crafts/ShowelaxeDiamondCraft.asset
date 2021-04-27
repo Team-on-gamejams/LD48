@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f98c4a3fe410e9845918b6011d970a22, type: 3}
-  m_Name: BlockBrickCraft
+  m_Name: ShowelaxeDiamondCraft
   m_EditorClassIdentifier: 
   place: 5
-  craftTime: 1
+  craftTime: 5
   ingradients:
   - itemSO: {fileID: 11400000, guid: 4176adcd7e6c2864682b9be455ded946, type: 2}
-    count: 2
+    count: 10
+  - itemSO: {fileID: 11400000, guid: 25e714d41abef044892d2b93f2275bb7, type: 2}
+    count: 10
+  - itemSO: {fileID: 11400000, guid: 06ac6ffad13f70a44b736b48c8037007, type: 2}
+    count: 10
   results:
-  - itemSO: {fileID: 11400000, guid: 152800ad04e815c488a950c15a1e9a45, type: 2}
+  - itemSO: {fileID: 11400000, guid: aca127da2c927a14ca0495cd63fb4366, type: 2}
     count: 1
-  resultSpriteOverride: {fileID: 0}

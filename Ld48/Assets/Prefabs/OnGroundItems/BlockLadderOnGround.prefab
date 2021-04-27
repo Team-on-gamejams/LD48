@@ -52,7 +52,7 @@ MonoBehaviour:
   placebleBlock: {fileID: -356071326622979661, guid: d72676587b20927428b75473ec67e4d0,
     type: 3}
   sr: {fileID: 3713613722133090354}
-  boxCollider: {fileID: 3713613722133090355}
+  collider: {fileID: 3713613722133090355}
   rb: {fileID: 3713613722133090356}
 --- !u!212 &3713613722133090354
 SpriteRenderer:
