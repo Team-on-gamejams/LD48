@@ -76,6 +76,6 @@ Make sure to set the x86_64 as executable before running.
 
 
 # Screenshots
-![Screenshot1](Screenshots/1.jpg)  
-![Screenshot2](Screenshots/2.jpg)  
-![Screenshot3](Screenshots/3.jpg)  
+![Screenshot1](Screenshots/1.jpeg)  
+![Screenshot2](Screenshots/2.jpeg)  
+![Screenshot3](Screenshots/3.jpeg)  
