@@ -75,13 +75,51 @@ public class Inventory : MonoBehaviour {
 					items[i].DrawItem();
 				}
 
-				if (item.count == 0) 
+				if (item.count == 0)
 					break;
 			}
 		}
 
 		onInventoryChangeEvent?.Invoke();
 		return item;
+	}
+
+	public bool IsCanFitItems(ItemData[] items) {
+		foreach (var item in items) {
+			if (!IsCanFitItem(item))
+				return false;
+		}
+		return true;
+	}
+
+	public bool IsCanFitItem(ItemData item) {
+		int canFit = 0;
+
+		for (byte i = 0; i < items.Length; ++i) {
+			if (items[i].item.itemSO != null) {
+				if (items[i].item.itemSO.type == item.itemSO.type)
+					canFit += item.itemSO.maxCount - items[i].item.count;
+			}
+			else {
+				canFit += item.itemSO.maxCount;
+			}
+
+		}
+
+		if (canFit < item.count && delegatedInventory != null) {
+			for (byte i = 0; i < delegatedInventory.items.Length; ++i) {
+				if (delegatedInventory.items[i].item.itemSO != null) {
+					if (delegatedInventory.items[i].item.itemSO.type == item.itemSO.type)
+						canFit += item.itemSO.maxCount - delegatedInventory.items[i].item.count;
+				}
+				else {
+					canFit += item.itemSO.maxCount;
+				}
+
+			}
+		}
+
+		return canFit >= item.count;
 	}
 
 	public bool ContainsItem(ItemData item) {
@@ -91,7 +129,7 @@ public class Inventory : MonoBehaviour {
 			if (items[i].item.itemSO != null && items[i].item.itemSO.type == item.itemSO.type && (findCount += items[i].item.count) > item.count)
 				break;
 
-		if(findCount < item.count && delegatedInventory != null)
+		if (findCount < item.count && delegatedInventory != null)
 			for (byte i = 0; i < delegatedInventory.items.Length; ++i)
 				if (delegatedInventory.items[i].item.itemSO != null && delegatedInventory.items[i].item.itemSO.type == item.itemSO.type && (findCount += delegatedInventory.items[i].item.count) > item.count)
 					break;
@@ -109,7 +147,7 @@ public class Inventory : MonoBehaviour {
 		}
 
 		for (byte i = 0; i < items.Length; ++i) {
-			if(items[i].item.itemSO != null && items[i].item.itemSO.type == item.itemSO.type) {
+			if (items[i].item.itemSO != null && items[i].item.itemSO.type == item.itemSO.type) {
 				if (items[i].item.count > item.count) {
 					items[i].item.count -= item.count;
 

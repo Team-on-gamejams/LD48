@@ -44,18 +44,24 @@ public class CraftingUI : MonoBehaviour {
 	}
 
 	private void Update() {
-		if(currCraft) {
-			currCraftTime += Time.deltaTime * craftSpeedMod;
-			currCraft.UpdateCraftTime(currCraftTime);
-
+		if (currCraft) {
+			if (currCraft.craft.craftTime > currCraftTime) {
+				currCraftTime += Time.deltaTime * craftSpeedMod;
+				currCraft.UpdateCraftTime(currCraftTime);
+			}
+				
 			if (currCraft.craft.craftTime <= currCraftTime) {
-				currCraftTime -= currCraft.craft.craftTime;
+				if (inventoryToAddItem.IsCanFitItems(currCraft.craft.results)) {
+					currCraftTime -= currCraft.craft.craftTime;
+					
+					foreach (var result in currCraft.craft.results)
+						inventoryToAddItem.AddItem(result.CloneItem());
 
-				//TODO: check is there enough space
-				foreach (var result in currCraft.craft.results) 
-					inventoryToAddItem.AddItem(result.CloneItem());
-
-				OnEndCraft();
+					OnEndCraft();
+				}
+				else {
+					//TODO: Inventory full popup text
+				}
 			}
 		}
 	}
@@ -81,13 +87,17 @@ public class CraftingUI : MonoBehaviour {
 	}
 
 	void OnClickOnItemInQueue(CraftSO craft) {
-		currCraftTime = 0;
+		if (inventoryToRemoveItem.IsCanFitItems(currCraft.craft.ingradients)) {
+			currCraftTime = 0;
 
-		//TODO: check is there enough space
-		foreach (var ingradient in currCraft.craft.ingradients)
-			inventoryToRemoveItem.AddItem(ingradient.CloneItem());
+			foreach (var ingradient in currCraft.craft.ingradients)
+				inventoryToRemoveItem.AddItem(ingradient.CloneItem());
 
-		OnEndCraft();
+			OnEndCraft();
+		}
+		else {
+			//TODO: Inventory full popup text
+		}
 	}
 
 	void OnEndCraft() {
