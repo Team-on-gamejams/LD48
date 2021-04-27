@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tips:
-  - You can set loading tips in [GlobalCanvas/Loading image] prefab. Or disable them
+  - Use 2 showelaxes to mine with both hands
   onLoadingEndClip: {fileID: 8300000, guid: 11711bfded1dce649b68c1a1f12e4cca, type: 3}
   onAnyKeyPressClip: {fileID: 8300000, guid: b9c8758345aeecc45965d2d946f6726c, type: 3}
   additionalDelay: {x: 0.5, y: 1}
@@ -1032,6 +1032,11 @@ PrefabInstance:
       propertyPath: loadingBarParent
       value: 
       objectReference: {fileID: 7052802825514451059}
+    - target: {fileID: 114199745479478546, guid: 6c809c8c07559404f91943282277eee2,
+        type: 3}
+      propertyPath: m_defaultEffectType
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 3869755286993628372, guid: 6c809c8c07559404f91943282277eee2,
         type: 3}
       propertyPath: m_Pivot.x
