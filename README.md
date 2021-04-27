@@ -1,5 +1,5 @@
 # [Terrario](https://teamon.itch.io/terrario)
-Made in 72 hours for [Ludum Dare 48](https://ldjam.com/)  
+Made in 72 hours for [Ludum Dare 48](https://ldjam.com/events/ludum-dare/48/terrario)  
 Theme: Deeper and deeper  
 
 Terrario, it's a game where terraria meets factorio.
