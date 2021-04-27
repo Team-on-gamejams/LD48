@@ -184,6 +184,38 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	public void OnSelectHotbar6(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Performed:
+				hotbar.SetSelection(6, !isHoldShift);
+				break;
+		}
+	}
+
+	public void OnSelectHotbar7(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Performed:
+				hotbar.SetSelection(7, !isHoldShift);
+				break;
+		}
+	}
+
+	public void OnSelectHotbar8(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Performed:
+				hotbar.SetSelection(8, !isHoldShift);
+				break;
+		}
+	}
+
+	public void OnSelectHotbar9(InputAction.CallbackContext context) {
+		switch (context.phase) {
+			case InputActionPhase.Performed:
+				hotbar.SetSelection(9, !isHoldShift);
+				break;
+		}
+	}
+
 	bool TryPickupItemOnGroundOnMouseDown() {
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.ItemsOnGroundMask); 
 		if(
