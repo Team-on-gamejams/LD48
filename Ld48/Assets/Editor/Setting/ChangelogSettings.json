@@ -5,7 +5,38 @@
             "date": "4/26/2021",
             "updateName": "Jam edition",
             "descriptionText": "Jam prototype release",
-            "notes": []
+            "notes": [
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Dual wielding. You can hold items in both hands and use them simultaneously."
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Broke and build blocks"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Smelting & crafting"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Mine resources"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Two-handed use for tools. Hold tool in both hands to use special ability"
+                }
+            ]
         }
     ],
     "readme": "Game page - https://teamon.itch.io/terrario\nSource code - https://github.com/Team-on/LD48https://github.com/Team-on/LD48\n\n\nAvailable in Windows, OSX and Linux\nIf you encounter any problem, please leave a issue! \nUse in-game form for that, report it in discord, or email me directly to timonsol13@gmail.com\n\r\nMac Version Notes:\r\nIf you get \"this package is from an unidentified developer\" right click (or control-click) and select open. You should now get the option to open anyways.\r\n\r\nLinux Version Notes:\r\nMake sure to set the x86_64 as executable before running.\r\n\n\nUsed assets:\nhttps://github.com/Team-on/UnityGameTemplate/wiki/Used-assets"
