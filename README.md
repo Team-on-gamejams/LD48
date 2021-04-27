@@ -38,8 +38,8 @@ The game is in active development. This demo contains only a small portion of th
  * Mouse - aim
  * LBM - use item in left hand
  * RMB - use item in right hand
- * 1..6 - select item in left hand
- * Shift + 1..6 - select item in right hand
+ * 1..0 - select item in left hand
+ * Shift + 1..0 - select item in right hand
  * Click on toolbar with LMB or RMB to select item. Click with middle mouse button to hold item in both hands
  
 # What is Ludum dare?
