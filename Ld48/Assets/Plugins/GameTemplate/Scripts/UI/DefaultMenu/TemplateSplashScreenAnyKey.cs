@@ -39,6 +39,7 @@ public class TemplateSplashScreenAnyKey : MenuBase {
 			timePassed += Time.deltaTime;
 			if (timePassed >= timeToShowAnyKeyText) {
 				LeanTweenEx.ChangeAlpha(anyKeyText, 1.0f, 0.2f)
+					.setEase(LeanTweenType.easeInOutQuad)
 					.setOnComplete(()=> { 
 						anyKeyTextAlphaLerp.enabled = anyKeyTextSizeLerp.enabled = true;
 					});

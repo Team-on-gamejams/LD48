@@ -63,7 +63,7 @@ public abstract class MenuBase : MonoBehaviour {
 			cg.alpha = 1.0f;
 		}
 		else {
-			LeanTweenEx.ChangeAlpha(cg, 1.0f, animTime);
+			LeanTweenEx.ChangeAlpha(cg, 1.0f, animTime).setEase(LeanTweenType.easeInOutQuad);
 		}
 	}
 
@@ -82,7 +82,7 @@ public abstract class MenuBase : MonoBehaviour {
 		else {
 			SaveLastButton();
 
-			LeanTweenEx.ChangeAlpha(cg, 0.0f, animTime)
+			LeanTweenEx.ChangeAlpha(cg, 0.0f, animTime).setEase(LeanTweenType.easeInOutQuad)
 			.setOnComplete(() => {
 				gameObject.SetActive(false);
 				enabled = false;

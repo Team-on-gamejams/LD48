@@ -31,7 +31,7 @@ public class Popup : MonoBehaviour {
 		isShowed = true;
 
 		LeanTween.cancel(gameObject, false);
-		LeanTweenEx.ChangeAlpha(cg, 1.0f, 0.1f);
+		LeanTweenEx.ChangeAlpha(cg, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 
 		transform.SetParent(textField.canvas.transform);
 	}
@@ -40,7 +40,7 @@ public class Popup : MonoBehaviour {
 		isShowed = false;
 
 		LeanTween.cancel(gameObject, false);
-		LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f);
+		LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 
 		transform.SetParent(defaultParent);
 	}

@@ -55,13 +55,13 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
 				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
 				
-				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 0.0f, 0.1f);
-				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 1.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 			else {
 				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
 				
-				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 1.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 		}
 		else {
@@ -69,13 +69,13 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
 				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
 
-				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 0.0f, 0.1f);
-				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 1.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 			else {
 				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
 				
-				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 1.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 		}
 	}
@@ -93,13 +93,13 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
 				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
 
-				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 0.0f, 0.1f);
-				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 1.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 			else {
 				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
 				
-				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 0.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 		}
 		else {
@@ -107,13 +107,13 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 				LeanTween.cancel(selectedFrameLeftImage.gameObject, false);
 				LeanTween.cancel(selectedFrameBothImage.gameObject, false);
 
-				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 0.0f, 0.1f);
-				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 1.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameBothImage, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+				LeanTweenEx.ChangeAlpha(selectedFrameLeftImage, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 			else {
 				LeanTween.cancel(selectedFrameRightImage.gameObject, false);
 			
-				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 0.0f, 0.1f);
+				LeanTweenEx.ChangeAlpha(selectedFrameRightImage, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 			}
 		}
 	}

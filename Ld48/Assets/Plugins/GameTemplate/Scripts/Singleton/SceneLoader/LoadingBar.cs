@@ -107,6 +107,7 @@ public class LoadingBar : MonoBehaviour {
 			AudioManager.Instance.Play(onLoadingEndClip);
 		
 		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 1.0f, 0.5f).setIgnoreTimeScale(true)
+		.setEase(LeanTweenType.easeInOutQuad)
 		.setOnComplete(()=> {
 			pressAnyKeyTextAlphaLerp.enabled = true;
 			pressAnyKeyTextSizeLerp.enabled = true;
@@ -166,7 +167,7 @@ public class LoadingBar : MonoBehaviour {
 		if (onAnyKeyPressClip)
 			AudioManager.Instance.Play(onAnyKeyPressClip);
 
-		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 0.0f, 0.2f).setIgnoreTimeScale(true);
+		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 0.0f, 0.2f).setIgnoreTimeScale(true).setEase(LeanTweenType.easeInOutQuad);
 
 		StartCoroutine(OnKeyPressRoutine());
 

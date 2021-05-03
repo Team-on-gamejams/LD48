@@ -34,12 +34,12 @@ public class UITabGroup : MonoBehaviour {
 		if (isShowed) {
 			isShowed = false;
 			cg.blocksRaycasts = cg.interactable = false;
-			LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f);
+			LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 		}
 		else {
 			isShowed = true;
 			cg.blocksRaycasts = cg.interactable = true;
-			LeanTweenEx.ChangeAlpha(cg, 1.0f, 0.1f);
+			LeanTweenEx.ChangeAlpha(cg, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 		}
 	}
 

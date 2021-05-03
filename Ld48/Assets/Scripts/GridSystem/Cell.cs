@@ -67,12 +67,12 @@ public class Cell : MonoBehaviour {
 
 	public void Hightlight() {
 		LeanTween.cancel(hightlightSr.gameObject, false);
-		LeanTweenEx.ChangeAlpha(hightlightSr, 1.0f, 0.1f);
+		LeanTweenEx.ChangeAlpha(hightlightSr, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 	}
 
 	public void UnHightlight() {
 		LeanTween.cancel(hightlightSr.gameObject, false);
-		LeanTweenEx.ChangeAlpha(hightlightSr, 0.0f, 0.1f);
+		LeanTweenEx.ChangeAlpha(hightlightSr, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
 	}
 
 	public bool IsPlayerInside() {

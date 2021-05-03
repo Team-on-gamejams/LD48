@@ -132,7 +132,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			}
 
 			itemImage.sprite = item.itemSO.sprite;
-			LeanTweenEx.ChangeAlpha(itemImage, 1.0f, 0.05f);
+			LeanTweenEx.ChangeAlpha(itemImage, 1.0f, 0.05f).setEase(LeanTweenType.easeInOutQuad);
 
 			
 			popup.SetText(item.GetInfoForPopup());
