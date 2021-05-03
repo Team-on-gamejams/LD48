@@ -32,6 +32,14 @@ namespace UnityConstants
         /// Name of tag 'GameController'.
         /// </summary>
         public const string GameController = "GameController";
+        /// <summary>
+        /// Name of tag 'OneWayPlatform'.
+        /// </summary>
+        public const string OneWayPlatform = "OneWayPlatform";
+        /// <summary>
+        /// Name of tag 'ForegroundPlace'.
+        /// </summary>
+        public const string ForegroundPlace = "ForegroundPlace";
     }
 
     public static class SortingLayers
@@ -56,6 +64,10 @@ namespace UnityConstants
         /// ID of sorting layer 'BlockBuilding'.
         /// </summary>
         public const int BlockBuilding = -1800884847;
+        /// <summary>
+        /// ID of sorting layer 'BlockOverlay'.
+        /// </summary>
+        public const int BlockOverlay = -414130729;
         /// <summary>
         /// ID of sorting layer 'ItemsOnGround'.
         /// </summary>
@@ -112,6 +124,14 @@ namespace UnityConstants
         /// Index of layer 'WorldObjects'.
         /// </summary>
         public const int WorldObjects = 8;
+        /// <summary>
+        /// Index of layer 'Ladder'.
+        /// </summary>
+        public const int Ladder = 9;
+        /// <summary>
+        /// Index of layer 'WorldObjectsNoPlayerCollision'.
+        /// </summary>
+        public const int WorldObjectsNoPlayerCollision = 10;
 
         /// <summary>
         /// Bitmask of layer 'Default'.
@@ -145,6 +165,14 @@ namespace UnityConstants
         /// Bitmask of layer 'WorldObjects'.
         /// </summary>
         public const int WorldObjectsMask = 1 << 8;
+        /// <summary>
+        /// Bitmask of layer 'Ladder'.
+        /// </summary>
+        public const int LadderMask = 1 << 9;
+        /// <summary>
+        /// Bitmask of layer 'WorldObjectsNoPlayerCollision'.
+        /// </summary>
+        public const int WorldObjectsNoPlayerCollisionMask = 1 << 10;
     }
 
     public static class Scenes
@@ -189,6 +217,14 @@ namespace UnityConstants
         /// Input axis 'Cancel'.
         /// </summary>
         public const string Cancel = "Cancel";
+        /// <summary>
+        /// Input axis 'Jump'.
+        /// </summary>
+        public const string Jump = "Jump";
+        /// <summary>
+        /// Input axis 'Fire3'.
+        /// </summary>
+        public const string Fire3 = "Fire3";
     }
 }
 

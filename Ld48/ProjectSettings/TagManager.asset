@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - OneWayPlatform
+  - ForegroundPlace
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - ItemsOnGround
   - WorldObjects
   - Ladder
-  - 
+  - WorldObjectsNoPlayerCollision
   - 
   - 
   - 

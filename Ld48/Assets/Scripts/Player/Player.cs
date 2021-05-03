@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour {
 	[Header("Inventory Data"), Space]
 	public float maxInteractDistance = 5.0f;
+	[NonSerialized] public float maxInteractDistanceSqr;
 
 	[Header("Refs"), Space]
 	public PlayerMoving mover;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour {
 
 	bool isHoldShift = false;
 	ItemOnGround buttonDownItem;
+	ForegroundPlaceBase foregroundPlace;
 
 #if UNITY_EDITOR
 	private void OnValidate() {
@@ -35,6 +37,8 @@ public class Player : MonoBehaviour {
 
 	private void Awake() {
 		GameManager.Instance.player = this;
+
+		maxInteractDistanceSqr = maxInteractDistance * maxInteractDistance;
 	}
 
 	public void OnMove(InputAction.CallbackContext context) {
@@ -81,11 +85,16 @@ public class Player : MonoBehaviour {
 				if (TryPickupItemOnGroundOnMouseDown())
 					return;
 
-				if(IsCanUseItemInToolbar())
+				if (TryUsePlaceOnMouseDown())
+					return;
+
+				if (IsCanUseItemInToolbar())
 					itemUser.StartUseLeftItem();
 				break;
+
 			case InputActionPhase.Canceled:
 				TryPickupItemOnGroundOnMouseUp();
+				TryUsePlaceOnMouseUp();
 				itemUser.StoptUseLeftItem();
 				break;
 		}
@@ -97,6 +106,7 @@ public class Player : MonoBehaviour {
 				if (IsCanUseItemInToolbar())
 					itemUser.StartUseRightItem();
 				break;
+
 			case InputActionPhase.Canceled:
 				itemUser.StoptUseRightItem();
 				break;
@@ -220,7 +230,7 @@ public class Player : MonoBehaviour {
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.ItemsOnGroundMask); 
 		if(
 			hit.collider != null && 
-			((Vector3)hit.point - GameManager.Instance.player.mover.transform.position).magnitude <= GameManager.Instance.player.maxInteractDistance
+			((Vector3)hit.point - GameManager.Instance.player.mover.transform.position).sqrMagnitude <= GameManager.Instance.player.maxInteractDistanceSqr
 		) {
 			buttonDownItem = hit.collider.GetComponent<ItemOnGround>();
 			return true;
@@ -232,7 +242,7 @@ public class Player : MonoBehaviour {
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.ItemsOnGroundMask);
 		if (
 			hit.collider != null &&
-			((Vector3)hit.point - GameManager.Instance.player.mover.transform.position).magnitude <= GameManager.Instance.player.maxInteractDistance &&
+			((Vector3)hit.point - GameManager.Instance.player.mover.transform.position).sqrMagnitude <= GameManager.Instance.player.maxInteractDistanceSqr &&
 			hit.collider.GetComponent<ItemOnGround>() == buttonDownItem
 		) {
 			ItemData leftItem = GameManager.Instance.player.inventory.AddItem(buttonDownItem.item);
@@ -261,5 +271,32 @@ public class Player : MonoBehaviour {
 			return false;
 
 		return true;
+	}
+
+	bool TryUsePlaceOnMouseDown() {
+		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.WorldObjectsNoPlayerCollisionMask);
+		if (
+			hit.collider != null && hit.collider.gameObject.CompareTag(UnityConstants.Tags.ForegroundPlace) &&
+			((Vector3)hit.point - GameManager.Instance.player.mover.transform.position).sqrMagnitude <= GameManager.Instance.player.maxInteractDistanceSqr
+		) {
+			foregroundPlace = hit.collider.GetComponent<ForegroundPlaceBase>();
+
+			if(foregroundPlace)
+				return true;
+		}
+		return false;
+	}
+
+	void TryUsePlaceOnMouseUp() {
+		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.WorldObjectsNoPlayerCollisionMask);
+		if (
+			hit.collider != null && hit.collider.gameObject.CompareTag(UnityConstants.Tags.ForegroundPlace) &&
+			((Vector3)hit.point - GameManager.Instance.player.mover.transform.position).sqrMagnitude <= GameManager.Instance.player.maxInteractDistanceSqr &&
+			hit.collider.GetComponent<ForegroundPlaceBase>() == foregroundPlace
+		) {
+			foregroundPlace.ToggleUI();
+
+			foregroundPlace = null;
+		}
 	}
 }
