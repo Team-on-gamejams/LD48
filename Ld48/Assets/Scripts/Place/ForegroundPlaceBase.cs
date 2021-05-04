@@ -11,6 +11,15 @@ public class ForegroundPlaceBase : MonoBehaviour {
 
 	bool isShowed;
 
+#if UNITY_EDITOR
+	private void OnValidate() {
+		if (!canvas)
+			canvas = GetComponent<Canvas>();
+		if (!cg)
+			cg = GetComponent<CanvasGroup>();
+	}
+#endif
+
 	private void Awake() {
 		isShowed = false;
 		cg.interactable = cg.blocksRaycasts = false;
@@ -34,7 +43,7 @@ public class ForegroundPlaceBase : MonoBehaviour {
 		}
 	}
 
-	public void ShowUI() {
+	public virtual void ShowUI() {
 		isShowed = true;
 		
 		canvas.sortingOrder = canvasSortOrder++;
@@ -44,7 +53,7 @@ public class ForegroundPlaceBase : MonoBehaviour {
 		LeanTweenEx.ChangeAlpha(cg, 1.0f, 0.2f).setEase(LeanTweenType.easeInOutQuad);
 	}
 
-	public void HideUI() {
+	public virtual void HideUI() {
 		isShowed = false;
 		
 		--canvasSortOrder;

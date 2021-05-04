@@ -166,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3024304187414211834}
   - component: {fileID: 2118555937331812832}
+  - component: {fileID: 8212376704239617665}
   - component: {fileID: 2883047306108132481}
   - component: {fileID: 3450759670849794895}
   - component: {fileID: 2959078259750310482}
@@ -212,6 +213,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cg: {fileID: 2883047306108132481}
   textField: {fileID: 2003782969924386332}
+--- !u!223 &8212376704239617665
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009002736242717562}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
 --- !u!225 &2883047306108132481
 CanvasGroup:
   m_ObjectHideFlags: 0

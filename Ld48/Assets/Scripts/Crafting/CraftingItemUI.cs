@@ -28,18 +28,13 @@ public class CraftingItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		craft = _craft;
 		isNeededPlace = craft.place.HasFlag(_myPlace);
 		onClick += _onClick;
+
+		isEnoughIngradients = true;
+		UpdateVisual();
 	}
 
 	public void CheckIsEnoughIngradients(Inventory inventory) {
-		foreach (var ingradient in craft.ingradients) {
-			if (!inventory.ContainsItem(ingradient)) {
-				isEnoughIngradients = false;
-				UpdateVisual();
-				return;
-			}
-		}
-
-		isEnoughIngradients = true;
+		isEnoughIngradients = inventory.CheckIsEnoughIngradients(craft);
 		UpdateVisual();
 	}
 

@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 4194056637636873576}
   - component: {fileID: 3183129507079530184}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonClose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -898,6 +898,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1075,6 +1085,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1252,6 +1272,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1429,6 +1459,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1606,6 +1646,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1783,6 +1833,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1960,6 +2020,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: item.itemSO
@@ -2142,6 +2212,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: item.itemSO
@@ -2324,6 +2404,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2501,6 +2591,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3730608671002983374, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184266575886737714, guid: f526414fc023a30428835605be5dd6ec,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 7890815167290911318}
     - target: {fileID: 6275826253745355349, guid: f526414fc023a30428835605be5dd6ec,
         type: 3}
       propertyPath: m_Pivot.x

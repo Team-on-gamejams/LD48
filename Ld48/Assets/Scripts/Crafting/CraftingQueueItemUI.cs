@@ -17,7 +17,7 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 	[SerializeField] protected Image fillCircle;
 	[SerializeField] protected Popup popup;
 
-	Action<CraftSO> onClick;
+	Action<CraftingQueueItemUI> onClick;
 	float currTime;
 
 	private void Awake() {
@@ -29,7 +29,7 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 			Destroy(popup.gameObject);
 	}
 
-	public void Init(CraftSO _craft, Action<CraftSO> _onClick) {
+	public void Init(CraftSO _craft, Action<CraftingQueueItemUI> _onClick) {
 		craft = _craft;
 		onClick += _onClick;
 
@@ -39,8 +39,9 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 			itemImage.sprite = craft.results[0].itemSO.sprite;
 	}
 
-	public void UpdateCraftTime(float _currTime) {
-		fillCircle.fillAmount = (currTime = _currTime) / craft.craftTime;
+	public void UpdateCraftTime(float fill) {
+		currTime = craft.craftTime * fill;
+		fillCircle.fillAmount = fill;
 
 		if(popup.IsShowed)
 			SetPopupText();
@@ -56,7 +57,7 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 	}
 
 	public void OnPointerDown(PointerEventData eventData) {
-		onClick?.Invoke(craft);
+		onClick?.Invoke(this);
 	}
 
 	void SetPopupText() {

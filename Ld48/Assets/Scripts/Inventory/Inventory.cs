@@ -12,12 +12,8 @@ public class Inventory : MonoBehaviour {
 	[SerializeField] protected Inventory delegatedInventory;
 	[SerializeField] protected InventoryItem[] items;
 
-	private void Awake() {
+	protected virtual void Awake() {
 		onInventoryChangeEvent += OnInventoryChange;
-	}
-
-	private void OnDestroy() {
-		onInventoryChangeEvent -= OnInventoryChange;
 	}
 
 	protected virtual void Start() {
@@ -25,6 +21,10 @@ public class Inventory : MonoBehaviour {
 		for (byte i = 0; i < items.Length; ++i) {
 			items[i].id = i;
 		}
+	}
+
+	private void OnDestroy() {
+		onInventoryChangeEvent -= OnInventoryChange;
 	}
 
 	public virtual ItemData AddItem(ItemData item) {
@@ -46,6 +46,7 @@ public class Inventory : MonoBehaviour {
 			if (items[i].item.itemSO == null) {
 				items[i].item = item;
 				items[i].DrawItem();
+				onInventoryChangeEvent?.Invoke();
 				return new ItemData();
 			}
 		}
@@ -120,6 +121,14 @@ public class Inventory : MonoBehaviour {
 		}
 
 		return canFit >= item.count;
+	}
+
+	public bool CheckIsEnoughIngradients(CraftSO craft) {
+		foreach (var ingradient in craft.ingradients) 
+			if (!ContainsItem(ingradient)) 
+				return false;
+
+		return true;
 	}
 
 	public bool ContainsItem(ItemData item) {
