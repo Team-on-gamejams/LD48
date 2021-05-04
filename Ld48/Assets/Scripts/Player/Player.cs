@@ -227,6 +227,10 @@ public class Player : MonoBehaviour {
 	}
 
 	bool TryPickupItemOnGroundOnMouseDown() {
+		bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+		if (isOverUI)
+			return false;
+
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.ItemsOnGroundMask); 
 		if(
 			hit.collider != null && 
@@ -239,6 +243,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void TryPickupItemOnGroundOnMouseUp() {
+		bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+		if (isOverUI)
+			return;
+
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.ItemsOnGroundMask);
 		if (
 			hit.collider != null &&
@@ -255,9 +263,9 @@ public class Player : MonoBehaviour {
 				buttonDownItem.item = leftItem;
 				buttonDownItem.Init();
 			}
-
-			buttonDownItem = null;
 		}
+
+		buttonDownItem = null;
 	}
 
 	bool IsCanUseItemInToolbar() {
@@ -274,6 +282,10 @@ public class Player : MonoBehaviour {
 	}
 
 	bool TryUsePlaceOnMouseDown() {
+		bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+		if (isOverUI)
+			return false;
+
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.WorldObjectsNoPlayerCollisionMask);
 		if (
 			hit.collider != null && hit.collider.gameObject.CompareTag(UnityConstants.Tags.ForegroundPlace) &&
@@ -288,6 +300,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void TryUsePlaceOnMouseUp() {
+		bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+		if (isOverUI)
+			return;
+
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 0, UnityConstants.Layers.WorldObjectsNoPlayerCollisionMask);
 		if (
 			hit.collider != null && hit.collider.gameObject.CompareTag(UnityConstants.Tags.ForegroundPlace) &&
@@ -295,8 +311,8 @@ public class Player : MonoBehaviour {
 			hit.collider.GetComponent<ForegroundPlaceBase>() == foregroundPlace
 		) {
 			foregroundPlace.ToggleUI();
-
-			foregroundPlace = null;
 		}
+		
+		foregroundPlace = null;
 	}
 }
