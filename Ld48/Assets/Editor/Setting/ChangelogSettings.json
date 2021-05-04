@@ -63,6 +63,13 @@
                     "text": "Fix popup overlaping"
                 }
             ]
+        },
+        {
+            "version": "0.12",
+            "date": "5/4/2021",
+            "updateName": "Jam edition polish - UI & Crafting",
+            "descriptionText": "Add help texts, UI sprites and crafting filters",
+            "notes": []
         }
     ],
     "readme": "Game page - https://teamon.itch.io/terrario\nSource code - https://github.com/Team-on/LD48https://github.com/Team-on/LD48\n\n\nAvailable in Windows, OSX and Linux\nIf you encounter any problem, please leave a issue! \nUse in-game form for that, report it in discord, or email me directly to timonsol13@gmail.com\n\r\nMac Version Notes:\r\nIf you get \"this package is from an unidentified developer\" right click (or control-click) and select open. You should now get the option to open anyways.\r\n\r\nLinux Version Notes:\r\nMake sure to set the x86_64 as executable before running.\r\n\n\nUsed assets:\nhttps://github.com/Team-on/UnityGameTemplate/wiki/Used-assets"
