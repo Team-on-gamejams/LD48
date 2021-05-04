@@ -22,6 +22,10 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 
 	protected override void Awake() {
 		base.Awake();
+	}
+
+	protected override void Start() {
+		base.Start();
 
 		hotbar = inventory as Hotbar;
 

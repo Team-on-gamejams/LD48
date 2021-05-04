@@ -46,15 +46,15 @@ public class Hotbar : Inventory {
 		items[selectedRight].DrawItem();
 	}
 
-	public void SetSelection(byte id, bool isLeftHand) {
+	public void SetSelection(int id, bool isLeftHand) {
 		if (isLeftHand) {
 			(items[selectedLeft] as HotbarItem).RemoveSelectedFrame(true);
-			selectedLeft = (byte)id;
+			selectedLeft = id;
 			(items[selectedLeft] as HotbarItem).SetSelectedFrame(true);
 		}
 		else {
 			(items[selectedRight] as HotbarItem).RemoveSelectedFrame(false);
-			selectedRight = (byte)id;
+			selectedRight = id;
 			(items[selectedRight] as HotbarItem).SetSelectedFrame(false);
 		}
 

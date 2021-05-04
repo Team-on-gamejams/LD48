@@ -20,10 +20,10 @@ public class CraftingPlace : MonoBehaviour {
 	CraftSO currCraft;
 	float currCraftTime;
 
-	void Awake() {
-		if(ui)
+	void Start() {
+		if (ui)
 			ui.InitUI(this, inventoryToAddItem, inventoryToRemoveItem, craftPlaceType);
-		if(selectUI)
+		if (selectUI)
 			selectUI.InitUI(this, inventoryToAddItem, inventoryToRemoveItem, craftPlaceType);
 	}
 

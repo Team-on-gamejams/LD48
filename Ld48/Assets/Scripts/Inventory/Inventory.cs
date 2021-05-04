@@ -7,20 +7,43 @@ using UnityEngine.Events;
 public class Inventory : MonoBehaviour {
 	public Action onInventoryChangeEvent;
 
-	[Header("Refs"), Space]
+	[Header("Init"), Space]
+	[SerializeField] protected ItemData[] startItems;
+
+	[Header("Data"), Space]
+	[SerializeField] protected int inventorySize = 10;
 	[SerializeField] protected Inventory parentInventory;
 	[SerializeField] protected Inventory delegatedInventory;
-	[SerializeField] protected InventoryItem[] items;
+
+	[Header("Refs"), Space]
+	[SerializeField] protected GameObject inventoryItemUIPrefab;
+
+	protected InventoryItem[] items;
 
 	protected virtual void Awake() {
+		items = new InventoryItem[inventorySize];
+
+		for(int i = 0; i < inventorySize; ++i) {
+			InventoryItem inventoryItem = Instantiate(inventoryItemUIPrefab, transform).GetComponent<InventoryItem>();
+
+			inventoryItem.inventory = this;
+			inventoryItem.id = i;
+
+			if(startItems != null && i < startItems.Length) {
+				inventoryItem.item = startItems[i];
+			}
+			else {
+				inventoryItem.item = new ItemData(null, 0);
+			}
+
+			items[i] = inventoryItem;
+		}
+
 		onInventoryChangeEvent += OnInventoryChange;
 	}
 
 	protected virtual void Start() {
-		InventoryItem[] items = GetComponentsInChildren<InventoryItem>(true);
-		for (byte i = 0; i < items.Length; ++i) {
-			items[i].id = i;
-		}
+		
 	}
 
 	private void OnDestroy() {

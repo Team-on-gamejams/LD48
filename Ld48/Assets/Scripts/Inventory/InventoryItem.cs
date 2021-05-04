@@ -9,19 +9,23 @@ using TMPro;
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
 	static protected InventoryItem draggingSlot;
 
-	[NonSerialized] public byte id;
+	[NonSerialized] public int id;
+	[NonSerialized] public Inventory inventory;
 
-	public ItemData item;
+	[NonSerialized] public ItemData item;
 
 	[Header("Refs self"), Space]
 	[SerializeField] protected Image itemImage;
 	[SerializeField] protected TextMeshProUGUI count;
 
 	[Header("Refs"), Space]
-	[SerializeField] protected Inventory inventory;
 	[SerializeField] protected Popup popup;
 
 	protected virtual void Awake() {
+
+	}
+
+	protected virtual void Start() {
 		DrawItem();
 	}
 
@@ -124,7 +128,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			count.rectTransform.anchoredPosition = Vector3.zero;
 		}
 	
-		if (item.itemSO != null) {
+		if (item != null && item.itemSO != null) {
 			if (item.itemSO.maxCount == 1) {
 				count.text = "";
 			}
