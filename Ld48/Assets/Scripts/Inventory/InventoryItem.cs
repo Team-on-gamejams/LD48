@@ -41,7 +41,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	}
 
 	public void OnBeginDrag(PointerEventData eventData) {
-		if (item.itemSO == null)
+		if (item == null || item.itemSO == null)
 			return;
 
 		popup.Hide();
@@ -58,7 +58,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	}
 
 	public void OnDrag(PointerEventData eventData) {
-		if (item.itemSO == null)
+		if (draggingSlot == null)
 			return;
 
 		itemImage.transform.position += (Vector3)eventData.delta;
@@ -66,28 +66,30 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
-		if (item.itemSO == null)
+		if (draggingSlot == null)
 			return;
 
-		if (eventData.hovered.Count != 0) {
-			DrawItem();
-			return;
+		if (eventData.hovered.Count == 0) {
+			Cell cell = GameManager.Instance.GetCellAtMousePosWithInteractClamp(out Vector2 dropPos);
+			
+			if (cell && cell.foregroud == Cell.CellContentForegroud.None) {
+				ItemOnGround.CreateOnGround(item, dropPos);
+				item.itemSO = null;
+			}
 		}
 
-		Cell cell = GameManager.Instance.GetCellAtMousePosWithInteractClamp(out Vector2 dropPos);
-
-		if(cell && cell.foregroud == Cell.CellContentForegroud.None) {
-			ItemOnGround.CreateOnGround(item, dropPos);
-			item.itemSO = null;
-			inventory?.onInventoryChangeEvent();
-		}
-
+		draggingSlot = null;
 		DrawItem();
+		inventory?.onInventoryChangeEvent();
 	}
 
 	public void OnDrop(PointerEventData eventData) {
-		if (draggingSlot == this || draggingSlot.item.itemSO == null)
+		if (draggingSlot == null || draggingSlot == this || item == null || draggingSlot.item.itemSO == null) {
+			draggingSlot = null;
+			DrawItem();
+			inventory?.onInventoryChangeEvent();
 			return;
+		}
 
 		if (item.itemSO == null || (item.itemSO.type != draggingSlot.item.itemSO.type) || item.IsMaxStack() || draggingSlot.item.IsMaxStack()) {
 			ItemData temp = item;
@@ -106,23 +108,22 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		}
 
 		DrawItem();
-		draggingSlot.DrawItem();
-
-		draggingSlot = null;
-		inventory?.onInventoryChangeEvent();
+		inventory.onInventoryChangeEvent?.Invoke();
 	}
 
 	public void DrawItem() {
 		LeanTween.cancel(itemImage.gameObject, false);
 
-		itemImage.transform.SetParent(transform, true);
-		itemImage.transform.SetAsFirstSibling();
-		count.transform.SetParent(transform, true);
-		count.transform.SetAsLastSibling();
+		if(draggingSlot != this) {
+			itemImage.transform.SetParent(transform, true);
+			itemImage.transform.SetAsFirstSibling();
+			count.transform.SetParent(transform, true);
+			count.transform.SetAsLastSibling();
 
-		itemImage.transform.localPosition = Vector3.zero;
-		count.rectTransform.anchoredPosition = Vector3.zero;
-
+			itemImage.transform.localPosition = Vector3.zero;
+			count.rectTransform.anchoredPosition = Vector3.zero;
+		}
+	
 		if (item.itemSO != null) {
 			if (item.itemSO.maxCount == 1) {
 				count.text = "";
