@@ -142,7 +142,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0f1220389990f15199704d3009c005eedba7ddd2"
+      "hash": "4349937ccf6b21517af3946b1e0b9bbd7307dba0"
     },
     "com.teamon.projectwindowdetails": {
       "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",

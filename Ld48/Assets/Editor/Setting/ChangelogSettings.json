@@ -10,6 +10,12 @@
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 1,
+                    "text": "Crafting in player inventory"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
                     "text": "Dual wielding. You can hold items in both hands and use them simultaneously."
                 },
                 {
@@ -22,12 +28,6 @@
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 1,
-                    "text": "Smelting & crafting"
-                },
-                {
-                    "isCommunityFeedback": false,
-                    "type": 2,
-                    "scope": 1,
                     "text": "Mine resources"
                 },
                 {
@@ -35,6 +35,32 @@
                     "type": 2,
                     "scope": 1,
                     "text": "Two-handed use for tools. Hold tool in both hands to use special ability"
+                }
+            ]
+        },
+        {
+            "version": "0.11",
+            "date": "5/4/2021",
+            "updateName": "Jam edition polish",
+            "descriptionText": " ",
+            "notes": [
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Smelting & crafting machine"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 3,
+                    "scope": 1,
+                    "text": "Fix items disappear in inventory"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 3,
+                    "scope": 5,
+                    "text": "Fix popup overlaping"
                 }
             ]
         }
