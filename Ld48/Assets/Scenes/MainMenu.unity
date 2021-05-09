@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a477ffa11aee2140abc4010ed5b9078, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -814,6 +814,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreditsMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1136375305689731453, guid: d3ed87ebdc4f65a4083f68d198a663af,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7416e2806d5dcbc478bb455815e55376,
+        type: 3}
+    - target: {fileID: 1136375305689731453, guid: d3ed87ebdc4f65a4083f68d198a663af,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1399993609026339051, guid: d3ed87ebdc4f65a4083f68d198a663af,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1073,6 +1084,17 @@ PrefabInstance:
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1113870167}
+    - target: {fileID: 1396353597527708673, guid: 8a9033cdc3e856b4a8e79309ff4e554c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7416e2806d5dcbc478bb455815e55376,
+        type: 3}
+    - target: {fileID: 1396353597527708673, guid: 8a9033cdc3e856b4a8e79309ff4e554c,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1396353597868247092, guid: 8a9033cdc3e856b4a8e79309ff4e554c,
         type: 3}
       propertyPath: m_Name
@@ -1829,6 +1851,27 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1459737537962740517, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c141d605d7a7a4fa97462f5e055403,
+        type: 3}
+    - target: {fileID: 1459737537962740517, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459737537962740517, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459737537962740517, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1687045299533299182, guid: 26adbdb6f4e59654ba433785b6282c2d,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
@@ -1869,9 +1912,61 @@ PrefabInstance:
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1113870167}
-    - target: {fileID: 4660504566461827792, guid: 26adbdb6f4e59654ba433785b6282c2d,
+    - target: {fileID: 4384496373041879608, guid: 26adbdb6f4e59654ba433785b6282c2d,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384496373041879608, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384496373041879608, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956162005977285886, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c141d605d7a7a4fa97462f5e055403,
+        type: 3}
+    - target: {fileID: 5956162005977285886, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956162005977285886, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956162005977285886, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425839885003920737, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c141d605d7a7a4fa97462f5e055403,
+        type: 3}
+    - target: {fileID: 6425839885003920737, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425839885003920737, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425839885003920737, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6879027971711603648, guid: 26adbdb6f4e59654ba433785b6282c2d,
@@ -1904,11 +1999,53 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7163569424424838230, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c141d605d7a7a4fa97462f5e055403,
+        type: 3}
+    - target: {fileID: 7163569424424838230, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163569424424838230, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163569424424838230, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8131501975722914145, guid: 26adbdb6f4e59654ba433785b6282c2d,
         type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1113870167}
+    - target: {fileID: 8355150078337861546, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c141d605d7a7a4fa97462f5e055403,
+        type: 3}
+    - target: {fileID: 8355150078337861546, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355150078337861546, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355150078337861546, guid: 26adbdb6f4e59654ba433785b6282c2d,
+        type: 3}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8641823605751825117, guid: 26adbdb6f4e59654ba433785b6282c2d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2461,6 +2598,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155458574550321314, guid: 456a3f39dc4b19c4a85ce9f250cafbdc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7416e2806d5dcbc478bb455815e55376,
+        type: 3}
+    - target: {fileID: 9155458574550321314, guid: 456a3f39dc4b19c4a85ce9f250cafbdc,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456a3f39dc4b19c4a85ce9f250cafbdc, type: 3}

@@ -361,7 +361,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 418.2, y: 100}
+  m_CellSize: {x: 450, y: 100}
   m_Spacing: {x: 0, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 1
@@ -449,6 +449,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9054416191348647354}
     m_Modifications:
+    - target: {fileID: 1377769284214138177, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2040e06c83deb5c4ca376f7d369b6288,
+        type: 3}
     - target: {fileID: 2620523516248762260, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: clickClip
@@ -804,6 +810,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9054416191348647354}
     m_Modifications:
+    - target: {fileID: 1014279040792948155, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: hoverSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55c141d605d7a7a4fa97462f5e055403,
+        type: 3}
+    - target: {fileID: 1014279040792948155, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014279040792948155, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014279040792948155, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377769284214138177, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2040e06c83deb5c4ca376f7d369b6288,
+        type: 3}
     - target: {fileID: 4417316442638819521, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_Name
@@ -1187,6 +1220,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9054416191348647354}
     m_Modifications:
+    - target: {fileID: 1377769284214138177, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2040e06c83deb5c4ca376f7d369b6288,
+        type: 3}
     - target: {fileID: 4417316442638819521, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_Name
@@ -1412,6 +1451,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9054416191348647354}
     m_Modifications:
+    - target: {fileID: 1377769284214138177, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2040e06c83deb5c4ca376f7d369b6288,
+        type: 3}
     - target: {fileID: 2620523516248762260, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: clickClip
@@ -1642,6 +1687,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9054416191348647354}
     m_Modifications:
+    - target: {fileID: 1377769284214138177, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2040e06c83deb5c4ca376f7d369b6288,
+        type: 3}
     - target: {fileID: 4417316442638819521, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_Name
@@ -2103,6 +2154,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9054416191348647354}
     m_Modifications:
+    - target: {fileID: 1377769284214138177, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2040e06c83deb5c4ca376f7d369b6288,
+        type: 3}
     - target: {fileID: 2620523516248762260, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: clickClip
@@ -2116,7 +2173,7 @@ PrefabInstance:
     - target: {fileID: 4417316442638819521, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4647860523317546142, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -2241,7 +2298,7 @@ PrefabInstance:
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -2251,17 +2308,17 @@ PrefabInstance:
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 418.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -2301,12 +2358,12 @@ PrefabInstance:
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 220
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -298.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
