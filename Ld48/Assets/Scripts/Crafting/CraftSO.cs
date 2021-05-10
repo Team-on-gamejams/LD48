@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 [CreateAssetMenu(fileName = "CraftSO", menuName = "Craft")]
 public class CraftSO : ScriptableObject {
@@ -12,7 +13,7 @@ public class CraftSO : ScriptableObject {
 	}
 
 	[Header("Craft data"), Space]
-	[EnumFlag] public CraftPlaceType place;
+	[EnumFlags] public CraftPlaceType place;
 	public float craftTime;
 	public ItemData[] ingradients;
 	public ItemData[] results;

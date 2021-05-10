@@ -71,6 +71,12 @@
             "descriptionText": "Add help texts, UI sprites and crafting filters",
             "notes": [
                 {
+                    "isCommunityFeedback": true,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Replace crafting ore from stone with opposite craft"
+                },
+                {
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 1,
