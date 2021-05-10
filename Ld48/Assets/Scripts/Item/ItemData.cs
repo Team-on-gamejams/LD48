@@ -26,6 +26,29 @@ public class ItemData : ICloneable {
 		return count == itemSO.maxCount;
 	}
 
+	public bool IsCanUseItemWhileInHotbar() {
+		switch (itemSO.metaType) {
+			case ItemSO.ItemMetaType.BuildableForeground:
+				if (!GameManager.Instance.SelectedCell || GameManager.Instance.SelectedCell.foregroud != Cell.CellContentForegroud.None)
+					return false;
+
+				PlacebleBlock placebleBlock = GameManager.Instance.GetItemPlacable(itemSO.type);
+				return placebleBlock.isCanPlaceOnPlayerPos || !GameManager.Instance.SelectedCell.IsPlayerInside();
+
+			case ItemSO.ItemMetaType.MiningTool:
+				return GameManager.Instance.SelectedCell && (
+					(GameManager.Instance.SelectedCell.foregroud != Cell.CellContentForegroud.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.foregroundBlock.neededForceToBroke) ||
+					(GameManager.Instance.SelectedCell.ore != Cell.CellContentOre.None && itemSO.miningForce >= GameManager.Instance.SelectedCell.oreBlock.neededForceToBroke)
+					);
+
+			default:
+				Debug.LogError("Unsupported ItemMetaType for using");
+				break;
+		}
+
+		return false;
+	}
+
 	public bool UseItemWhileInHotbar() {
 		switch (itemSO.metaType) {
 			case ItemSO.ItemMetaType.BuildableForeground:

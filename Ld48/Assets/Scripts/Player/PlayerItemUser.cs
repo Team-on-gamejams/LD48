@@ -90,6 +90,14 @@ public class PlayerItemUser : MonoBehaviour {
 		isUseRightItem = false;
 	}
 
+	public bool IsCanUseLeftItemThisFrame() {
+		return isUseLeftItem && itemInLeftHand.itemSO != null && itemInLeftHand.IsCanUseItemWhileInHotbar();
+	}
+
+	public bool IsCanUseRightItemThisFrame() {
+		return isUseRightItem && itemInRightHand.itemSO != null && itemInRightHand.IsCanUseItemWhileInHotbar();
+	}
+
 	void RedrawItemsInHand() {
 		itemInBothHands = hotbar.GetItemInBothHands();
 		itemInLeftHand = hotbar.GetLeftItem();

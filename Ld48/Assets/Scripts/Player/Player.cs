@@ -85,17 +85,21 @@ public class Player : MonoBehaviour {
 				if (TryPickupItemOnGroundOnMouseDown())
 					return;
 
+				if (IsCanUseItemInToolbar()) {
+					itemUser.StartUseLeftItem();
+					if(itemUser.IsCanUseLeftItemThisFrame())
+						return;
+				}
+
 				if (TryUsePlaceOnMouseDown())
 					return;
 
-				if (IsCanUseItemInToolbar())
-					itemUser.StartUseLeftItem();
 				break;
 
 			case InputActionPhase.Canceled:
 				TryPickupItemOnGroundOnMouseUp();
-				TryUsePlaceOnMouseUp();
 				itemUser.StoptUseLeftItem();
+				TryUsePlaceOnMouseUp();
 				break;
 		}
 	}
@@ -103,12 +107,23 @@ public class Player : MonoBehaviour {
 	public void UseItemR(InputAction.CallbackContext context) {
 		switch (context.phase) {
 			case InputActionPhase.Started:
-				if (IsCanUseItemInToolbar())
+				if (TryPickupItemOnGroundOnMouseDown())
+					return;
+
+				if (IsCanUseItemInToolbar()) {
 					itemUser.StartUseRightItem();
+					if (itemUser.IsCanUseRightItemThisFrame())
+						return;
+				}
+
+				if (TryUsePlaceOnMouseDown())
+					return;
 				break;
 
 			case InputActionPhase.Canceled:
+				TryPickupItemOnGroundOnMouseUp();
 				itemUser.StoptUseRightItem();
+				TryUsePlaceOnMouseUp();
 				break;
 		}
 	}

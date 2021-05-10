@@ -74,6 +74,12 @@
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 1,
+                    "text": "Change use/mine priority"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 1,
                     "text": "Inventory slot filters"
                 },
                 {
