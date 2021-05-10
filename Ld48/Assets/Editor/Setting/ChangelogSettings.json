@@ -120,6 +120,12 @@
                 },
                 {
                     "isCommunityFeedback": false,
+                    "type": 3,
+                    "scope": 1,
+                    "text": "Made easier to jump on stairs"
+                },
+                {
+                    "isCommunityFeedback": false,
                     "type": 7,
                     "scope": 1,
                     "text": "Dynamic inventory creation"
