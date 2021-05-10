@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de15dd71d923f844096aa22d4dbdc961, type: 3}
   m_Name: OreGold
   m_EditorClassIdentifier: 
+  metaType: 0
   type: 1001
-  name: Gold Ore
-  description: Smelt this ore in furnace to get gold
-  sprite: {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
   maxCount: 10
+  name: Gold Ore
+  description: Smelt this ore in <b>furnace</b> to get gold
+  sprite: {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
   singleMass: 500
+  scaleFactorOnGround: 1
+  miningForce: 1

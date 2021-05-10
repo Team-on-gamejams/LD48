@@ -55,7 +55,7 @@ public class ItemSO : ScriptableObject {
 
 	[Header("Visual"), Space]
 	public string name = "Item name";
-	[Multiline] public string description = "Item desc";
+	[Multiline(20)] public string description = "Item desc";
 	public Sprite sprite;
 
 	[Header("On ground data"), Space]

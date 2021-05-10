@@ -95,6 +95,12 @@
                     "text": "Inventory slot filters"
                 },
                 {
+                    "isCommunityFeedback": true,
+                    "type": 2,
+                    "scope": 5,
+                    "text": "Help texts in game"
+                },
+                {
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 5,

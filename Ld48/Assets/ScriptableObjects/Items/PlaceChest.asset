@@ -16,7 +16,11 @@ MonoBehaviour:
   type: 3000
   maxCount: 10
   name: Chest
-  description: Place to store items
+  description: 'Place to <b>store items</b>
+
+
+    Click on it with <i>LMB/RMB</i>
+    to open UI'
   sprite: {fileID: 21300000, guid: d45e4b27a31f60642b7baa846f64e8fb, type: 3}
   singleMass: 500
   scaleFactorOnGround: 1

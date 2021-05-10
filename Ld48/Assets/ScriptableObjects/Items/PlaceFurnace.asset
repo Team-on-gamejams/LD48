@@ -16,7 +16,11 @@ MonoBehaviour:
   type: 3001
   maxCount: 10
   name: Furnace
-  description: Use to get ignots from ore
+  description: 'Use to get <b>ignots</b> from ore
+
+
+    Click on it with <i>LMB/RMB</i>
+    to open UI'
   sprite: {fileID: 21300000, guid: 389d84d5d6f1cf14f8f4467b7dbfaed1, type: 3}
   singleMass: 500
   scaleFactorOnGround: 1

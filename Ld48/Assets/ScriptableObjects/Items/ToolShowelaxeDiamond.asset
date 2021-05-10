@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 3
   maxCount: 1
   name: Notch Shovelaxe
-  description: "The best shovelaxe\n\nDual wielding:\nLMB - Mine block. \nRMB - Dig
-    through block. 2 times faster, but no loot"
+  description: "The best shovelaxe\n\nTwo-handed use:\n<i>LMB</i> - Mine block. \n<i>RMB</i>
+    - Dig through block. 2 times faster, but no loot"
   sprite: {fileID: 21300000, guid: 409cd93d98a7b7a49ae4065674ba622b, type: 3}
   singleMass: 5000
   scaleFactorOnGround: 1

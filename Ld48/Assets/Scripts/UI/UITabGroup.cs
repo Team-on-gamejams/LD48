@@ -11,6 +11,7 @@ using Random = UnityEngine.Random;
 public class UITabGroup : MonoBehaviour {
 	[Header("Refs"), Space]
 	[SerializeField] protected CanvasGroup cg;
+	[SerializeField] protected CanvasGroup cgAlt;
 
 	bool isShowed;
 
@@ -19,6 +20,11 @@ public class UITabGroup : MonoBehaviour {
 			isShowed = false;
 			cg.blocksRaycasts = cg.interactable = false;
 			cg.alpha = 0.0f;
+
+			if (cgAlt) {
+				cgAlt.blocksRaycasts = cgAlt.interactable = true;
+				cgAlt.alpha = 1.0f;
+			}
 		}
 		else {
 			isShowed = true;
@@ -35,11 +41,21 @@ public class UITabGroup : MonoBehaviour {
 			isShowed = false;
 			cg.blocksRaycasts = cg.interactable = false;
 			LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+
+			if (cgAlt) {
+				cgAlt.blocksRaycasts = cgAlt.interactable = true;
+				LeanTweenEx.ChangeAlpha(cgAlt, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+			}
 		}
 		else {
 			isShowed = true;
 			cg.blocksRaycasts = cg.interactable = true;
 			LeanTweenEx.ChangeAlpha(cg, 1.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+
+			if (cgAlt) {
+				cgAlt.blocksRaycasts = cgAlt.interactable = false;
+				LeanTweenEx.ChangeAlpha(cgAlt, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad);
+			}
 		}
 	}
 

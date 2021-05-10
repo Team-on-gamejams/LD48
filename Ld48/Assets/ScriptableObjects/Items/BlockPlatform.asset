@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de15dd71d923f844096aa22d4dbdc961, type: 3}
   m_Name: BlockPlatform
   m_EditorClassIdentifier: 
+  metaType: 0
   type: 2001
-  name: Platform
-  description: Solid from top, but you can fall through when press S
-  sprite: {fileID: 21300000, guid: fa6445a5f6d25bd428423048b5720ba9, type: 3}
   maxCount: 10
+  name: Platform
+  description: Solid from top, but you can fall through when press <i>S+Space</i>
+  sprite: {fileID: 21300000, guid: fa6445a5f6d25bd428423048b5720ba9, type: 3}
   singleMass: 500
+  scaleFactorOnGround: 1
+  miningForce: 1

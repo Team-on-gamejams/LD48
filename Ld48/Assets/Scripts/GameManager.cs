@@ -28,12 +28,29 @@ public class GameManager : Singleton<GameManager> {
 	bool isDebugMode = false;
 #endif
 
+	public int HelpLevelMode {
+		get => helpLevelMode;
+		set {
+			if (helpLevelMode != value) {
+				helpLevelMode = value;
+				OnHelpModeChange?.Invoke(helpLevelMode);
+			}
+		}
+	}
+	public Action<int> OnHelpModeChange;
+	int helpLevelMode = 0;
+
 	public Cell SelectedCell => hightlightBlockUnderMouse.lastHightlightedCell;
 
 	[NonSerialized] public Player player;
 	[NonSerialized] public HightlightBlockUnderMouse hightlightBlockUnderMouse;
 	[NonSerialized] public Grid grid;
 	[NonSerialized] public GameObject draggedParent;
+
+	[Header("Help"), Space]
+	[Tooltip("Inclusive minimum value")] public int minHelpLevel = 0;
+	[Tooltip("Inclusive maximum value")] public int maxHelpLevel = 2;
+	[Tooltip("")] public int startHelpLevel = 2;
 
 	[Header("Cells"), Space]
 	public ForegroundGoData[] foregroundCells;
@@ -49,6 +66,8 @@ public class GameManager : Singleton<GameManager> {
 
 	protected override void Initialize() {
 		base.Initialize();
+
+		helpLevelMode = startHelpLevel;
 	}
 
 	protected override void Deinitialize() {

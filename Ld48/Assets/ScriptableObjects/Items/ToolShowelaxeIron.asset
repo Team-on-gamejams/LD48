@@ -16,8 +16,8 @@ MonoBehaviour:
   type: 2
   maxCount: 1
   name: Iron Shovelaxe
-  description: "Tool to broke things much faster\n\nTwo-handed use:\nLMB - Mine block.
-    \nRMB - Dig through block. 2 times faster, but no loot"
+  description: "Tool to broke things much faster\n\nTwo-handed use:\n<i>LMB</i> -
+    Mine block. \n<i>RMB</i> - Dig through block. 2 times faster, but no loot"
   sprite: {fileID: 21300000, guid: 7f6619496c0a2244a965e3820a3cd6ca, type: 3}
   singleMass: 500
   scaleFactorOnGround: 1
