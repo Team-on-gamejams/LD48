@@ -111,6 +111,12 @@
                     "type": 7,
                     "scope": 1,
                     "text": "Dynamic inventory creation"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 7,
+                    "scope": 10,
+                    "text": "Rename sprites and prefabs for better hierarchy"
                 }
             ]
         }
