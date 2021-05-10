@@ -871,7 +871,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startItems: []
-  inventorySize: 10
   parentInventory: {fileID: 0}
   delegatedInventory: {fileID: 0}
   inventoryItemUIPrefab: {fileID: 69334790429004265, guid: f526414fc023a30428835605be5dd6ec,
@@ -931,7 +930,7 @@ MonoBehaviour:
     m_Right: 5
     m_Top: 5
     m_Bottom: 5
-  m_ChildAlignment: 4
+  m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
@@ -1061,6 +1060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ede73296afaa634f96c0454ae94a2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventories:
+  - {fileID: 7612020855589933284}
+  - {fileID: 2949404765378875462}
   canvas: {fileID: 5944322368225576971}
   cg: {fileID: 3993617429042700366}
 --- !u!114 &5805327290697376873
@@ -1102,6 +1104,7 @@ MonoBehaviour:
   isCanPlaceOnPlayerPos: 1
   background: 0
   ore: 0
+  craftPlace: {fileID: 5401056125847868050}
 --- !u!212 &4864332047625639347
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1557,7 +1560,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startItems: []
-  inventorySize: 10
   parentInventory: {fileID: 0}
   delegatedInventory: {fileID: 0}
   inventoryItemUIPrefab: {fileID: 69334790429004265, guid: f526414fc023a30428835605be5dd6ec,
@@ -1617,7 +1619,7 @@ MonoBehaviour:
     m_Right: 5
     m_Top: 5
     m_Bottom: 5
-  m_ChildAlignment: 4
+  m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
@@ -1807,6 +1809,7 @@ MonoBehaviour:
   cgSelectCraft: {fileID: 4561244615196403860}
   cgCraftingPlace: {fileID: 7974824071418305108}
   fillImage: {fileID: 6215511818487788195}
+  myBlock: {fileID: -8470503787209177685}
   recipeGoPrefab: {fileID: 8807921577697562932, guid: 36f5f66117b6cd946b273a33aa698269,
     type: 3}
 --- !u!222 &827525052994771534

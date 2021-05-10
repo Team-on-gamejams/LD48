@@ -14,8 +14,8 @@ public class Hotbar : Inventory {
 	int selectedLeft;
 	int selectedRight;
 
-	protected override void Awake() {
-		base.Awake();
+	public override void InitInvetory(int size) {
+		base.InitInvetory(size);
 
 		selectedLeft = 0;
 		selectedRight = 1;

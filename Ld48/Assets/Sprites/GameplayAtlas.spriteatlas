@@ -88,36 +88,36 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fe9fd63f05e20644483bfe34a72e2639, type: 3}
   m_PackedSpriteNamesToIndex:
   - IgnotIron
-  - BlockLadder
-  - BlockIronIgnot
-  - BlockBrick
-  - DestroyAnimation2
+  - BlockForegroundLadder
+  - BlockForegroundIronIgnot
+  - BlockForegroundBrick
+  - MineAnimation2
   - SelectionBoth
-  - OreIron
+  - TileOreIron
   - Player
-  - DestroyAnimation3
-  - ShovelaxeStone
-  - BlockPlatform
-  - Furnace
-  - DestroyAnimation0
+  - MineAnimation3
+  - ToolShovelaxeStone
+  - BlockForegroundPlatform
+  - PlaceForegroundFurnace
+  - MineAnimation0
   - IgnotGold
-  - BlockGoldIgnot
-  - Chest
-  - BedrockBackground
-  - ShovelaxeIron
+  - BlockForegroundGoldIgnot
+  - PlaceForegroundChest
+  - TileBackgroundBedrock
+  - ToolShovelaxeIron
   - SelectionLeft
-  - BedrockForeground
-  - StoneBackground
-  - BlockIronOre
-  - DirtBackground
-  - Assembler
-  - DirtForeground
-  - BlockGoldOre
-  - StoneForeground
-  - ShovelaxeDiamond
-  - DestroyAnimation1
+  - TileForegroundBedrock
+  - TileBackgroundStone
+  - BlockForegroundIronOre
+  - TileBackgroundDirt
+  - PlaceForegroundAssembler
+  - TileForegroundDirt
+  - BlockForegroundGoldOre
+  - TileForegroundStone
+  - ToolShovelaxeDiamond
+  - MineAnimation1
   - BlockSelection
-  - OreGold
+  - TileOreGold
   - SelectionRight
   m_RenderDataMap: {}
   m_Tag: GameplayAtlas

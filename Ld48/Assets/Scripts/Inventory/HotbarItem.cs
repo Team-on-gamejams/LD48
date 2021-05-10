@@ -14,6 +14,7 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 	[SerializeField] Image selectedFrameLeftImage;
 	[SerializeField] Image selectedFrameRightImage;
 	[SerializeField] Image selectedFrameBothImage;
+	[SerializeField] TextMeshProUGUI hotbarNumberTextField;
 
 	Hotbar hotbar;
 
@@ -32,6 +33,8 @@ public class HotbarItem : InventoryItem, IPointerClickHandler {
 		selectedFrameLeftImage.color = selectedFrameLeftImage.color.SetA(0.0f);
 		selectedFrameRightImage.color = selectedFrameRightImage.color.SetA(0.0f);
 		selectedFrameBothImage.color = selectedFrameBothImage.color.SetA(0.0f);
+
+		hotbarNumberTextField.text = ((id + 1) % 10).ToString("0");
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {

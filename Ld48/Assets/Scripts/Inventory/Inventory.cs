@@ -12,25 +12,36 @@ public class Inventory : MonoBehaviour {
 	[SerializeField] protected ItemData[] startItems;
 
 	[Header("Data"), Space]
-	[SerializeField] protected int inventorySize = 10;
 	[SerializeField] protected Inventory parentInventory;
 	[SerializeField] protected Inventory delegatedInventory;
 
 	[Header("Refs"), Space]
 	[SerializeField] protected GameObject inventoryItemUIPrefab;
 
+	protected int inventorySize = 10;
 	protected InventoryItem[] items;
 
 	protected virtual void Awake() {
+		onInventoryChangeEvent += OnInventoryChange;
+	}
+
+	private void OnDestroy() {
+		onInventoryChangeEvent -= OnInventoryChange;
+	}
+
+	public virtual void InitInvetory(int _inventorySize) {
+		CleanInventoryBeforeReinit();
+
+		inventorySize = _inventorySize;
 		items = new InventoryItem[inventorySize];
 
-		for(int i = 0; i < inventorySize; ++i) {
+		for (int i = 0; i < inventorySize; ++i) {
 			InventoryItem inventoryItem = Instantiate(inventoryItemUIPrefab, transform).GetComponent<InventoryItem>();
 
 			inventoryItem.inventory = this;
 			inventoryItem.id = i;
 
-			if(startItems != null && i < startItems.Length) {
+			if (startItems != null && i < startItems.Length) {
 				inventoryItem.item = startItems[i];
 			}
 			else {
@@ -39,16 +50,10 @@ public class Inventory : MonoBehaviour {
 
 			items[i] = inventoryItem;
 		}
-
-		onInventoryChangeEvent += OnInventoryChange;
 	}
 
-	protected virtual void Start() {
-		
-	}
-
-	private void OnDestroy() {
-		onInventoryChangeEvent -= OnInventoryChange;
+	public void SetFilter(int id, ItemSO itemso) {
+		items[id].SetFilter(itemso);
 	}
 
 	public virtual ItemData AddItem(ItemData item) {
@@ -67,7 +72,7 @@ public class Inventory : MonoBehaviour {
 		}
 
 		for (byte i = 0; i < items.Length; ++i) {
-			if (items[i].item.itemSO == null) {
+			if (items[i].item.itemSO == null && items[i].IsCanContainItem(item.itemSO)) {
 				items[i].item = item;
 				items[i].DrawItem();
 				onInventoryChangeEvent?.Invoke();
@@ -125,7 +130,7 @@ public class Inventory : MonoBehaviour {
 				if (items[i].item.itemSO.type == item.itemSO.type)
 					canFit += item.itemSO.maxCount - items[i].item.count;
 			}
-			else {
+			else if(items[i].IsCanContainItem(item.itemSO)) {
 				canFit += item.itemSO.maxCount;
 			}
 
@@ -137,10 +142,9 @@ public class Inventory : MonoBehaviour {
 					if (delegatedInventory.items[i].item.itemSO.type == item.itemSO.type)
 						canFit += item.itemSO.maxCount - delegatedInventory.items[i].item.count;
 				}
-				else {
+				else if (delegatedInventory.items[i].IsCanContainItem(item.itemSO)) {
 					canFit += item.itemSO.maxCount;
 				}
-
 			}
 		}
 
@@ -148,8 +152,8 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public bool CheckIsEnoughIngradients(CraftSO craft) {
-		foreach (var ingradient in craft.ingradients) 
-			if (!ContainsItem(ingradient)) 
+		foreach (var ingradient in craft.ingradients)
+			if (!ContainsItem(ingradient))
 				return false;
 
 		return true;
@@ -206,6 +210,9 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public void DropAllItemsToGround(Vector3 position, Vector2 rangeX, Vector2 rangeY) {
+		if (items == null)
+			return;
+
 		foreach (var item in items) {
 			if (item != null && item.item != null && item.item.itemSO != null) {
 				ItemOnGround.CreateOnGround(
@@ -219,8 +226,41 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+	public void GiveAllItemsToPlayerOrDrop(Vector3 position, Vector2 rangeX, Vector2 rangeY) {
+		if (items == null)
+			return;
+
+		foreach (var item in items) {
+			if (item != null && item.item != null && item.item.itemSO != null) {
+				ItemData leftItem = GameManager.Instance.player.inventory.AddItem(item.item);
+
+				if (leftItem.count != 0) {
+					//TODO: Inventory full popup text
+					Vector3 pos = GameManager.Instance.player.transform.position;
+					ItemOnGround.CreateOnGround(
+						leftItem, 
+						position + new Vector3(rangeX.GetRandomValueFloat(), rangeY.GetRandomValueFloat())
+					);
+					leftItem.itemSO = null;
+				}
+
+				item.item.itemSO = null;
+				item.item.count = 0;
+			}
+		}
+	}
+
 	void OnInventoryChange() {
 		if (parentInventory)
 			parentInventory.onInventoryChangeEvent?.Invoke();
+	}
+
+	void CleanInventoryBeforeReinit() {
+		if(items != null) {
+			foreach (var item in items) {
+				Destroy(item.gameObject);
+			}
+			items = null;
+		}
 	}
 }

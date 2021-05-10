@@ -12,6 +12,9 @@ public class SelectCraftUI : MonoBehaviour {
 	[SerializeField] CanvasGroup cgCraftingPlace;
 	[SerializeField] Image fillImage;
 
+	[Header("Refs"), Space]
+	[SerializeField] PlacebleBlock myBlock;
+
 	[Header("Refs prefabs"), Space]
 	[SerializeField] GameObject recipeGoPrefab;
 
@@ -22,7 +25,14 @@ public class SelectCraftUI : MonoBehaviour {
 	List<CraftingItemUI> craftingItems;
 
 	CraftSO selectedCraft;
+	CraftSO previousCraft;
 	bool isCrafting = false;
+
+#if UNITY_EDITOR
+	private void OnValidate() {
+
+	}
+#endif
 
 	public void InitUI(CraftingPlace _craftingPlace, Inventory _inventoryToAddItem, Inventory _inventoryToRemoveItem, CraftSO.CraftPlaceType craftPlaceType) {
 		craftingPlace = _craftingPlace;
@@ -59,11 +69,11 @@ public class SelectCraftUI : MonoBehaviour {
 	}
 
 	public void SelectOtherCraft() {
-		CraftSO savedCraft = selectedCraft;
+		previousCraft = selectedCraft;
 		selectedCraft = null;
 
 		if (isCrafting) {
-			foreach (var ingradient in savedCraft.ingradients) {
+			foreach (var ingradient in previousCraft.ingradients) {
 				ItemData leftItem = GameManager.Instance.player.inventory.AddItem(ingradient.CloneItem());
 
 				if (leftItem.count != 0) {
@@ -77,8 +87,17 @@ public class SelectCraftUI : MonoBehaviour {
 			craftingPlace.AbortCraft();
 		}
 
-		//TODO: return out inventory to player inventory if filter don't match
-		//TODO: return in inventory to player inventory if filter don't match
+		inventoryToAddItem.GiveAllItemsToPlayerOrDrop(
+			myBlock.MyCell.transform.position,
+			new Vector2(-myBlock.MyCell.MyGrid.cellSize.x / 2, myBlock.MyCell.MyGrid.cellSize.x / 2) * 0.8f,
+			new Vector2(-myBlock.MyCell.MyGrid.cellSize.y / 2, myBlock.MyCell.MyGrid.cellSize.y / 2) * 0.8f
+		);
+		inventoryToRemoveItem.GiveAllItemsToPlayerOrDrop(
+			myBlock.MyCell.transform.position,
+			new Vector2(-myBlock.MyCell.MyGrid.cellSize.x / 2, myBlock.MyCell.MyGrid.cellSize.x / 2) * 0.8f,
+			new Vector2(-myBlock.MyCell.MyGrid.cellSize.y / 2, myBlock.MyCell.MyGrid.cellSize.y / 2) * 0.8f
+		);
+
 
 		cgCraftingPlace.interactable = cgCraftingPlace.blocksRaycasts = false;
 		LeanTween.cancel(cgCraftingPlace.gameObject, false);
@@ -107,6 +126,17 @@ public class SelectCraftUI : MonoBehaviour {
 	void OnClickOnItem(CraftSO craft) {
 		selectedCraft = craft;
 
+		inventoryToAddItem.InitInvetory(selectedCraft.results.Length);
+		inventoryToRemoveItem.InitInvetory(selectedCraft.ingradients.Length);
+
+		for(int i = 0; i < selectedCraft.results.Length; ++i) {
+			inventoryToAddItem.SetFilter(i, selectedCraft.results[i].itemSO);
+		}
+
+		for (int i = 0; i < selectedCraft.ingradients.Length; ++i) {
+			inventoryToRemoveItem.SetFilter(i, selectedCraft.ingradients[i].itemSO);
+		}
+
 		cgSelectCraft.interactable = cgSelectCraft.blocksRaycasts = false;
 		LeanTween.cancel(cgSelectCraft.gameObject, false);
 		LeanTweenEx.ChangeAlpha(cgSelectCraft, 0.0f, 0.2f).setEase(LeanTweenType.easeInOutQuad);
@@ -117,6 +147,8 @@ public class SelectCraftUI : MonoBehaviour {
 
 		craftingPlace.ResetCraftTime();
 		TryCraft();
+
+		previousCraft = null;
 	}
 
 	void TryCraft() {

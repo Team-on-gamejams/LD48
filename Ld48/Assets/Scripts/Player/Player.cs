@@ -38,6 +38,9 @@ public class Player : MonoBehaviour {
 	private void Awake() {
 		GameManager.Instance.player = this;
 
+		inventory.InitInvetory(40);
+		hotbar.InitInvetory(10);
+
 		maxInteractDistanceSqr = maxInteractDistance * maxInteractDistance;
 	}
 

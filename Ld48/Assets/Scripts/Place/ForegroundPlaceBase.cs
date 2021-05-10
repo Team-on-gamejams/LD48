@@ -9,7 +9,7 @@ public class ForegroundPlaceBase : MonoBehaviour {
 	public Cell MyCell { get; set; }
 
 	[Header("Refs"), Space]
-	[SerializeField] Inventory[] inventories;
+	[SerializeField] protected Inventory[] inventories;
 
 	[Header("UI"), Space]
 	[SerializeField] Canvas canvas;
@@ -75,8 +75,8 @@ public class ForegroundPlaceBase : MonoBehaviour {
 	public void OnMined() {
 		if (inventories != null) {
 			foreach (var inventory in inventories) {
-				inventory.DropAllItemsToGround(
-					transform.position, 
+				inventory.GiveAllItemsToPlayerOrDrop(
+					MyCell.transform.position, 
 					new Vector2(-MyCell.MyGrid.cellSize.x / 2, MyCell.MyGrid.cellSize.x / 2) * 0.8f,
 					new Vector2(-MyCell.MyGrid.cellSize.y / 2, MyCell.MyGrid.cellSize.y / 2) * 0.8f
 				);

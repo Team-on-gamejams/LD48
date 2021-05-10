@@ -104,6 +104,12 @@
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 5,
+                    "text": "Craft filters"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 5,
                     "text": "New menu sprites"
                 },
                 {

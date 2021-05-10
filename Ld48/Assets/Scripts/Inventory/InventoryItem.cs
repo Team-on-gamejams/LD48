@@ -13,9 +13,11 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	[NonSerialized] public Inventory inventory;
 
 	[NonSerialized] public ItemData item;
+	[NonSerialized] public ItemSO filter;
 
 	[Header("Refs self"), Space]
 	[SerializeField] protected Image itemImage;
+	[SerializeField] protected Image itemFilterImage;
 	[SerializeField] protected TextMeshProUGUI count;
 
 	[Header("Refs"), Space]
@@ -88,8 +90,14 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	}
 
 	public void OnDrop(PointerEventData eventData) {
-		if (draggingSlot == null || draggingSlot == this || item == null || draggingSlot.item.itemSO == null) {
+		if (draggingSlot == null || draggingSlot == this|| draggingSlot.item.itemSO == null) {
 			draggingSlot = null;
+			DrawItem();
+			inventory?.onInventoryChangeEvent();
+			return;
+		}
+
+		if (!IsCanContainItem(draggingSlot.item.itemSO)) {
 			DrawItem();
 			inventory?.onInventoryChangeEvent();
 			return;
@@ -115,6 +123,27 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		inventory.onInventoryChangeEvent?.Invoke();
 	}
 
+	public void SetFilter(ItemSO itemso) {
+		filter = itemso;
+	}
+
+	public bool IsCanContainItem(ItemSO itemso) {
+		if (!filter)
+			return true;
+
+		switch (filter.metaType) {
+			case ItemSO.ItemMetaType.BuildableForeground:
+				return itemso.type == filter.type;
+			case ItemSO.ItemMetaType.MiningTool:
+				return itemso.type == filter.type;
+			default:
+				Debug.LogWarning("Unsupported ItemMetaType");
+				break;
+		}
+
+		return false;
+	}
+
 	public void DrawItem() {
 		LeanTween.cancel(itemImage.gameObject, false);
 
@@ -127,7 +156,16 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			itemImage.transform.localPosition = Vector3.zero;
 			count.rectTransform.anchoredPosition = Vector3.zero;
 		}
-	
+
+		if (filter) {
+			itemFilterImage.sprite = filter.sprite;
+			itemFilterImage.color = itemFilterImage.color.SetA(0.5f);
+		}
+		else {
+			itemFilterImage.sprite = null;
+			itemFilterImage.color = itemFilterImage.color.SetA(0.1f);
+		}
+
 		if (item != null && item.itemSO != null) {
 			if (item.itemSO.maxCount == 1) {
 				count.text = "";
@@ -139,7 +177,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			itemImage.sprite = item.itemSO.sprite;
 			LeanTweenEx.ChangeAlpha(itemImage, 1.0f, 0.05f).setEase(LeanTweenType.easeInOutQuad);
 
-			
 			popup.SetText(item.GetInfoForPopup());
 
 		}
