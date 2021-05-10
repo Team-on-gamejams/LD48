@@ -95,6 +95,12 @@
                     "text": "Inventory slot filters"
                 },
                 {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 5,
+                    "text": "New in-game UI sprites"
+                },
+                {
                     "isCommunityFeedback": true,
                     "type": 2,
                     "scope": 5,

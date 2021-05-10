@@ -26,7 +26,7 @@ SpriteAtlas:
       m_MaxTextureSize: 8192
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
-      m_TextureCompression: 1
+      m_TextureCompression: 2
       m_CompressionQuality: 50
       m_CrunchedCompression: 1
       m_AllowsAlphaSplitting: 0
@@ -44,80 +44,64 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 93f9557e145390b4786f9c44dd864648, type: 3}
-    - {fileID: 102900000, guid: dbe1be0cc3aeacc479874e662cbd7d62, type: 3}
+    - {fileID: 102900000, guid: ee2ba357d6c6d364ab18ffcd29a99eaa, type: 3}
     - {fileID: 102900000, guid: d73e1c21044a31b488b160de0eed0558, type: 3}
     - {fileID: 102900000, guid: 229227f9af1cdf2478656e6433b96676, type: 3}
-    - {fileID: 102900000, guid: 802b46da9058d55408dc3dedd5190bab, type: 3}
-    totalSpriteSurfaceArea: 524288
+    - {fileID: 102900000, guid: dbe1be0cc3aeacc479874e662cbd7d62, type: 3}
+    totalSpriteSurfaceArea: 832032
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: ae827f80537e6df47aad08cef6e07221, type: 3}
-  - {fileID: 21300000, guid: 5d49ecd180973ff4c89ae12df2d9bb95, type: 3}
-  - {fileID: 21300000, guid: 8d90cc32321eadb44b4358566c149074, type: 3}
-  - {fileID: 21300000, guid: 3b829df2706f31a4c9deeb7fc181c572, type: 3}
   - {fileID: 21300000, guid: b7936633c46f9c94d83c61bcc29fc6e8, type: 3}
   - {fileID: 21300000, guid: 2a2751c365e8b8245ab938e087ec0c97, type: 3}
-  - {fileID: 21300000, guid: e31991c35ce64af439d93d632f7ab52f, type: 3}
   - {fileID: 21300000, guid: dd792bd3143895e4f8f0ad638addfaea, type: 3}
+  - {fileID: 21300000, guid: c5a765146066b214986af063008781c5, type: 3}
   - {fileID: 21300000, guid: 8dd882841bd8e6e4d8a88d908fe0e4a2, type: 3}
   - {fileID: 21300000, guid: 55b769753b37a6c4588e847f509b2e07, type: 3}
-  - {fileID: 21300000, guid: fa6445a5f6d25bd428423048b5720ba9, type: 3}
-  - {fileID: 21300000, guid: 389d84d5d6f1cf14f8f4467b7dbfaed1, type: 3}
+  - {fileID: 21300000, guid: cd1620b548c7cd94aabd8bffee24bdd9, type: 3}
   - {fileID: 21300000, guid: b1352336caf584b4bb00483d7d4263d0, type: 3}
+  - {fileID: 21300000, guid: 9e5436f6c72d22440a5358535688675f, type: 3}
   - {fileID: 21300000, guid: a90227f6b06cb544db7aab76da2bc3c3, type: 3}
-  - {fileID: 21300000, guid: 7734ce1797afc3641a0f0542297a97dd, type: 3}
-  - {fileID: 21300000, guid: d45e4b27a31f60642b7baa846f64e8fb, type: 3}
-  - {fileID: 21300000, guid: e9b0a958bae80ae4dbc6120d42482754, type: 3}
+  - {fileID: 21300000, guid: d28f4f88e14f56b4f8fef66b0957813b, type: 3}
   - {fileID: 21300000, guid: 7f6619496c0a2244a965e3820a3cd6ca, type: 3}
   - {fileID: 21300000, guid: e11b9c593a620fd4a8110f5421022005, type: 3}
-  - {fileID: 21300000, guid: 8cd881e9d9230dc47a3ed069c98f51db, type: 3}
-  - {fileID: 21300000, guid: a2cae91af8c6e1f49bb33a849fd0c2a8, type: 3}
-  - {fileID: 21300000, guid: e96dde7a3ad31ca4d983fd064d5fae7e, type: 3}
-  - {fileID: 21300000, guid: a83f4f7af87780242bf08d0a3c6a102a, type: 3}
-  - {fileID: 21300000, guid: 752e26aaf8bce2447887e759256aa579, type: 3}
-  - {fileID: 21300000, guid: 31d0bbba8d7f865459a62bdbca2dd65d, type: 3}
-  - {fileID: 21300000, guid: 6c3125eb8b0838340a20f00df3742689, type: 3}
-  - {fileID: 21300000, guid: 471fb6fca7de6e045a0ec9cf3f962fba, type: 3}
+  - {fileID: 21300000, guid: f974997ae7544794c83c82d94c170cb5, type: 3}
+  - {fileID: 21300000, guid: fb421a7a818ac9942a094080cb708cae, type: 3}
+  - {fileID: 21300000, guid: 7e6d949a6a1aede41b5a5224727994ca, type: 3}
+  - {fileID: 21300000, guid: cd7110db7d6f2444aa508822881e1ac3, type: 3}
   - {fileID: 21300000, guid: 409cd93d98a7b7a49ae4065674ba622b, type: 3}
   - {fileID: 21300000, guid: b4b299ddd24d66d4fb3b3cc2a59f90a0, type: 3}
   - {fileID: 21300000, guid: b1dc567ee0dbb6f41ab5deac676376a6, type: 3}
-  - {fileID: 21300000, guid: 0030252f4c0444749aa1a0af7eb2201c, type: 3}
+  - {fileID: 21300000, guid: f90b4e8e5e7bf714f8f45f1fa47b72b5, type: 3}
+  - {fileID: 21300000, guid: ecd2de1f9c4b8a74496b78758e9a1db1, type: 3}
   - {fileID: 21300000, guid: fe9fd63f05e20644483bfe34a72e2639, type: 3}
   m_PackedSpriteNamesToIndex:
   - IgnotIron
-  - BlockForegroundLadder
-  - BlockForegroundIronIgnot
-  - BlockForegroundBrick
   - MineAnimation2
   - SelectionBoth
-  - TileOreIron
   - Player
+  - CraftOtherStoneCreating
   - MineAnimation3
   - ToolShovelaxeStone
-  - BlockForegroundPlatform
-  - PlaceForegroundFurnace
+  - InventoryHeaderBackground
   - MineAnimation0
+  - InventorySlotBackground
   - IgnotGold
-  - BlockForegroundGoldIgnot
-  - PlaceForegroundChest
-  - TileBackgroundBedrock
+  - CraftOtherDirtCreating
   - ToolShovelaxeIron
   - SelectionLeft
-  - TileForegroundBedrock
-  - TileBackgroundStone
-  - BlockForegroundIronOre
-  - TileBackgroundDirt
-  - PlaceForegroundAssembler
-  - TileForegroundDirt
-  - BlockForegroundGoldOre
-  - TileForegroundStone
+  - ItemInQueueSlotBackground
+  - PopupBackground
+  - HeaderButtonHide
+  - InventoryBackground
   - ToolShovelaxeDiamond
   - MineAnimation1
   - BlockSelection
-  - TileOreGold
+  - HeaderButtonReset
+  - HeaderButtonClose
   - SelectionRight
   m_RenderDataMap: {}
   m_Tag: GameplayAtlas

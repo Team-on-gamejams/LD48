@@ -163,7 +163,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		}
 		else {
 			itemFilterImage.sprite = null;
-			itemFilterImage.color = itemFilterImage.color.SetA(0.1f);
+			itemFilterImage.color = itemFilterImage.color.SetA(0.0f);
 		}
 
 		if (item != null && item.itemSO != null) {

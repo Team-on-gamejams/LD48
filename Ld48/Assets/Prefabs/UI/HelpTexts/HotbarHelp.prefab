@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3505516305782733202}
   - component: {fileID: 6289247747548005390}
   - component: {fileID: 9004306282933624173}
+  - component: {fileID: 1443395369590295112}
   m_Layer: 5
   m_Name: HotbarHelp
   m_TagString: Untagged
@@ -26,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038151182134683563}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -164,3 +165,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1443395369590295112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038151182134683563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f314670f7a6535a449e346a5401bcf89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelWhenShow: 1
+  textField: {fileID: 6289247747548005390}
+  cg: {fileID: 0}
