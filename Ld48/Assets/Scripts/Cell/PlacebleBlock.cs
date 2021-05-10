@@ -9,6 +9,18 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class PlacebleBlock : MonoBehaviour {
+	public Cell MyCell { 
+		get => myCell;
+		set{
+			myCell = value;
+			if (craftPlace) {
+				craftPlace.MyCell = myCell;
+			}
+		}
+	}
+	Cell myCell;
+
+
 	[Header("Drop data"), Space]
 	public ItemOnGround itemToDrop;
 
@@ -22,6 +34,16 @@ public class PlacebleBlock : MonoBehaviour {
 	[NaughtyAttributes.ShowIf("IsForeground")] public bool isCanPlaceOnPlayerPos = false;
 	[NaughtyAttributes.ShowIf("IsBackground")] public Cell.CellContentBackground background;
 	[NaughtyAttributes.ShowIf("IsOre")] public Cell.CellContentOre ore;
+
+	[Header("Refs"), Space]
+	public ForegroundPlaceBase craftPlace;
+
+#if UNITY_EDITOR
+	private void OnValidate() {
+		if(!craftPlace)
+			craftPlace = GetComponent<ForegroundPlaceBase>();
+	}
+#endif
 
 	public bool IsForeground() {
 		return type == Cell.CellBlockType.Foreground;

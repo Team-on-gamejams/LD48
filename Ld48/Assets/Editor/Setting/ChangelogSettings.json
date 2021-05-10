@@ -77,6 +77,12 @@
                     "text": "Replace crafting ore from stone with opposite craft"
                 },
                 {
+                    "isCommunityFeedback": true,
+                    "type": 2,
+                    "scope": 1,
+                    "text": "Drop items from broken chest/assembler"
+                },
+                {
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 1,
@@ -87,6 +93,12 @@
                     "type": 2,
                     "scope": 1,
                     "text": "Inventory slot filters"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 5,
+                    "text": "New menu sprites"
                 },
                 {
                     "isCommunityFeedback": false,

@@ -44,13 +44,6 @@ public class Cell : MonoBehaviour {
 
 	float currMineTime = 0.0f;
 
-	//#if UNITY_EDITOR
-	//	void OnValidate() {
-	//		CreateCellVisuals();
-	//		UnityEditor.EditorUtility.SetDirty(gameObject);
-	//	}
-	//#endif
-
 	public void Init() {
 		CreateAllVisuals();
 		CreateDebugText();
@@ -108,18 +101,19 @@ public class Cell : MonoBehaviour {
 				destoyVisual.UpdateVisual(0);
 
 				if (isNeedLoot) {
-					ItemOnGround.CreateOnGround(foregroundBlock.itemToDrop.item.CloneItem().SetCount(1),
-						transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)
-					));
+					ItemOnGround.CreateOnGround(
+						foregroundBlock.itemToDrop.item.CloneItem().SetCount(1),
+						transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f))
+					);
 				}
 
+				if(foregroundBlock.craftPlace)
+					foregroundBlock.craftPlace.OnMined();
 				foregroud = CellContentForegroud.None;
 				RecreateVisualAfterChangeType();
-				debugText.text = $"{coord.x} {coord.y}";
 			}
 			else {
 				destoyVisual.UpdateVisual(brokePersent);
-				debugText.text = $"{coord.x} {coord.y}\n{currMineTime.ToString("0.00")} {foregroundBlock.neededTimeToBroke.ToString("0.00")}";
 			}
 
 		}
@@ -131,14 +125,17 @@ public class Cell : MonoBehaviour {
 				currMineTime -= oreBlock.neededTimeToBroke;
 				destoyVisual.UpdateVisual(0);
 
-				ItemOnGround.CreateOnGround(oreBlock.itemToDrop.item.CloneItem().SetCount(1), transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f)));
+				ItemOnGround.CreateOnGround(
+					oreBlock.itemToDrop.item.CloneItem().SetCount(1), 
+					transform.position + new Vector3(Random.Range(-MyGrid.cellSize.x / 2 * 0.8f, MyGrid.cellSize.x / 2 * 0.8f), Random.Range(-MyGrid.cellSize.y / 2 * 0.8f, MyGrid.cellSize.y / 2 * 0.8f))
+				);
 			}
 			else {
 				destoyVisual.UpdateVisual(brokePersent);
 			}
-
-			debugText.text = $"{coord.x} {coord.y}\n{currMineTime.ToString("0.00")} {oreBlock.neededTimeToBroke.ToString("0.00")}";
 		}
+
+		FillDebugText();
 	}
 
 	void CreateAllVisuals() {
@@ -159,21 +156,26 @@ public class Cell : MonoBehaviour {
 			oreBlock = null;
 		}
 
-		if (foregroundBlock == null && foregroud != CellContentForegroud.None)
+		if (foregroundBlock == null && foregroud != CellContentForegroud.None) {
 			foregroundBlock = Instantiate(GameManager.Instance.GetCellForeground(foregroud), gameObject.transform.position, Quaternion.identity, gameObject.transform).GetComponent<PlacebleBlock>();
+			foregroundBlock.MyCell = this;
+		}
 
-		if (backgroundBlock == null && background != CellContentBackground.None)
+		if (backgroundBlock == null && background != CellContentBackground.None) {
 			backgroundBlock = Instantiate(GameManager.Instance.GetCellBackground(background), gameObject.transform.position, Quaternion.identity, gameObject.transform).GetComponent<PlacebleBlock>();
+			backgroundBlock.MyCell = this;
+		}
 
-		if (oreBlock == null && ore != CellContentOre.None)
+		if (oreBlock == null && ore != CellContentOre.None) {
 			oreBlock = Instantiate(GameManager.Instance.GetCellOre(ore), gameObject.transform.position, Quaternion.identity, gameObject.transform).GetComponent<PlacebleBlock>();
+			oreBlock.MyCell = this;
+		}
 	}
 
 	void CreateDebugText() {
 		debugText.transform.SetParent(gameObject.transform, true);
 		debugText.transform.localPosition = Vector3.zero;
 
-		debugText.text = $"{coord.x} {coord.y}";
 		debugText.alignment = TextAlignmentOptions.Center;
 		debugText.color = Color.black;
 		debugText.sortingLayerID = UnityConstants.SortingLayers.Foreground;
@@ -185,5 +187,18 @@ public class Cell : MonoBehaviour {
 
 		RectTransform textFieldrt = debugText.GetComponent<RectTransform>();
 		textFieldrt.sizeDelta = MyGrid.cellSize;
+
+		FillDebugText();
+	}
+
+	void FillDebugText() {
+		debugText.text = $"{coord.x} {coord.y}";
+		
+		if (currMineTime != 0) {
+			if (foregroundBlock)
+				debugText.text = $"{coord.x} {coord.y}\n{currMineTime.ToString("0.00")} {foregroundBlock.neededTimeToBroke.ToString("0.00")}";
+			else if (oreBlock)
+				debugText.text = $"{coord.x} {coord.y}\n{currMineTime.ToString("0.00")} {oreBlock.neededTimeToBroke.ToString("0.00")}";
+		}
 	}
 }

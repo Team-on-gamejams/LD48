@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class Inventory : MonoBehaviour {
 	public Action onInventoryChangeEvent;
@@ -202,6 +203,20 @@ public class Inventory : MonoBehaviour {
 		onInventoryChangeEvent?.Invoke();
 
 		return item;
+	}
+
+	public void DropAllItemsToGround(Vector3 position, Vector2 rangeX, Vector2 rangeY) {
+		foreach (var item in items) {
+			if (item != null && item.item != null && item.item.itemSO != null) {
+				ItemOnGround.CreateOnGround(
+						item.item,
+						position + new Vector3(rangeX.GetRandomValueFloat(), rangeY.GetRandomValueFloat())
+				);
+
+				item.item.itemSO = null;
+				item.item.count = 0;
+			}
+		}
 	}
 
 	void OnInventoryChange() {
