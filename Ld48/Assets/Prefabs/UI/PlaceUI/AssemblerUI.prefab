@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 3178956175702653757}
   - component: {fileID: 3432991344222616696}
   - component: {fileID: 1871898192772917026}
+  - component: {fileID: 6658870670565058053}
   m_Layer: 0
   m_Name: ButtonReset
   m_TagString: Untagged
@@ -259,6 +260,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6658870670565058053}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -298,6 +311,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6658870670565058053}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExit:
     m_PersistentCalls:
       m_Calls:
@@ -327,6 +352,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1871898192772917026}
         m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
+        m_MethodName: OnExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6658870670565058053}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
         m_MethodName: OnExit
         m_Mode: 0
         m_Arguments:
@@ -387,6 +424,20 @@ MonoBehaviour:
   enterClip: {fileID: 8300000, guid: da833e1c9f6291342a5753dd6afe8df9, type: 3}
   clickClip: {fileID: 0}
   exitClip: {fileID: 8300000, guid: e811789c765c9784eb007f1d96304d6a, type: 3}
+  events: {fileID: 5903962360299375473}
+--- !u!114 &6658870670565058053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265261269800322480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c90889cb9b2f164b84fcda45b55e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Select other craft
   events: {fileID: 5903962360299375473}
 --- !u!1 &359410229388060513
 GameObject:
@@ -1500,6 +1551,7 @@ GameObject:
   - component: {fileID: 8526503526706246322}
   - component: {fileID: 4902131014541144846}
   - component: {fileID: 4391066630213342805}
+  - component: {fileID: 9038648586592090092}
   m_Layer: 0
   m_Name: ButtonClose
   m_TagString: Untagged
@@ -1668,6 +1720,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9038648586592090092}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -1707,6 +1771,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9038648586592090092}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExit:
     m_PersistentCalls:
       m_Calls:
@@ -1736,6 +1812,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4391066630213342805}
         m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
+        m_MethodName: OnExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9038648586592090092}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
         m_MethodName: OnExit
         m_Mode: 0
         m_Arguments:
@@ -1796,6 +1884,20 @@ MonoBehaviour:
   enterClip: {fileID: 8300000, guid: da833e1c9f6291342a5753dd6afe8df9, type: 3}
   clickClip: {fileID: 0}
   exitClip: {fileID: 8300000, guid: e811789c765c9784eb007f1d96304d6a, type: 3}
+  events: {fileID: 1633688200360302321}
+--- !u!114 &9038648586592090092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221707832623875609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c90889cb9b2f164b84fcda45b55e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Hide this window
   events: {fileID: 1633688200360302321}
 --- !u!1 &6877172089882993405
 GameObject:

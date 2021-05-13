@@ -98,6 +98,18 @@
                     "isCommunityFeedback": false,
                     "type": 2,
                     "scope": 5,
+                    "text": "Custom mouse cursor"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 5,
+                    "text": "Mouse over tooltip"
+                },
+                {
+                    "isCommunityFeedback": false,
+                    "type": 2,
+                    "scope": 5,
                     "text": "New in-game UI sprites"
                 },
                 {
@@ -128,7 +140,7 @@
                     "isCommunityFeedback": false,
                     "type": 3,
                     "scope": 5,
-                    "text": "Fix tooltip placing"
+                    "text": "Fix inventory tooltip placing"
                 },
                 {
                     "isCommunityFeedback": false,
@@ -145,5 +157,5 @@
             ]
         }
     ],
-    "readme": "Game page - https://teamon.itch.io/terrario\nSource code - https://github.com/Team-on/LD48https://github.com/Team-on/LD48\n\n\nAvailable in Windows, OSX and Linux\nIf you encounter any problem, please leave a issue! \nUse in-game form for that, report it in discord, or email me directly to timonsol13@gmail.com\n\r\nMac Version Notes:\r\nIf you get \"this package is from an unidentified developer\" right click (or control-click) and select open. You should now get the option to open anyways.\r\n\r\nLinux Version Notes:\r\nMake sure to set the x86_64 as executable before running.\r\n\n\nUsed assets:\nhttps://github.com/Team-on/UnityGameTemplate/wiki/Used-assets"
+    "readme": "Game page - https://teamon.itch.io/terrario\nSource code - https://github.com/Team-on/LD48https://github.com/Team-on/LD48\n\n\nAvailable in Windows, OSX and Linux\nIf you encounter any problem, please leave a issue! \nUse in-game form for that, report it in discord, or email me directly to timonsol13@gmail.com\n\nCan be played only with keyboard + mouse\n\r\nMac Version Notes:\r\nIf you get \"this package is from an unidentified developer\" right click (or control-click) and select open. You should now get the option to open anyways.\r\n\r\nLinux Version Notes:\r\nMake sure to set the x86_64 as executable before running.\r\n\n\nUsed assets:\nhttps://github.com/Team-on/UnityGameTemplate/wiki/Used-assets"
 }

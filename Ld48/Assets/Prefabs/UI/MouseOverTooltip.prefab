@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3024304187414211834}
-  - component: {fileID: 2118555937331812832}
+  - component: {fileID: 6273144696727263662}
   - component: {fileID: 8212376704239617665}
   - component: {fileID: 2883047306108132481}
   - component: {fileID: 3450759670849794895}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 3286731534940308001}
   - component: {fileID: 4715832335159368374}
   m_Layer: 5
-  m_Name: TextTooltip
+  m_Name: MouseOverTooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ RectTransform:
   m_AnchoredPosition: {x: 101, y: -65.1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &2118555937331812832
+--- !u!114 &6273144696727263662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4009002736242717562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f727d2efa6dc23c46b790aef1333e0e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 03ab121e2403bf74691d2e2a6b2433be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rt: {fileID: 3024304187414211834}

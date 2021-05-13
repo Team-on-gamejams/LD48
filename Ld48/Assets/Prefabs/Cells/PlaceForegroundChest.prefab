@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7298455630475136919}
   - component: {fileID: 121595930253185956}
   - component: {fileID: 7920159661899791349}
+  - component: {fileID: 2943893148711842093}
   m_Layer: 0
   m_Name: ButtonClose
   m_TagString: Untagged
@@ -184,6 +185,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2943893148711842093}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -223,6 +236,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2943893148711842093}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExit:
     m_PersistentCalls:
       m_Calls:
@@ -252,6 +277,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7920159661899791349}
         m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
+        m_MethodName: OnExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2943893148711842093}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
         m_MethodName: OnExit
         m_Mode: 0
         m_Arguments:
@@ -312,6 +349,20 @@ MonoBehaviour:
   enterClip: {fileID: 8300000, guid: da833e1c9f6291342a5753dd6afe8df9, type: 3}
   clickClip: {fileID: 0}
   exitClip: {fileID: 8300000, guid: e811789c765c9784eb007f1d96304d6a, type: 3}
+  events: {fileID: 3598221223500158099}
+--- !u!114 &2943893148711842093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78809824906881113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c90889cb9b2f164b84fcda45b55e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Close this window
   events: {fileID: 3598221223500158099}
 --- !u!1 &2052763020147362972
 GameObject:

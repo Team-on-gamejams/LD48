@@ -42,6 +42,8 @@ public class GameManager : Singleton<GameManager> {
 
 	public Cell SelectedCell => hightlightBlockUnderMouse.lastHightlightedCell;
 
+	[ReadOnly] public MouseTooltip tooltip;
+
 	[NonSerialized] public Player player;
 	[NonSerialized] public HightlightBlockUnderMouse hightlightBlockUnderMouse;
 	[NonSerialized] public Grid grid;
@@ -63,11 +65,17 @@ public class GameManager : Singleton<GameManager> {
 	[Header("Crafts"), Space]
 	public CraftSO[] crafts;
 
-
 	protected override void Initialize() {
 		base.Initialize();
 
 		helpLevelMode = startHelpLevel;
+
+		StartCoroutine(DelayedSetup());
+
+		IEnumerator DelayedSetup() {
+			yield return null;
+			yield return null;
+		}
 	}
 
 	protected override void Deinitialize() {

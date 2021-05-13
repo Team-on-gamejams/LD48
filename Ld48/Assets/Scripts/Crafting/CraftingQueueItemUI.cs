@@ -17,7 +17,7 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 	[SerializeField] protected Image fillCircle;
 	[SerializeField] protected GameObject tooltipPrefab;
 
-	protected Tooltip tooltip;
+	protected InventoryItemTooltip tooltip;
 
 	Action<CraftingQueueItemUI> onClick;
 	float currTime;
@@ -28,7 +28,7 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 
 	private void Start() {
 		if (!tooltip && tooltipPrefab)
-			tooltip = Instantiate(tooltipPrefab, transform).GetComponent<Tooltip>();
+			tooltip = Instantiate(tooltipPrefab, transform).GetComponent<InventoryItemTooltip>();
 	}
 
 	private void OnDestroy() {

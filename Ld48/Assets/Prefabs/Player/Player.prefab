@@ -49,6 +49,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be254b73e93e864c94aa51283c4263b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8827758163256470092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416664785253783895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c90889cb9b2f164b84fcda45b55e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Cycle through help
+  events: {fileID: 5912290201741356649}
 --- !u!1 &1409948814065590107
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +383,7 @@ GameObject:
   - component: {fileID: 3078022946797035508}
   - component: {fileID: 8360446753374366354}
   - component: {fileID: 4825965983020013802}
+  - component: {fileID: 4068554292990370664}
   m_Layer: 0
   m_Name: ButtonClose
   m_TagString: Untagged
@@ -537,6 +552,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4068554292990370664}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -576,6 +603,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4068554292990370664}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExit:
     m_PersistentCalls:
       m_Calls:
@@ -605,6 +644,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4825965983020013802}
         m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
+        m_MethodName: OnExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4068554292990370664}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
         m_MethodName: OnExit
         m_Mode: 0
         m_Arguments:
@@ -665,6 +716,20 @@ MonoBehaviour:
   enterClip: {fileID: 8300000, guid: da833e1c9f6291342a5753dd6afe8df9, type: 3}
   clickClip: {fileID: 0}
   exitClip: {fileID: 8300000, guid: e811789c765c9784eb007f1d96304d6a, type: 3}
+  events: {fileID: 5195988191447208164}
+--- !u!114 &4068554292990370664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357178479732109383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c90889cb9b2f164b84fcda45b55e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Hide this window
   events: {fileID: 5195988191447208164}
 --- !u!1 &3638142533852973098
 GameObject:
@@ -2814,6 +2879,7 @@ GameObject:
   - component: {fileID: 1220760596413170657}
   - component: {fileID: 2502544672484167005}
   - component: {fileID: 4973283454057769721}
+  - component: {fileID: 1139147274127480279}
   m_Layer: 0
   m_Name: ButtonClose
   m_TagString: Untagged
@@ -2982,6 +3048,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1139147274127480279}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -3021,6 +3099,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1139147274127480279}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
+        m_MethodName: OnEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExit:
     m_PersistentCalls:
       m_Calls:
@@ -3050,6 +3140,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4973283454057769721}
         m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
+        m_MethodName: OnExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1139147274127480279}
+        m_TargetAssemblyTypeName: ShowMouseTooltip, GeneralGameAssembly
         m_MethodName: OnExit
         m_Mode: 0
         m_Arguments:
@@ -3110,6 +3212,20 @@ MonoBehaviour:
   enterClip: {fileID: 8300000, guid: da833e1c9f6291342a5753dd6afe8df9, type: 3}
   clickClip: {fileID: 0}
   exitClip: {fileID: 8300000, guid: e811789c765c9784eb007f1d96304d6a, type: 3}
+  events: {fileID: 5246821331834869996}
+--- !u!114 &1139147274127480279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007351336191401848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c90889cb9b2f164b84fcda45b55e784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Hide this window
   events: {fileID: 5246821331834869996}
 --- !u!1 &6351040890248727280
 GameObject:
@@ -4040,7 +4156,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
@@ -4050,13 +4176,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 8827758163256470092}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 4600635188520139543}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 8827758163256470092}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 8827758163256470092}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: OnExit
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -4065,8 +4226,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: OnEnter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: ShowMouseTooltip, GeneralGameAssembly
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: ChangeHelpMode, GeneralGameAssembly
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: ShowMouseTooltip, GeneralGameAssembly
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: ShowMouseTooltip, GeneralGameAssembly
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -4132,6 +4318,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4072731311449438614}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5912290201741356649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4072731311449438614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416664785253783895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcfa99ea39dbe142bdc12bc0395665a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &416664785253783895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4417316442638819521, guid: 175d8b4b549be85458818f12f1d96b4b,

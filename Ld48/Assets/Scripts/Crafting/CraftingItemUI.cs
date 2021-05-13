@@ -14,7 +14,7 @@ public class CraftingItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	[SerializeField] protected Image itemImage;
 	[SerializeField] protected GameObject tooltipPrefab;
 
-	protected Tooltip tooltip;
+	protected InventoryItemTooltip tooltip;
 
 	bool isNeededPlace = false;
 	bool isEnoughIngradients;
@@ -23,7 +23,7 @@ public class CraftingItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
 	private void Awake() {
 		if (!tooltip && tooltipPrefab)
-			tooltip = Instantiate(tooltipPrefab, transform).GetComponent<Tooltip>();
+			tooltip = Instantiate(tooltipPrefab, transform).GetComponent<InventoryItemTooltip>();
 	}
 
 	private void OnDestroy() {
