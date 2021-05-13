@@ -126,6 +126,12 @@
                 },
                 {
                     "isCommunityFeedback": false,
+                    "type": 3,
+                    "scope": 5,
+                    "text": "Fix tooltip placing"
+                },
+                {
+                    "isCommunityFeedback": false,
                     "type": 7,
                     "scope": 1,
                     "text": "Dynamic inventory creation"

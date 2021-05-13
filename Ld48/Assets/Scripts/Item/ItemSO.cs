@@ -65,7 +65,39 @@ public class ItemSO : ScriptableObject {
 	[Header("Mining item data"), Space]
 	[NaughtyAttributes.ShowIf("IsMiningItem")] public int miningForce = 1;
 
+	public string GetInfoForPopup() {
+		string popupText = "";
+		popupText += $"<b>{name}</b>\n\n";
+		popupText += $"{description}\n\n";
+		if (maxCount == 1)
+			popupText += $"Not stackable\n\n";
+		else
+			popupText += $"Max Stack: {maxCount}\n\n";
+
+		popupText += $"Meta type: {ItemMetaTypeToString(metaType)}";
+
+		switch (metaType) {
+			case ItemSO.ItemMetaType.MiningTool:
+				popupText += $"\nMining force: {miningForce}";
+				break;
+		}
+
+		return popupText;
+	}
+
 	bool IsMiningItem() {
 		return metaType == ItemMetaType.MiningTool;
+	}
+
+	string ItemMetaTypeToString(ItemMetaType itemMeta) {
+		switch (itemMeta) {
+			case ItemMetaType.BuildableForeground:
+				return "Buildable";
+			case ItemMetaType.MiningTool:
+				return "Mining tool";
+			default:
+				Debug.LogError($"Unsupported string for ItemMetaType: {itemMeta}");
+				return "Error";
+		}
 	}
 }

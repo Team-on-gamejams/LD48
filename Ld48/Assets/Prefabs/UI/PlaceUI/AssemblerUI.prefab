@@ -444,7 +444,7 @@ MonoBehaviour:
   cgCraftingPlace: {fileID: 1755086754181516648}
   fillImage: {fileID: 2357345466939614623}
   myBlock: {fileID: 0}
-  recipeGoPrefab: {fileID: 8807921577697562932, guid: 36f5f66117b6cd946b273a33aa698269,
+  recipeGoPrefab: {fileID: 2072346210283053431, guid: 7c0f7818a784f5f45b899fd509c63ff4,
     type: 3}
 --- !u!222 &9046855897046420850
 CanvasRenderer:

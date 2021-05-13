@@ -21,36 +21,41 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	[SerializeField] protected TextMeshProUGUI count;
 
 	[Header("Refs"), Space]
-	[SerializeField] protected Popup popup;
+	[SerializeField] protected GameObject tooltipPrefab;
+
+	protected InventoryItemTooltip tooltip;
 
 	protected virtual void Awake() {
 
 	}
 
 	protected virtual void Start() {
+		if (!tooltip && tooltipPrefab) 
+			tooltip = Instantiate(tooltipPrefab, transform).GetComponent<InventoryItemTooltip>();
+
 		DrawItem();
 	}
 
 	private void OnDestroy() {
-		if (popup)
-			Destroy(popup.gameObject);
+		if (tooltip)
+			Destroy(tooltip.gameObject);
 	}
 
 	public void OnPointerEnter(PointerEventData eventData) {
-		if (item.itemSO != null)
-			popup.Show();
+		if (item.itemSO != null || filter != null)
+			tooltip.Show();
 	}
 
 	public void OnPointerExit(PointerEventData eventData) {
-		if (item.itemSO != null)
-			popup.Hide();
+		if (item.itemSO != null || filter != null)
+			tooltip.Hide();
 	}
 
 	public void OnBeginDrag(PointerEventData eventData) {
 		if (item == null || item.itemSO == null)
 			return;
 
-		popup.Hide();
+		tooltip.Hide();
 
 		draggingSlot = this;
 
@@ -177,14 +182,19 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 			itemImage.sprite = item.itemSO.sprite;
 			LeanTweenEx.ChangeAlpha(itemImage, 1.0f, 0.05f).setEase(LeanTweenType.easeInOutQuad);
 
-			popup.SetText(item.GetInfoForPopup());
+			tooltip.SetText(item.itemSO.GetInfoForPopup());
 
 		}
 		else {
 			count.text = "";
 
-			popup.SetText("");
-			
+			if (filter) {
+				tooltip.SetText(filter.GetInfoForPopup());
+			}
+			else {
+				tooltip.SetText("");
+			}
+
 			itemImage.sprite = null;
 			itemImage.color = itemImage.color.SetA(0.0f);
 		}

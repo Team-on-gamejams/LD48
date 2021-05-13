@@ -15,7 +15,9 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 	[Header("Refs"), Space]
 	[SerializeField] protected Image itemImage;
 	[SerializeField] protected Image fillCircle;
-	[SerializeField] protected Popup popup;
+	[SerializeField] protected GameObject tooltipPrefab;
+
+	protected Tooltip tooltip;
 
 	Action<CraftingQueueItemUI> onClick;
 	float currTime;
@@ -24,9 +26,14 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 		fillCircle.fillAmount = 0;
 	}
 
+	private void Start() {
+		if (!tooltip && tooltipPrefab)
+			tooltip = Instantiate(tooltipPrefab, transform).GetComponent<Tooltip>();
+	}
+
 	private void OnDestroy() {
-		if (popup)
-			Destroy(popup.gameObject);
+		if (tooltip)
+			Destroy(tooltip.gameObject);
 	}
 
 	public void Init(CraftSO _craft, Action<CraftingQueueItemUI> _onClick) {
@@ -43,17 +50,17 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 		currTime = craft.craftTime * fill;
 		fillCircle.fillAmount = fill;
 
-		if(popup.IsShowed)
+		if(tooltip.IsShowed)
 			SetPopupText();
 	}
 
 	public void OnPointerEnter(PointerEventData eventData) {
-		popup.Show();
+		tooltip.Show();
 		SetPopupText();
 	}
 
 	public void OnPointerExit(PointerEventData eventData) {
-		popup.Hide();
+		tooltip.Hide();
 	}
 
 	public void OnPointerDown(PointerEventData eventData) {
@@ -81,6 +88,6 @@ public class CraftingQueueItemUI : MonoBehaviour, IPointerEnterHandler, IPointer
 			popupText += $"Craft time: {craft.craftTime}";
 		}
 
-		popup.SetText(popupText);
+		tooltip.SetText(popupText);
 	}
 }

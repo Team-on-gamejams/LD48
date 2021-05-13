@@ -115,26 +115,6 @@ public class ItemData : ICloneable {
 		return false;
 	}
 
-	public string GetInfoForPopup() {
-		string popupText = "";
-		popupText += $"<b>{itemSO.name}</b>\n\n";
-		popupText += $"{itemSO.description}\n\n";
-		if (itemSO.maxCount == 1)
-			popupText += $"Not stackable\n\n";
-		else
-			popupText += $"Max Stack: {itemSO.maxCount}\n\n";
-
-		popupText += $"Meta type: {itemSO.metaType}";
-
-		switch (itemSO.metaType) {
-			case ItemSO.ItemMetaType.MiningTool:
-				popupText += $"\nMining force: {itemSO.miningForce}";
-				break;
-		}
-
-		return popupText;
-	}
-
 	public object Clone() {
 		return MemberwiseClone();
 	}

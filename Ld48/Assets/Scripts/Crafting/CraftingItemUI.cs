@@ -12,16 +12,23 @@ using Random = UnityEngine.Random;
 public class CraftingItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
 	[Header("Refs"), Space]
 	[SerializeField] protected Image itemImage;
-	[SerializeField] protected Popup popup;
+	[SerializeField] protected GameObject tooltipPrefab;
+
+	protected Tooltip tooltip;
 
 	bool isNeededPlace = false;
 	bool isEnoughIngradients;
 	CraftSO craft;
 	Action<CraftSO> onClick;
 
+	private void Awake() {
+		if (!tooltip && tooltipPrefab)
+			tooltip = Instantiate(tooltipPrefab, transform).GetComponent<Tooltip>();
+	}
+
 	private void OnDestroy() {
-		if (popup)
-			Destroy(popup.gameObject);
+		if (tooltip)
+			Destroy(tooltip.gameObject);
 	}
 
 	public void Init(CraftSO _craft, CraftSO.CraftPlaceType _myPlace, Action<CraftSO> _onClick) {
@@ -39,11 +46,11 @@ public class CraftingItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	}
 
 	public void OnPointerEnter(PointerEventData eventData) {
-		popup.Show();
+		tooltip.Show();
 	}
 
 	public void OnPointerExit(PointerEventData eventData) {
-		popup.Hide();
+		tooltip.Hide();
 	}
 
 	public void OnPointerDown(PointerEventData eventData) {
@@ -105,6 +112,6 @@ public class CraftingItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		popupText += $"Craft tool: {craft.GetCraftPlaceTypeString()}\n";
 		popupText += $"Craft time: {craft.craftTime}";
 
-		popup.SetText(popupText);
+		tooltip.SetText(popupText);
 	}
 }
