@@ -6,6 +6,8 @@ Available in Windows, OSX and Linux
 If you encounter any problem, please leave a issue! 
 Use in-game form for that, report it in discord, or email me directly to timonsol13@gmail.com
 
+Can be played only with keyboard + mouse
+
 Mac Version Notes:
 If you get "this package is from an unidentified developer" right click (or control-click) and select open. You should now get the option to open anyways.
 

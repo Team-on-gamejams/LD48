@@ -11,6 +11,8 @@ Add help texts, UI sprites and crafting filters
  * Change use/mine priority
  * Inventory slot filters
 #### UI: 
+ * Custom mouse cursor
+ * Mouse over tooltip
  * New in-game UI sprites
  * 📢 Help texts in game
  * Craft filters
@@ -19,6 +21,8 @@ Add help texts, UI sprites and crafting filters
 ### Fixes: 
 #### Gameplay: 
  * Made easier to jump on stairs
+#### UI: 
+ * Fix inventory tooltip placing
 
 ### Refactoring: 
 #### Gameplay: 
