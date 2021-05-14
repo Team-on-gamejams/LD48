@@ -18,8 +18,6 @@ public class MouseTooltip : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI textField;
 	[SerializeField] LayoutElement childLayoutElement;
 
-	RectTransform parentRt;
-
 	bool isShowed;
 
 #if UNITY_EDITOR
@@ -35,14 +33,12 @@ public class MouseTooltip : MonoBehaviour {
 
 	private void Awake() {
 		cg.alpha = 0.0f;
-
-		GameManager.Instance.tooltip = this;
 	}
 
 	private void Start() {
 		enabled = false;
 
-		parentRt = transform.parent.GetComponent<RectTransform>();
+		GameManager.Instance.tooltip = this;
 	}
 
 	private void Update() {
@@ -99,7 +95,8 @@ public class MouseTooltip : MonoBehaviour {
 		--InventoryItemTooltip.canvasSortOrder;
 
 		LeanTween.cancel(gameObject, false);
-		LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f).setEase(LeanTweenType.easeInOutQuad)
+		LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f)
+		.setEase(LeanTweenType.easeInOutQuad)
 		.setOnComplete(() => {
 			enabled = false;
 		});
