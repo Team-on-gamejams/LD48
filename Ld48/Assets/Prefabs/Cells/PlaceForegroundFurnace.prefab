@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventories:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4041437730970197907}
+  - {fileID: 8744621131448442673}
   canvas: {fileID: 273381628190246780}
   cg: {fileID: 7411072807288532793}
 --- !u!114 &946487478584277283
