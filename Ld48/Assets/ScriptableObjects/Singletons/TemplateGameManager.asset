@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TemplateGameManager
   m_EditorClassIdentifier: 
   startResources: 
-  buildNameString: 0.12 - Jam edition polish - UI & Crafting (5/4/2021)
+  buildNameString: 0.2 - Automation & shortcuts update (6/14/2021)
   productName: Terrario
   uiinput: {fileID: 0}
   eventSystem: {fileID: 0}

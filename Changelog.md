@@ -2,7 +2,7 @@ Note: 📢 indicates a change inspired by community feedback!
 
 
 ---------- 
-# 0.12 - Jam edition polish - UI & Crafting (5/4/2021)
+# 0.12 - Jam edition polish - UI & Crafting (5/14/2021)
 Add help texts, UI sprites and crafting filters
 ### Features: 
 #### Gameplay: 
